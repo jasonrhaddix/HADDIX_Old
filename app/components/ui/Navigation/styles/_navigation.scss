@@ -1,0 +1,31 @@
+.nav-container {
+	position: fixed;
+	
+	// background: linear-gradient(#660099, #330099);
+	background-color: $app-background-color;
+    background: -webkit-radial-gradient(circle, #13003a, #070707);
+    background: -o-radial-gradient(circle, #13003a, #070707);
+    background: -moz-radial-gradient(circle, #13003a, #070707);
+    background: radial-gradient(circle, #13003a, #070707);
+
+	height: 100%;
+	width: 100%;
+	top: 0;
+	z-index: 999;
+	display: none;
+
+	&.true {
+		display: block;		
+	}
+
+	nav {
+		@extend .center-content;
+
+		ul {
+			/* font-size: 4.2rem;
+			line-height: 1.4em; */
+			text-transform: uppercase;
+			text-align: center;
+		}
+	}
+}

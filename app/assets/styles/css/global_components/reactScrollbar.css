@@ -1,0 +1,16 @@
+/*.react-scrollbar-default {
+	width: 100% !important;
+	height: 100% !important;
+}*/
+
+.react-scrollbar-default .-reactjs-scrollbar-thumb {
+  background: #0d0028;
+}
+
+.react-scrollbar-default .-reactjs-scrollbar-thumb:hover {
+  background: #13003a;
+}
+
+.react-scrollbar-default .-reactjs-scrollbar-track {
+  background: #0C0C0C;
+}

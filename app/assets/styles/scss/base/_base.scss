@@ -1,0 +1,122 @@
+ 
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; // For some Android phones
+}
+
+
+
+body, html {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: 100%; // Some mobile devices don't scale up text size on device rotation
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+body {
+    background-color: $app-background-color;
+    background: -webkit-radial-gradient(circle, #13003a, #070707);
+    background: -o-radial-gradient(circle, #13003a, #070707);
+    background: -moz-radial-gradient(circle, #13003a, #070707);
+    background: radial-gradient(circle, #13003a, #070707);
+    background-repeat: none;
+     
+    color: $app-text-color;
+    font-family: 'DIN-Light', Helvetica, sans-serif;
+    letter-spacing: 0.01em;
+    margin: 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004); // Turns on ClearType for Windows machines
+
+    &.display-scrim {
+        overflow: hidden;
+    }
+
+    &.noscroll {
+        overflow-y: hidden;
+    }
+}
+
+
+ 
+h1, h2, h3, h4, h5, h6 { line-height: 1.4em }
+/* h1 { font-size: 4.2rem; }
+h2 { font-size: 3.2rem; } */
+
+ 
+
+a, button {
+    color: $app-text-color;
+    text-decoration: none;
+    outline: 0;
+
+    &:hover, &:active, &:focus {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+ 
+p
+ {
+    font-size: 0.8rem;
+    line-height: 1.3em;
+}
+
+
+ 
+ul, ol {
+    margin: 0;
+    padding: 0;
+    
+    li {
+        text-decoration: none;
+        list-style-type: none;
+    }
+}
+
+
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+
+    .main-container {
+
+        .row {
+
+        }
+    }
+}
+
+
+
+.routes-container {
+    overflow-x: hidden;
+}
+
+
+
+.switch-wrapper {
+    position: absolute;
+    top: 0;
+  // position: relative;
+
+}
+
+  .route-wrapper > div {
+    position: absolute;
+  }
+
+/* #app {
+    overflow: hidden;
+    height: 100vh;
+}
+ */

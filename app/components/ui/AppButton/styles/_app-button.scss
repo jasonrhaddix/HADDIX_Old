@@ -1,0 +1,63 @@
+.app-button {
+	position: relative;
+	display: inline-block;
+	border: 1px solid $app-button-border;
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	
+	&:hover {
+
+		.animated-button-bg {
+			transition-delay: 0s;
+			transform: translateX( 0% );
+		}
+
+		.animated-button-text {
+			transition-delay: 0.2s;
+			transform: translateX( 0% );
+			opacity: 1;
+		}
+	}
+
+	.animated-button-text, .animated-button-bg {
+		top: 0;
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		transform: translateX( -10% );
+		transition: all 0.3s ease-in-out;
+	}
+
+	.animated-button-text {
+		transition-delay: 0s;
+		opacity: 0;
+		font-weight: 800;
+		color: $black;
+	}
+
+	.animated-button-bg {
+		transition-delay: 0.2s;
+		background-color: $white;
+		transform: translateX( -150% );
+	
+		&:after {
+			content: "";
+			margin-left: 145px;
+			display: block;
+			width: 10px;
+			height: 10px;
+			border-top: 50px solid $white;
+			border-right: 50px solid transparent;
+		}
+	}
+
+	p {
+		text-transform: uppercase;
+	    display: block;
+    	position: relative;
+    	padding: 10px 40px;
+	}
+}

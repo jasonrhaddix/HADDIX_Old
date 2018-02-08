@@ -1,0 +1,36 @@
+.header-container {
+	position: fixed;
+	height: 60px;
+	width: 100vw;
+	z-index: 1001;
+	transition: .2s ease-in-out;
+	
+	.header-bg {
+		position: absolute;
+		background-color: $black;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+
+		&.show-bg {
+
+			&.true {
+				opacity: 1;
+			}
+
+			&.false {
+				opacity: 0;
+			}
+		}
+	}
+
+	.app-logo {
+		position: relative;
+		width: 120px;
+		padding: 20px 0 0 20px;
+
+		img, svg {
+			// width: 100px;
+		}
+	}
+}

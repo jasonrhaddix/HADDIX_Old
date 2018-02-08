@@ -1,0 +1,33 @@
+{
+	"navOpen": false,
+	"projects": [
+		{
+			"title": "Happy Holidays",
+			"subtitle": "Gary Group Christmas Card",
+			"main": "",
+			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
+			"link": ""
+		},
+		{
+			"title": "Project 2",
+			"subtitle": "Gary Group Christmas Card",
+			"main": "",
+			"desc": "This is the description for Project 2",
+			"link": ""
+		},
+		{
+			"title": "Project 3",
+			"subtitle": "Gary Group Christmas Card",
+			"main": "",
+			"desc": "This is the description for Project 3",
+			"link": ""
+		},
+		{
+			"title": "Project 3",
+			"subtitle": "Gary Group Christmas Card",
+			"main": "",
+			"desc": "This is the description for Project 3",
+			"link": ""
+		}
+	]
+}
