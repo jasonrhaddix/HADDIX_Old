@@ -1,6 +1,6 @@
 import React from 'react'
 	
-import Projects from '../../containers/Projects'
+// import Projects from '../../containers/Projects'
 
 
 
@@ -8,7 +8,8 @@ const About = () => {
 
     return (
         <div>
-            <Projects />
+            {/*<Projects />*/}
+            This is the ABOUT page.
         </div>
     )
 }

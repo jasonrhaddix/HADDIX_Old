@@ -8,8 +8,13 @@
 	
 	&:hover {
 
-		.animated-button-bg {
+		.animated-button-bg-under {
 			transition-delay: 0s;
+			transform: translateX( 0% );
+		}
+
+		.animated-button-bg {
+			transition-delay: 0.1s;
 			transform: translateX( 0% );
 		}
 
@@ -20,7 +25,7 @@
 		}
 	}
 
-	.animated-button-text, .animated-button-bg {
+	.animated-button-text, .animated-button-bg, .animated-button-bg-under  {
 		top: 0;
 		position: absolute;
 		display: block;
@@ -38,7 +43,7 @@
 		color: $black;
 	}
 
-	.animated-button-bg {
+	.animated-button-bg, .animated-button-bg-under {
 		transition-delay: 0.2s;
 		background-color: $white;
 		transform: translateX( -150% );
@@ -52,6 +57,17 @@
 			border-top: 50px solid $white;
 			border-right: 50px solid transparent;
 		}
+	}
+
+	.animated-button-bg-under {
+		transition-delay: 0.3s;
+		background-color: #2b0081;
+		opacity: 0.7;
+
+		&:after {
+			border-top: 50px solid #2b0081;
+		}
+
 	}
 
 	p {

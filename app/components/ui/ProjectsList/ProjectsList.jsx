@@ -2,7 +2,7 @@ import React from 'react'
 // import ReatDOM from 'react-dom'
 // import { viewProject } from '../../../actions'
 
-import Project from '../../ui/Project'
+import ProjectListItem from '../../ui/ProjectListItem/ProjectsListItem.jsx'
 import ProjectsData from '../../../models/projectsData.js'
 
 
@@ -39,7 +39,7 @@ class Projects extends React.Component
         this.projectsMap = ProjectsData.map(function(data) {
 
             return (
-                <Project onClick={this.openProject} key={data.id} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images} />
+                <ProjectListItem onClick={this.openProject} key={data.id} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images} />
             )
 
         }, this)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 // import PropTypes from 'prop-types'
-// import ReactScrollbar from 'react-scrollbar-js'
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import Routes from './Router.jsx'
 
@@ -21,9 +21,9 @@ class App extends React.Component
 		super(props, context)
 
 		this.state = {
-            /*windowWidth: window.innerWidth,
+            windowWidth: window.innerWidth,
             windowHeight: window.innerHeight,
-            scrollSpeed: 100,*/
+            scrollSpeed: 100,
         }
 	}
 
@@ -49,22 +49,22 @@ class App extends React.Component
 
 	render() 
 	{
-		/*const scrollbarProps = {	
+		const scrollbarProps = {	
 			width: this.state.windowWidth,
 			height: this.state.windowHeight,
-	    }*/
+	    }
 
 		return (
 			<BrowserRouter>
-				<div>
-				 {/*<ReactScrollbar style={scrollbarProps} speed={this.state.scrollSpeed} >*/}
+				{/*<div>*/}
+				 <Scrollbars style={{ width: this.state.windowWidth, height: this.state.windowHeight }} >
 					{/*<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title}/>*/}
 					{/*<Navigation links={this.props.data.navigation}/>*/}
 					<div className="routes-container">
 						{Routes}
 					</div>
-				{/*</ReactScrollbar>*/}
-				</div>
+				</Scrollbars>
+				{/*</div>*/}
 			</BrowserRouter>
 		)
 	}

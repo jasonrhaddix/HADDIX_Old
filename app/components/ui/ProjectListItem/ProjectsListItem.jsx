@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Project = (props) => {
+const ProjectListItem = (props) => {
 
     return (
         <div className='project-container col-sm-12 col-lg-12'>
@@ -23,4 +23,4 @@ const Project = (props) => {
     
 }
 
-export default Project;
+export default ProjectListItem;
