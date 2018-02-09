@@ -3,34 +3,25 @@
 	height: 60px;
 	width: 100vw;
 	z-index: 1001;
-	transition: .2s ease-in-out;
-	
-	.header-bg {
-		position: absolute;
-		background-color: $black;
-		height: 100%;
-		width: 100%;
-		opacity: 0;
+	top: 0;
 
-		&.show-bg {
+	transition: top 0.2s ease-in-out;
+	will-change: top;
 
-			&.true {
-				opacity: 1;
-			}
+	&.true {
+		top: 0px;
+	}
 
-			&.false {
-				opacity: 0;
-			}
-		}
+	&.false {
+		top: -100px;
 	}
 
 	.app-logo {
 		position: relative;
-		width: 120px;
 		padding: 20px 0 0 20px;
 
 		img, svg {
-			// width: 100px;
+			width: 90px;
 		}
 	}
 }

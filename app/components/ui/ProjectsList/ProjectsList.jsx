@@ -51,7 +51,7 @@ class Projects extends React.Component
     render() {
 
         return(
-            <div className='row' onClick={this.openProject}>
+            <div className='' onClick={this.openProject}>
 		        {this.loadProjects()}
 		    </div>
         )

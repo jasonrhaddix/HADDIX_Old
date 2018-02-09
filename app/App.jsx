@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-// import PropTypes from 'prop-types'
 import { Scrollbars } from 'react-custom-scrollbars';
+// import PropTypes from 'prop-types'
 
 import Routes from './Router.jsx'
 
-// import Header from './components/containers/Header'
-// import Navigation from './components/containers/Navigation'
+import Header from './components/containers/Header'
+import Navigation from './components/containers/Navigation'
 
 import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 import './assets/styles/scss/app.scss'
@@ -23,16 +23,14 @@ class App extends React.Component
 		this.state = {
             windowWidth: window.innerWidth,
             windowHeight: window.innerHeight,
-            scrollSpeed: 100,
         }
 	}
 
 
-	/*handleResize(e) {
+	handleResize(e) {
         this.setState({
 	        windowWidth: window.innerWidth,
 	        windowHeight: window.innerHeight,
-	        scrollSpeed: 100,
         })
     }
 
@@ -44,7 +42,7 @@ class App extends React.Component
 
     componentWillUnmount() {
         window.removeEventListener('resize', ::this.handleResize)
-    }*/
+    }
 
 
 	render() 
@@ -56,15 +54,13 @@ class App extends React.Component
 
 		return (
 			<BrowserRouter>
-				{/*<div>*/}
-				 <Scrollbars style={{ width: this.state.windowWidth, height: this.state.windowHeight }} >
-					{/*<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title}/>*/}
-					{/*<Navigation links={this.props.data.navigation}/>*/}
+			 	<Scrollbars style={{ width: this.state.windowWidth, height: this.state.windowHeight }} >
+					<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title}/>
+					<Navigation links={this.props.data.navigation}/>
 					<div className="routes-container">
 						{Routes}
 					</div>
 				</Scrollbars>
-				{/*</div>*/}
 			</BrowserRouter>
 		)
 	}

@@ -10,19 +10,26 @@ class SphereBg extends React.Component
         super(props, context)
 
         this.state = {
-            //
+            focus: false
         }
+    }
+
+    componentWillMount() {
     }
 
     componentDidMount() {
         this.refs.threeContainer.append(ThreeRender)
+        this.setState({ focus: true })
+    }
+
+    componentWillUnmount() {
+        this.setState({ focus: false })
     }
 
     render() {
-
         return(
             <div className='container-spherebg'>
-                <div ref='threeContainer' id='threeContainer' data-state={this.props.navOpen} />
+                <div ref='threeContainer' id='threeContainer' data-focus={this.state.focus} />
             </div>
         )
     }

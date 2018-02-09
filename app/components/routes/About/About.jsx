@@ -1,4 +1,5 @@
 import React from 'react'
+import DocumentTitle from 'react-document-title'
 	
 // import Projects from '../../containers/Projects'
 
@@ -7,10 +8,10 @@ import React from 'react'
 const About = () => {
 
     return (
-        <div>
+        <DocumentTitle title='HADDIX | About' className="about-container">
             {/*<Projects />*/}
             This is the ABOUT page.
-        </div>
+        </DocumentTitle>
     )
 }
 

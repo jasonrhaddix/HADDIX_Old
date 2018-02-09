@@ -1,4 +1,5 @@
 import React from 'react'
+import DocumentTitle from 'react-document-title'
 
 
 
@@ -36,9 +37,9 @@ class Home extends React.Component
     render() 
     {
         return (
-            <div className="home-container">
+            <DocumentTitle title='HADDIX | Work' className="home-container">
                 This is the HOME page.
-            </div>
+            </DocumentTitle>
         )
     }
 } 

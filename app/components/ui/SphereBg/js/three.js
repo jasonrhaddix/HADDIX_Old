@@ -362,12 +362,13 @@ function iniThreeJS_Geometry()
 function initThreeJS_Animate( time )
 {	
 	try {
-		appState = (document.getElementById('threeContainer').dataset.state === 'true' )
-	} catch(err){/**/}
+		appState = (document.getElementById('threeContainer').dataset.focus === 'true' ) ? true : false;
+	} catch(err){
+		appState = false;
+	}
 	
-	windowFocused = ( !introComplete || !appState && document.hasFocus() && document.documentElement.scrollTop < 600 ) ? true : false;
-	// windowFocused = ( !introComplete || !appState && document.hasFocus() && document.getElementsByClassName('home-container')[0].scrollTop < 400 ) ? true : false;
-	// windowFocused = ( parseInt(document.getElementsByClassName('-reactjs-scrollbar-area')[0].style.marginTop) > -200 ) ? true : false;
+	windowFocused = ( appState && document.hasFocus() ) ? true : false;
+	// windowFocused = ( !introComplete || appState && document.hasFocus() ) ? true : false;
 	
 	requestAnimationFrame( initThreeJS_Animate );
 	if( windowFocused ) initThreeJS_Render( time );
@@ -379,10 +380,8 @@ function initThreeJS_Animate( time )
 
 function initThreeJS_Render( time )
 {
-	// TWEEN.update();
-
-	var motionRate = time * 0.00002;
 	// var motionRate = Date.now() * 0.00003;
+	var motionRate = time * 0.00002;
     var x = motionRate * 2;
     var y = motionRate * 1.65;
     var z = motionRate;

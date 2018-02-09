@@ -1,4 +1,5 @@
 import React from 'react'
+import DocumentTitle from 'react-document-title'
 
 import ProjectsList from '../../containers/ProjectsList'
 
@@ -38,9 +39,9 @@ class Work extends React.Component
     render() 
     {
         return (
-            <div className="work-container">
+            <DocumentTitle title='HADDIX | Work' className="work-container">
                 <ProjectsList />
-            </div>
+            </DocumentTitle>
         )
     }
 } 

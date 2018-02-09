@@ -27,7 +27,7 @@ class Intro extends React.Component
 
 
     componentDidMount() {
-        // 
+        this.props.history.push('/')
     }
 
 

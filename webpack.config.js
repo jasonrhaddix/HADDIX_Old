@@ -50,6 +50,12 @@ const config_Production = webpack_merge([
 			name: "[name].[ext]",
 		},
 	}),
+	config_exports.loadSVGs({
+		options: {
+			limit: 15000,
+			name: "[name].[ext]",
+		},
+	}),
 	config_exports.loadJSON({
 		options: {
 			limit: 15000,
