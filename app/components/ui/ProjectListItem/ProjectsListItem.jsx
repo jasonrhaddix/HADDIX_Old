@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 const ProjectListItem = (props) => {
@@ -6,6 +7,7 @@ const ProjectListItem = (props) => {
     return (
         <div className='project-container col-sm-12 col-lg-12'>
             <div className='project-container-inner'>
+                <Link to={`${props.path}/jason`} >
                 <div className='project-background'>
                     <div><img src={props.images[0]} /></div>
                     <video></video>
@@ -17,6 +19,7 @@ const ProjectListItem = (props) => {
                         <p>{props.desc}</p>
                     </div>
                 </div>
+                </Link>
             </div>
         </div>
     )

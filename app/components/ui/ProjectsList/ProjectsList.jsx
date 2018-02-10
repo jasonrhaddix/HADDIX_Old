@@ -1,5 +1,5 @@
 import React from 'react'
-// import ReatDOM from 'react-dom'
+
 // import { viewProject } from '../../../actions'
 
 import ProjectListItem from '../../ui/ProjectListItem/ProjectsListItem.jsx'
@@ -7,7 +7,7 @@ import ProjectsData from '../../../models/projectsData.js'
 
 
 
-class Projects extends React.Component
+class ProjectsList extends React.Component
 {
     constructor(props, context)
     {
@@ -17,6 +17,7 @@ class Projects extends React.Component
         }
 
         this.openProject = this.openProject.bind(this)
+
     }
 
 
@@ -36,10 +37,10 @@ class Projects extends React.Component
 
     loadProjects()
     {
-        this.projectsMap = ProjectsData.map(function(data) {
+        this.projectsMap = ProjectsData.map(function(data, i) {
 
             return (
-                <ProjectListItem onClick={this.openProject} key={data.id} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images} />
+                <ProjectListItem path={this.props.match.path} key={data.id} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images} />
             )
 
         }, this)
@@ -49,8 +50,8 @@ class Projects extends React.Component
 
 
     render() {
-
-        return(
+        console.log( this.props )
+        return (
             <div className='' onClick={this.openProject}>
 		        {this.loadProjects()}
 		    </div>
@@ -59,4 +60,4 @@ class Projects extends React.Component
 } 
 
 
-export default Projects
+export default ProjectsList

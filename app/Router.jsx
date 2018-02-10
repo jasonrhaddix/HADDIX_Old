@@ -52,7 +52,7 @@ export default (
             atLeave={bounceTransition.atLeave}
             atActive={bounceTransition.atActive}
             mapStyles={mapStyles}
-        className="route-wrapper">
+            className="route-wrapper">
 		<Route exact path="/" component={Intro} />
     	<Route path="/work" component={Work} />
 		<Route path="/about" component={About} />
