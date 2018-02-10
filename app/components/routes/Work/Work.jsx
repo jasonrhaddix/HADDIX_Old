@@ -1,7 +1,11 @@
 import React from 'react'
+import { Route, Link } from 'react-router-dom'
+import { spring, AnimatedSwitch } from 'react-router-transition';
+
 import DocumentTitle from 'react-document-title'
 
 import ProjectsList from '../../containers/ProjectsList'
+import ProjectsDetail from '../../containers/ProjectDetail'
 
 
 
@@ -11,7 +15,40 @@ import ProjectsList from '../../containers/ProjectsList'
         openNav: state.openNav
     }
 }*/
+function mapStyles(styles) {
+    return {
+        opacity: styles.opacity,
+        transform: `scale(${styles.scale})`,
+    };
+}
 
+
+
+function bounce(val) {
+    return spring(val, {
+        stiffness:300,
+        damping: 30,
+    });
+}
+
+
+
+const bounceTransition = {
+    atEnter: {
+        opacity: 0,
+        scale: 1.2,
+    },
+    
+    atLeave: {
+        opacity: bounce(0),
+        scale: bounce(0.8),
+    },
+    
+    atActive: {
+        opacity: bounce(1),
+        scale: bounce(1),
+    },
+};
 
 
 class Work extends React.Component
@@ -23,6 +60,7 @@ class Work extends React.Component
         this.state = {
             // 
         }
+
     }
 
 
@@ -39,9 +77,17 @@ class Work extends React.Component
     render() 
     {
         return (
-            <DocumentTitle title='HADDIX | Work' className="work-container">
-                <ProjectsList />
-            </DocumentTitle>
+            <div className="work-container">
+                <AnimatedSwitch
+                            atEnter={bounceTransition.atEnter}
+                            atLeave={bounceTransition.atLeave}
+                            atActive={bounceTransition.atActive}
+                            mapStyles={mapStyles}
+                            className="route-wrapper">
+                        <Route exact path={`${this.props.match.path}`} component={ProjectsList} />
+                        <Route path={`${this.props.match.path}/:name`} component={ProjectsDetail}/>
+                    </AnimatedSwitch>
+            </div>
         )
     }
 } 

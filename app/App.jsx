@@ -1,12 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars';
+import { spring, AnimatedSwitch } from 'react-router-transition';
 // import PropTypes from 'prop-types'
 
 import Routes from './Router.jsx'
-
 import Header from './components/containers/Header'
 import Navigation from './components/containers/Navigation'
+
 
 import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 import './assets/styles/scss/app.scss'
