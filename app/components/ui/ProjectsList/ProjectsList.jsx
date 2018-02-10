@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // import { viewProject } from '../../../actions'
 
-import ProjectListItem from '../../ui/ProjectListItem/ProjectsListItem.jsx'
+import ProjectListItem from '../ProjectListItem/ProjectsListItem.jsx'
 import ProjectsData from '../../../models/projectsData.js'
 
 
@@ -17,6 +18,11 @@ class ProjectsList extends React.Component
         }
 
         this.openProject = this.openProject.bind(this)
+    }
+
+
+    componentWillMount() 
+    {
 
     }
 
@@ -40,7 +46,7 @@ class ProjectsList extends React.Component
         this.projectsMap = ProjectsData.map(function(data, i) {
 
             return (
-                <ProjectListItem path={this.props.match.path} key={data.id} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images} />
+                <ProjectListItem anchor={data.id} path={this.props.match.path} key={data.id} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images}/>
             )
 
         }, this)
@@ -50,11 +56,10 @@ class ProjectsList extends React.Component
 
 
     render() {
-        console.log( this.props )
         return (
             <div className='' onClick={this.openProject}>
-		        {this.loadProjects()}
-		    </div>
+                {this.loadProjects()}
+            </div>
         )
     }
 } 

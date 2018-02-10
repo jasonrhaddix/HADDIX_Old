@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
+import ScrollToAnchor from '../../util/ScrollToAnchor/ScrollToAnchor.jsx'
+
 import Logo from '../Logo/Logo.jsx'
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu.jsx'
 
@@ -59,6 +61,7 @@ class Header extends React.Component {
 					<Link to="/"><img alt={this.props.title} src={this.props.logo}/></Link>
 				</div>
 				<HamburgerMenu onClickFun={this.toggleMenu} navState={this.props.navOpen}/>
+				<ScrollToAnchor to="#3" animate={{ duration: 600 }} className="nav-link">SCROLL</ScrollToAnchor>
 			</header>
 		)
 	}

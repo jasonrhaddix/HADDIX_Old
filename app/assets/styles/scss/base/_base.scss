@@ -15,7 +15,8 @@ body, html {
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -103,16 +104,15 @@ ul, ol {
 }
 
 
-
 .switch-wrapper {
     position: absolute;
     top: 0;
-  // position: relative;
 
 }
 
+
 .route-wrapper > div {
-position: absolute;
+    position: absolute;
 }
 
 /* #app {

@@ -55,12 +55,14 @@ class App extends React.Component
 
 		return (
 			<BrowserRouter>
-			 	<Scrollbars style={{ width: this.state.windowWidth, height: this.state.windowHeight }} >
-					<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title}/>
-					<Navigation links={this.props.data.navigation}/>
-					<div className="routes-container">
-						{Routes}
-					</div>
+			 	<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }} >
+			 		{/*<div>*/}
+						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title}/>
+						<Navigation links={this.props.data.navigation}/>
+						<div className="routes-container">
+							{Routes}
+						</div>
+					{/*</div>*/}
 				</Scrollbars>
 			</BrowserRouter>
 		)

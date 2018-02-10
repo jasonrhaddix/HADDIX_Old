@@ -2,8 +2,8 @@ import uuid from 'uuid';
 
 const projectsData = [
 	{
-		id: uuid.v4(),
-		title: 'Happy Holidaywws',
+		id: "1",
+		title: 'Happy Holidays',
 		subtitle: 'Gary Group Christmas Card',
 		main: '',
 		desc: 'A digital holiday card using CSS3 animations and clipping mask tranforms.',
@@ -13,7 +13,7 @@ const projectsData = [
 		],
 	},
 	{
-		id: uuid.v4(),
+		id: "2",
 		title: 'Project 2',
 		subtitle: 'Gary Group Christmas Card',
 		main: '',
@@ -24,7 +24,7 @@ const projectsData = [
 		],
 	},
 	{
-		id: uuid.v4(),
+		id: "3",
 		title: 'Project 3',
 		subtitle: 'Gary Group Christmas Card',
 		main: '',
@@ -35,7 +35,7 @@ const projectsData = [
 		],
 	},
 	{
-		id: uuid.v4(),
+		id: "4",
 		title: 'Project 3',
 		subtitle: 'Gary Group Christmas Card',
 		main: '',
