@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import uuid from 'uuid'
 
 // import { viewProject } from '../../../actions'
 
 import ProjectListItem from '../ProjectListItem/ProjectsListItem.jsx'
+import ProjectScrollIndicator from '../ProjectScrollIndicator/ProjectScrollIndicator.jsx'
 import ProjectsData from '../../../models/projectsData.js'
 
 
@@ -46,7 +48,7 @@ class ProjectsList extends React.Component
         this.projectsMap = ProjectsData.map(function(data, i) {
 
             return (
-                <ProjectListItem anchor={data.id} path={this.props.match.path} key={data.id} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images}/>
+                <ProjectListItem key={uuid.v4()} scrollref={data.index} anchor={data.anchor} path={this.props.match.path} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images}/>
             )
 
         }, this)

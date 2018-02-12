@@ -7,6 +7,7 @@ import { spring, AnimatedSwitch } from 'react-router-transition';
 import Routes from './Router.jsx'
 import Header from './components/containers/Header'
 import Navigation from './components/containers/Navigation'
+import ProjectScrollIndicator from './components/containers/ProjectScrollIndicator'
 
 
 import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
@@ -59,6 +60,7 @@ class App extends React.Component
 			 		{/*<div>*/}
 						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title}/>
 						<Navigation links={this.props.data.navigation}/>
+            			<ProjectScrollIndicator className="project-scroll-ind-container"/>
 						<div className="routes-container">
 							{Routes}
 						</div>

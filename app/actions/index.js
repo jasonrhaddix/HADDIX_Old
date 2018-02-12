@@ -30,6 +30,15 @@ export const toggleNav = bool => {
 }
 
 
+export const setActiveProjectScroll = string => {
+	// extend the app functionality here
+	return {
+		type: storeConsts.SET_ACTIVE_PROJECT_SCROLL,
+		payload: string
+	}
+}
+
+
 /*export const viewProject = bool => {
 	// extend the app functionality here
 	return {
