@@ -88,9 +88,9 @@ class ProjectScrollIndicator extends React.Component {
 	render() {
 		return (
 			<div className="project-scroll-ind-container">
-				{/*<div className="line-ind-container">
+				<div className="line-ind-container">
 					<div className="line-ind" />
-				</div>*/}
+				</div>
 				<ul>
 					{this.loadProjects()}
 				</ul>
