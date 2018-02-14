@@ -21,7 +21,7 @@ class ProjectDetail extends React.Component {
 
 	componentDidMount()
 	{
-		/**/
+		console.log( this )
 	}
 
 
