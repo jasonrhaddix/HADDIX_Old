@@ -15,6 +15,9 @@ import ProjectsDetail from '../../containers/ProjectDetail'
         openNav: state.openNav
     }
 }*/
+
+
+
 function mapStyles(styles) {
     return {
         opacity: styles.opacity,
@@ -79,14 +82,14 @@ class Work extends React.Component
         return (
             <div className="work-container">
                 <AnimatedSwitch
-                            atEnter={bounceTransition.atEnter}
-                            atLeave={bounceTransition.atLeave}
-                            atActive={bounceTransition.atActive}
-                            mapStyles={mapStyles}
-                            className="route-wrapper">
-                        <Route exact path={`${this.props.match.path}`} component={ProjectsList} />
-                        <Route path={`${this.props.match.path}/:name`} component={ProjectsDetail}/>
-                    </AnimatedSwitch>
+                        atEnter={bounceTransition.atEnter}
+                        atLeave={bounceTransition.atLeave}
+                        atActive={bounceTransition.atActive}
+                        mapStyles={mapStyles}
+                        className="route-wrapper">
+                    <Route exact path={`${this.props.match.path}`} component={ProjectsList} />
+                    <Route path={`${this.props.match.path}/:name`} component={ProjectsDetail}/>
+                </AnimatedSwitch>
             </div>
         )
     }

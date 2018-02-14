@@ -55,9 +55,7 @@ class Header extends React.Component {
 	{
 		return (
 			<header className={`header-container ${this.state.showHeader}`} >
-				<div className="app-logo">
-					<Link to="/"><img alt={this.props.title} src={this.props.logo}/></Link>
-				</div>
+				<div className="app-logo"><Link to="/"><img alt={this.props.title} src={this.props.logo}/></Link></div>
 				<HamburgerMenu onClickFun={this.toggleMenu} navState={this.props.navOpen}/>
 			</header>
 		)

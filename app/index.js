@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import { Router, Route }from 'react-router-dom'
+import { BrowserRouter, Route }from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import configureStore from './store'
@@ -9,7 +9,7 @@ import rootReducer from './store/reducers'
 import initialState from './store/initial_state.json'
 import { addProject, toggleNav, randomGoals } from './actions'
 
-import App from './App.jsx'
+import App from './AppContainer'
 
 
 
@@ -37,7 +37,9 @@ window.appStore = appStore
 render (
 	<AppContainer>
 		<Provider store={appStore}>
-			<App data={appData}/>
+			<BrowserRouter>
+				<App data={appData}/>
+			</BrowserRouter>
 		</Provider>
 	</AppContainer>,
 

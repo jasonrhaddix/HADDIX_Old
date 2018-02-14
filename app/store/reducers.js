@@ -17,12 +17,17 @@ export const addProject = (state=[], action) => {
 	}
 }
 
-
-
 export const toggleNav = (state=false, action ) =>
 	( action.type === A.TOGGLE_NAV ) ? action.payload : state
 
+export const setActiveProjectScroll = (state=null, action ) =>
+	( action.type === A.SET_ACTIVE_PROJECT_SCROLL ) ? action.payload : state
 
+export const setScrollPosition = (state=0, action ) =>
+	( action.type === A.SET_SCROLL_POS ) ? action.payload : state
+
+export const setScrollHeight = (state=0, action ) =>
+	( action.type === A.SET_SCROLL_HEIGHT ) ? action.payload : state
 
 /*export const viewProject = (state=false, action ) =>
 	( action.type === A.VIEW_PROJECT ) ? action.payload : state*/
@@ -32,5 +37,8 @@ export const toggleNav = (state=false, action ) =>
 export default combineReducers({
 	projects: addProject,
     navOpen: toggleNav,
+    scrollProject: setActiveProjectScroll,
+    scrollPos: setScrollPosition,
+    scrollHeight: setScrollHeight,
     // viewProject: viewProject,
 })

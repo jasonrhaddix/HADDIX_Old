@@ -1,0 +1,126 @@
+.project-scroll-ind-container {
+	position: fixed;
+	display: block;
+	top: 50%;
+	right: -100px;
+	transform: translateY(-50%);
+	z-index: 999;
+
+	transition: right 0.2s ease-in-out;
+	will-change: right;
+
+	&.true {
+		right: 35px;
+	}
+
+	&.false {
+		right: -100px;
+	}
+
+	.scroll-ind-inner {
+		position: relative;
+		top: 0;
+		will-change: top;
+		transition: top 0.2s linear;
+
+
+		.line-ind-container {
+			position: absolute;
+			background-color: rgba( 255, 255, 255, 0.2 );
+			width: 1px;
+			height: calc( 100% - 40px );
+			right: 11px;
+			top: 7px;
+			z-index: -1;
+
+			.line-ind {
+				position: absolute;
+				background-color: white;
+				width: 1px;
+				height: calc( 100% - 40px );
+				right: 0px;
+				top: 7px;
+				z-index: -1;
+			}
+		}
+		
+		ul {
+
+			li {
+				display: flex;
+				margin-bottom: 20px;
+
+					.tag {
+						float: left;
+						margin: 1px 10px 0 0;
+						pointer-events: none;
+						opacity: 0;
+						will-change: opacity;
+
+						p {
+							white-space: no-wrap;
+							font-size: 0.7rem;
+							text-transform: uppercase;
+						}
+
+						&.active {
+							transition: fadeInTag 0.25s linear forwards;
+							// opacity: 1;
+						}
+					}
+
+				a {
+					display: block;
+
+
+					.indicator {
+						width: 16px;
+						height: 16px;
+						float: right;
+
+						svg {
+							height: 16px;
+							width: 16px;
+							fill: black;
+							stroke: $app-accent-color-purple-bright;
+							stroke-width: 5;
+						}
+
+						&.active {
+
+							svg {
+								stroke: $app-accent-color-orange;
+							}
+						}
+					}
+					
+					&:hover {
+
+						/* .tag {
+							opacity: 1;
+						} */
+
+						.indicator {
+							
+
+							svg {
+								stroke: white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@keyframe fadeInTag {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

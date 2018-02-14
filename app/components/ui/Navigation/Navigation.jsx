@@ -22,7 +22,7 @@ class Navigation extends React.Component {
 
             var navData = data.navigation.map(function(section) {
                 return (
-                    <li key={section.id}><Link to='/about'><h1>{section.title}</h1></Link></li>
+                    <li key={uuid.v4()}><Link to='/about'><h1>{section.title}</h1></Link></li>
                 )
             })
 
@@ -36,7 +36,7 @@ class Navigation extends React.Component {
     render() {
 
         return (
-            <div key={uuid.v4()} className={`nav-container ${appStore.getState().navOpen}`}>
+            <div className={`nav-container ${appStore.getState().navOpen}`}>
                 <nav>
                     <ul>
                         {this.getNavData()}
