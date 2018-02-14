@@ -8,12 +8,11 @@ import { setActiveProjectScroll } from '../../../actions'
 
 function onChange(isVisible) {
 
-    if( isVisible) {
-        // console.log(this.children.props.scrollref)
+    /*if( isVisible) {
         appStore.dispatch(
             setActiveProjectScroll(this.children.props.scrollref)
         )
-    }
+    }*/
 }
 
 const ProjectListItem = (props) => {
@@ -22,7 +21,8 @@ const ProjectListItem = (props) => {
         <div id={props.anchor} className='project-container col-sm-12 col-lg-12'>
             <div className='project-container-inner'>
                 <Link to={`${props.path}/jason`} >
-                <VisibilitySensor onChange={onChange} >
+                <VisibilitySensor intervalDelay={100} scrollDelay={75} >
+                {/*<VisibilitySensor intervalDelay={100} scrollDelay={75} onChange={onChange} >*/}
                     <div scrollref={props.scrollref} className='project-background'>
                         <div><img src={props.images[0]} /></div>
                         <video></video>

@@ -8,7 +8,8 @@ import ProjectScrollIndicator from '../ui/ProjectScrollIndicator/ProjectScrollIn
 const mapPropsToState = (state) => {
 
 	return {
-		navOpen: state.navOpen
+		navOpen: state.navOpen,
+		scrollHeight: state.scrollHeight
 	}
 }
 

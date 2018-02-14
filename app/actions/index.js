@@ -7,8 +7,8 @@
 
 	'store.dispatch( setGoal(10) )' 
 */
-
 import storeConsts from '../store/action_types'
+
 
 
 /* redux action*/
@@ -20,7 +20,6 @@ export const addProject = (payload) => {
 	}
 }
 
-
 export const toggleNav = bool => {
 	// extend the app functionality here
 	return {
@@ -28,7 +27,6 @@ export const toggleNav = bool => {
 		payload: bool
 	}
 }
-
 
 export const setActiveProjectScroll = string => {
 	// extend the app functionality here
@@ -38,14 +36,22 @@ export const setActiveProjectScroll = string => {
 	}
 }
 
-
-/*export const viewProject = bool => {
+export const setScrollPosition = num => {
 	// extend the app functionality here
 	return {
-		type: storeConsts.VIEW_PROJECT,
-		payload: bool
+		type: storeConsts.SET_SCROLL_POS,
+		payload: num
 	}
-}*/
+}
+
+export const setScrollHeight = num => {
+	// extend the app functionality here
+	return {
+		type: storeConsts.SET_SCROLL_HEIGHT,
+		payload: num
+	}
+}
+
 
 
 /* redux thunk*/

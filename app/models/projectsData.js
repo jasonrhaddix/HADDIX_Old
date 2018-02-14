@@ -40,6 +40,19 @@ const projectsData = [
 			require('../assets/images/projects/holiday_card/img_1.jpg')
 		],
 	},
+	{
+		index: "3",
+		title: 'Fast and Furious',
+		subtitle: 'Supercharged',
+		anchor: 'fast-and-furious-3',
+		main: '',
+		desc: 'An addition to the Universal Studios Orlando corporate site for Fast and Furious - Supercharged show experience',
+		client: 'Universal Studios',
+		link: '',
+		images: [
+			require('../assets/images/projects/holiday_card/img_1.jpg')
+		],
+	},
 ];
 
 export default projectsData;	

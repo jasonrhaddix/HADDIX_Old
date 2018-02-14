@@ -1,6 +1,8 @@
 {
 	"navOpen": false,
 	"scrollProject": null,
+	"scrollPos": 0,
+	"scrollHeight": 0,
 	"projects": [
 		{
 			"title": "Happy Holidays",
@@ -24,7 +26,14 @@
 			"link": ""
 		},
 		{
-			"title": "Project 3",
+			"title": "Project 4",
+			"subtitle": "Gary Group Christmas Card",
+			"main": "",
+			"desc": "This is the description for Project 3",
+			"link": ""
+		},
+		{
+			"title": "Project 5",
 			"subtitle": "Gary Group Christmas Card",
 			"main": "",
 			"desc": "This is the description for Project 3",

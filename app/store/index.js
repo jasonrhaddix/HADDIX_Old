@@ -10,7 +10,7 @@ import rootReducer from './reducers'
 const consoleMessages = store => next => action => {
 	let result;
 
-	console.log(`dispatching action => ${action.type}`)
+	// console.log(`dispatching action => ${action.type}`)
 	result = next( action );
 
 	return result;
