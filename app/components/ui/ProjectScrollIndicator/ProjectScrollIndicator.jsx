@@ -59,7 +59,7 @@ class ProjectScrollIndicator extends React.Component {
     		this.indicators.push({svg:svg, tag:tag})
 		}
 
-		this.indicators[this.currProject].svg.style.fill = 'white'
+		// this.indicators[this.currProject].svg.style.fill = 'white'
 
 
 		this.props.history.listen(() => {
@@ -77,9 +77,9 @@ class ProjectScrollIndicator extends React.Component {
 	}
 
 
-	componentShouldUpdate()
+	shouldComponentUpdate()
 	{
-
+		return true
 	}
 
 
@@ -95,11 +95,7 @@ class ProjectScrollIndicator extends React.Component {
 		if( this.currProject !== this.prevProject ) {
 			this.prevProject = this.currProject
 			this.setState({ activeInd: this.currProject })
-			
-			// console.log( this.startScroll, this.maxScroll, this.currPos, this.numOfElements, this.currProject, this.indicators[this.prevProject].svg )
-		}
-		
-		
+		}		
 	}
 
 
@@ -107,8 +103,8 @@ class ProjectScrollIndicator extends React.Component {
 	checkScrollPosition( scrollHeight, scrollPos )
 	{	
 		const delta = scrollHeight / this.refs.scrollIndInner.offsetHeight
-		document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")
-
+		// document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")
+		
 		this.checkProjectIndPosition( scrollHeight, scrollPos )
 	}
 
@@ -123,16 +119,16 @@ class ProjectScrollIndicator extends React.Component {
 						<div className={`tag ${(this.state.activeInd === i) ? "active" : ""}`}>
 							<p>Gary Group Holiday Card</p>
 						</div>
-                	<ScrollToAnchor to={`#${data.anchor}`} animate={{ duration: 300 }} className="nav-link">
+                	<ScrollToAnchor to={`#${data.anchor}`} animate={{ duration: 600 }} className="nav-link">
 						<div className={`indicator ${(this.state.activeInd === i) ? "active" : ""}`}>
 							<svg id="Layer_1" data-name="Layer 1" viewBox="0 0 108.29 124.5">
 								
 								<path d="M65.16,3.65,118.07,34.2V95.3L65.16,125.85,12.25,95.3V34.2L65.16,3.65m0-1.15L11.25,33.63V95.88L65.16,127l53.91-31.12V33.63L65.16,2.5Z" transform="translate(-11.01 -2.5)"/>
 								<path d="M65.16,5.11,117.56,95H12.75L65.16,5.11m0-2L11,96H119.3L65.16,3.12Z" transform="translate(-11.01 -2.5)"/>
 								<path d="M90.32,50.22,65.16,93.8,40,50.22H90.32m1.73-1H38.26L65.16,95.8,92,49.22Z" transform="translate(-11.01 -2.5)"/>
-								<line class="cls-1" x1="0.61" y1="31.13" x2="28" y2="47.31"/>
-								<line class="cls-1" x1="107.68" y1="31.13" x2="80.29" y2="47.31"/>
-								<line class="cls-1" x1="54.15" y1="124.5" x2="54.15" y2="92.13"/>
+								<line className="cls-1" x1="0.61" y1="31.13" x2="28" y2="47.31"/>
+								<line className="cls-1" x1="107.68" y1="31.13" x2="80.29" y2="47.31"/>
+								<line className="cls-1" x1="54.15" y1="124.5" x2="54.15" y2="92.13"/>
 							</svg>
 							{/*<svg viewBox="0 0 48 41.57"><polygon points="1.3 40.82 24 1.5 46.7 40.82 1.3 40.82"/><path d="M25,3.72,35.7,22.25,46.4,40.78H3.6L14.3,22.25,25,3.72m0-3L13,21.5,1,42.28H49L37,21.5,25,.72Z" transform="translate(-1 -0.72)"/></svg>*/}
 						</div>
@@ -149,8 +145,6 @@ class ProjectScrollIndicator extends React.Component {
 
 	render()
 	{
-		console.log("RENDER")
-
 		return (
 			<div className={`project-scroll-ind-container ${this.state.showInd}`}>
 				<div className="scroll-ind-inner" id="scroll-ind-inner" ref="scrollIndInner">

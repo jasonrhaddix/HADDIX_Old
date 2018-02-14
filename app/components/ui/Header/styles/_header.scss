@@ -3,25 +3,59 @@
 	height: 60px;
 	width: 100vw;
 	z-index: 1001;
-	top: 0;
-
-	transition: top 0.2s ease-in-out;
+	top: -100px;
+	transition: all 0.3s ease-in-out;
 	will-change: top;
 
 	&.true {
 		top: 0px;
+		opacity: 1;
 	}
 
 	&.false {
 		top: -100px;
+		opacity: 0;
 	}
 
-	.app-logo {
-		position: relative;
+	.app-logo-wrapper {
+		display: flex;
+		flex-direction: row;
 		padding: 20px 0 0 20px;
+		
+		.app-logo {
+			position: relative;
 
-		img, svg {
-			width: 90px;
+			img, svg {
+				width: 90px;
+			}
 		}
+
+		.breadcrumb-divider {
+			background-color: $app-text-color;
+			margin: 5px 10px;
+			width: 1px;
+			height: 24px;
+			transition: transform 0.25s ease-in-out;
+			transform: translateY(0);
+		}
+
+		.breadcrumb-title {
+			margin: 6px 0;
+			text-transform: uppercase;
+		}	
 	}
 }
+
+/* 
+@keyframes showHeader {
+	0% { opacity: 0; top: -100px; }
+	75% { opacity: 1; }
+	100% { top: 0; }
+}
+
+@keyframes hideHeader {
+	0% { opacity: 1; top: 0; }
+	75% { opacity: 0; }
+	100% { top: -100px; }
+}
+ */

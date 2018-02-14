@@ -6,7 +6,7 @@
 	transform: translateY(-50%);
 	z-index: 999;
 
-	transition: right 0.2s ease-in-out;
+	transition: right 0.3s ease-in-out;
 	will-change: right;
 
 	&.true {
@@ -21,7 +21,7 @@
 		position: relative;
 		top: 0;
 		will-change: top;
-		transition: top 0.2s linear;
+		// transition: top 0.2s linear;
 
 
 		.line-ind-container {
@@ -64,7 +64,7 @@
 						}
 
 						&.active {
-							transition: fadeInTag 0.25s linear forwards;
+							// transition: fadeInTag 0.25s linear forwards;
 							// opacity: 1;
 						}
 					}
@@ -79,6 +79,7 @@
 						float: right;
 
 						svg {
+							// transition: all 0.25s ease-in-out;
 							height: 16px;
 							width: 16px;
 							fill: black;
@@ -89,7 +90,7 @@
 						&.active {
 
 							svg {
-								stroke: $app-accent-color-orange;
+								stroke: $white;
 							}
 						}
 					}
