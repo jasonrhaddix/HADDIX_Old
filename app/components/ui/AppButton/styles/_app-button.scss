@@ -8,6 +8,11 @@
 	
 	&:hover {
 
+		.button-text {
+			transition-delay: 0s;
+			transform: translateX( 7% );
+		}
+
 		.animated-button-bg-under {
 			transition-delay: 0s;
 			transform: translateX( 0% );
@@ -25,6 +30,11 @@
 		}
 	}
 
+	.button-text {
+		transition: all 0.2s ease-in-out;
+		transition-delay: 0.25s;	
+	}
+
 	.animated-button-text, .animated-button-bg, .animated-button-bg-under  {
 		top: 0;
 		position: absolute;
@@ -37,10 +47,13 @@
 	}
 
 	.animated-button-text {
+		text-transform: uppercase;
+	    padding: 10px 40px;
 		transition-delay: 0s;
 		opacity: 0;
+		font-size: 0.8rem;
 		font-weight: 800;
-		color: $black;
+		color: $app-text-color_dark;
 	}
 
 	.animated-button-bg, .animated-button-bg-under {
@@ -52,10 +65,10 @@
 			content: "";
 			margin-left: 145px;
 			display: block;
-			width: 10px;
-			height: 10px;
-			border-top: 50px solid $white;
-			border-right: 50px solid transparent;
+			width: 20px;
+			height: 20px;
+			border-top: 70px solid $white;
+			border-right: 70px solid transparent;
 		}
 	}
 
@@ -70,10 +83,11 @@
 
 	}
 
-	p {
+	.button-text {
 		text-transform: uppercase;
 	    display: block;
     	position: relative;
     	padding: 10px 40px;
+    	font-size: 0.8rem;
 	}
 }

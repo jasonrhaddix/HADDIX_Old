@@ -8,7 +8,8 @@ import ProjectDetail from '../ui/ProjectDetail/ProjectDetail.jsx'
 const mapPropsToState = (state) => {
 
 	return {
-		navOpen: state.navOpen
+		navOpen: state.navOpen,
+		projects: state.projects
 	}
 }
 

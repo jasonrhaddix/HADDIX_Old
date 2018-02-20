@@ -5,39 +5,49 @@
 	"scrollHeight": 0,
 	"projects": [
 		{
+			"index": "0",
 			"title": "Happy Holidays",
 			"subtitle": "Gary Group Christmas Card",
+			"anchor": "holiday_card",
 			"main": "",
 			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
-			"link": ""
+			"client": "The Gary Group",
+			"link": "",
+			"projectFolder": "holiday_card",
+			"images": [
+				"img_2"
+			],
+			"video": "sample_vid"
 		},
 		{
-			"title": "Project 2",
-			"subtitle": "Gary Group Christmas Card",
+			"index": "1",
+			"title": "Fast and Furious - Supercharged",
+			"subtitle": "Too Fast. Too Furious. Totally Bitchen.",
+			"anchor": "fast_and_furious_supercharged",
 			"main": "",
-			"desc": "This is the description for Project 2",
-			"link": ""
+			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
+			"client": "Universal Orlando",
+			"link": "",
+			"projectFolder": "holiday_card",
+			"images": [
+				"img_1"
+			],
+			"video": "sample_vid"
 		},
 		{
-			"title": "Project 3",
-			"subtitle": "Gary Group Christmas Card",
+			"index": "2",
+			"title": "Skechers - Wayfinder",
+			"subtitle": "Interactive kiosk to get you where you need to go.",
+			"anchor": "skechers_kiosk",
 			"main": "",
-			"desc": "This is the description for Project 3",
-			"link": ""
-		},
-		{
-			"title": "Project 4",
-			"subtitle": "Gary Group Christmas Card",
-			"main": "",
-			"desc": "This is the description for Project 3",
-			"link": ""
-		},
-		{
-			"title": "Project 5",
-			"subtitle": "Gary Group Christmas Card",
-			"main": "",
-			"desc": "This is the description for Project 3",
-			"link": ""
+			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
+			"client": "Skechers",
+			"link": "",
+			"projectFolder": "holiday_card",
+			"images": [
+				"img_1"
+			],
+			"video": "sample_vid"
 		}
 	]
 }

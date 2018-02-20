@@ -20,8 +20,8 @@ function mapStyles(styles) {
 
 function bounce(val) {
     return spring(val, {
-        stiffness:300,
-        damping: 30,
+        stiffness:200,
+        damping: 40,
     });
 }
 
@@ -30,12 +30,12 @@ function bounce(val) {
 const bounceTransition = {
     atEnter: {
         opacity: 0,
-        scale: 1.2,
+        scale: 1.1,
     },
     
     atLeave: {
         opacity: bounce(0),
-        scale: bounce(0.8),
+        scale: bounce(1),
     },
     
     atActive: {

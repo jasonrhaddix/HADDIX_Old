@@ -9,7 +9,8 @@ const mapPropsToState = (state) => {
 
 	return {
 		navOpen: state.navOpen,
-		scrollHeight: state.scrollHeight
+		scrollHeight: state.scrollHeight,
+		projects: state.projects
 	}
 }
 

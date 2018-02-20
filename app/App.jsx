@@ -8,17 +8,18 @@ import { setScrollPosition, setScrollHeight } from './actions'
 import Routes from './Router.jsx'
 import Header from './components/containers/Header'
 import Navigation from './components/containers/Navigation'
+import CloseButton from './components/ui/CloseButton/CloseButton.jsx'
 import ProjectScrollIndicator from './components/containers/ProjectScrollIndicator'
 
 
 // import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 import './assets/styles/scss/app.scss'
-// import './assets/styles/css/global_components/reactScrollbar.css'
 
 
 
 class App extends React.Component
 {
+	
 	constructor(props, context)
 	{
 		super(props, context)
@@ -26,7 +27,8 @@ class App extends React.Component
 		this.state = {
             windowWidth: window.innerWidth,
             windowHeight: window.innerHeight,
-            scrollPos: null
+            scrollPos: null,
+            currentPath: ""
         }
 
         this.scrollPos = 0
@@ -53,8 +55,6 @@ class App extends React.Component
 		appStore.dispatch(
 			setScrollPosition(this.scrollPos)
 		)
-
-
 	}	
 
 
@@ -67,19 +67,48 @@ class App extends React.Component
     }
 
 
+    componentWillMount()
+    {
+    	this.getCurrentPath()
+    }
+
+
     componentDidMount()
     {
-		window.addEventListener('resize', ::this.handleResize) // :: for autobind via babel preset (stage-0)
+		window.addEventListener('resize', ::this.handleResize)
     	document.getElementById("scroll-container").firstChild.addEventListener("scroll", ::this.setScrollPos)
     }
 
 
-
-	componentDidUpdate()
+	componentDidUpdate(prevProps)
 	{
 		this.setScrollHeight()
+
+
+		if (this.props.location !== prevProps.location) {
+			if( this.props.location.hash === "") this.onRouteChanged()
+	  		this.getCurrentPath()
+		}
 	}
 
+
+	getCurrentPath()
+	{
+		let path = this.props.history.location.pathname
+    	path = path.substring(path.lastIndexOf("/") + 1)
+    	path = path.split("_").join(" ")
+
+    	this.setState({ currentPath : path })
+	}
+
+
+	onRouteChanged() {
+		console.log(this.props.location)
+		setTimeout( function()
+		{
+			document.getElementById("scroll-container").firstChild.scrollTop = 0
+		}, 150)
+	}
 
 
 	render() 
@@ -97,9 +126,12 @@ class App extends React.Component
 
 	   return (
 		 	<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
-		 			<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title}/>
+		 			<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
 					<Navigation links={this.props.data.navigation}/>
-        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator; }} className="project-scroll-ind-container"/>
+        			
+        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
+					<CloseButton buttonText="X" buttonPath="/work" />
+
 					<div className="routes-container">
 						{Routes}
 					</div>

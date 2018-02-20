@@ -6,6 +6,7 @@
 	top: -100px;
 	transition: all 0.3s ease-in-out;
 	will-change: top;
+	pointer-events: none;
 
 	&.true {
 		top: 0px;
@@ -20,7 +21,9 @@
 	.app-logo-wrapper {
 		display: flex;
 		flex-direction: row;
-		padding: 20px 0 0 20px;
+		position: absolute;
+		pointer-events: all;
+		padding: 30px 0 0 40px;
 		
 		.app-logo {
 			position: relative;
@@ -31,18 +34,29 @@
 		}
 
 		.breadcrumb-divider {
-			background-color: $app-text-color;
+			background-color: $app-text-color_light;
 			margin: 5px 10px;
 			width: 1px;
 			height: 24px;
 			transition: transform 0.25s ease-in-out;
 			transform: translateY(0);
+			// box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 		}
 
 		.breadcrumb-title {
 			margin: 6px 0;
-			text-transform: uppercase;
+			// text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+
+			h1 {
+		    	line-height: 1.4rem;
+				text-transform: uppercase;
+			}
 		}	
+	}
+
+	.hamburger-container {
+		pointer-events: all;
+		margin: 30px 40px 0 0;
 	}
 }
 

@@ -3,15 +3,17 @@ $white: #FFFFFF;
 $black: #000000;
 
 $app-background-color: #070707;
-$app-text-color: #FFFFFF;
+
+$app-text-color_light: #EFEFEF;
+$app-text-color_dark: #333;
+
 $app-accent-color-purple: #370FAE;
 $app-accent-color-purple-bright: #3802d9;
 $app-accent-color-orange: #D63D04;
 
-
-$app-button-border: $white;
+$app-button-border: $app-text-color_light;
 
 
 // Projects
-$project-background-color: rgba( 0, 0, 0, 0.5 );
-$project-background-cover-color: rgba( 0, 0, 0, 0.65 );
+$project-background-color: $black;
+$project-background-cover-color: $app-text-color_light

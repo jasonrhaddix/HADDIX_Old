@@ -1,0 +1,139 @@
+.project-detail-container {
+	position: relative;
+
+	/* MASTHEAD  Component */
+	.detail-masthead-container {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+		background-position: center top;
+		background-size: cover;
+		overflow: hidden;
+		border-bottom: 1px solid #EEE;
+
+		.detail-masthead-cover {
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.25);
+		}
+		
+		.detail-masthead-inner {
+			@extend .container;
+
+			.detail-masthead-title {
+				overflow: hidden;
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				transform: translateY(-50%);
+				padding: 15px;
+				background-color: rgba(255,255,255,0.3);
+    			color: $app-text-color_dark;
+
+    			img {
+    				position: absolute;
+    				top: -160px;
+    				left: -20px;
+    				opacity: 0.6;
+    				width: 100%;
+    				height: 100%;
+    			}
+
+				h2 {
+					position: relative;
+					text-transform: uppercase;
+					font-size: 1.6rem;
+				}
+
+				h1 {
+					position: relative;
+					font-family: 'DIN-Black', helvetica, sans-serif;
+					text-transform: uppercase;
+					font-size: 6rem;
+				}
+			}
+		}
+	}
+
+
+	.content-container {
+		background-color: $white;
+		color: $app-text-color_dark;
+		width: 100vw;
+
+		.content-container-inner {
+			@extend .container;
+
+		}
+	}
+	
+
+	/* HEADER Component */
+	.detail-header-container {
+
+		.detail-header-inner {
+			margin: 10% 0 0;
+			font-size: 1.4rem;
+		}
+	}	
+
+
+	/* VIDEO Conponent */
+	.detail-video-container {
+		
+		.detail-video-inner {
+			margin: 10% 0;
+
+			video {
+				width: 100%;
+			}
+		}
+	}
+
+
+	/* SPECS Component */
+	.detail-specs-container {
+		background-color: #333;
+
+		.detail-specs-inner {
+			@extend .container;
+			
+			.detail-specs {
+				padding: 20px 0;
+
+				.detail-spect-col {
+					width: 50%;
+					display: inline-block;
+
+					.detail-spec-item {
+						margin: 40px 0;
+
+						.detail-item-name {
+							font-family: 'DIN-Bold', helvetica, sans-serif;
+							text-transform: uppercase;
+							font-size: 0.9em;
+							margin: 10px 0;
+						}
+
+						.detail-item-value {
+							font-size: 0.9em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	/* WRITEUP Component */
+	.detail-writeup-container {
+
+		.detail-writeup-inner {
+			margin: 10% 0;
+			.writeup {
+				column-count: 2;
+				line-height: 1.3em;
+			}
+		}
+	}
+}

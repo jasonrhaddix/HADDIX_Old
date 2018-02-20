@@ -1,0 +1,15 @@
+.close-button {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 991;
+
+	.button-background {
+		height: 40px;
+		width: 40px;
+
+		svg {
+			stroke: black;
+		}
+	}
+}
