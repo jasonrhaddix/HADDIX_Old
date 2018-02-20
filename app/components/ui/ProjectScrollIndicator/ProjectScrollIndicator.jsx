@@ -35,6 +35,8 @@ class ProjectScrollIndicator extends React.Component {
 
 	componentWillMount()
 	{
+		console.log("comp will mount")
+
 		appStore.subscribe(() => {
 			// this.checkProjectIndPosition( appStore.getState()["scrollProject"] )
 			this.checkScrollPosition( appStore.getState()["scrollHeight"], appStore.getState()["scrollPos"] )
@@ -45,6 +47,8 @@ class ProjectScrollIndicator extends React.Component {
 
 	componentDidMount()
 	{	
+		console.log(this.props.history)
+
 		var collection = document.getElementsByClassName("indicator-container")
 		var containers = [].slice.call(collection);
 		
@@ -59,21 +63,20 @@ class ProjectScrollIndicator extends React.Component {
     		this.indicators.push({svg:svg, tag:tag})
 		}
 
-		// this.indicators[this.currProject].svg.style.fill = 'white'
-
-
-		this.props.history.listen(() => {
-			var path = this.props.history.location.pathname
-			var indState = ( path === "/work" ) ?  true : false
-			this.setState({ showInd: indState })
-		});
+		let path = this.props.history.location.pathname
+		let indState = ( path !== "/work" ) ?  false : true
+		this.setState({ showInd: indState })
 	}
 
 
 
 	componentDidUpdate()
 	{
-		// 
+		this.props.history.listen(() => {
+			let path = this.props.history.location.pathname
+			let indState = ( path !== "/work" ) ?  false : true
+			this.setState({ showInd: indState })
+		});
 	}
 
 
@@ -112,7 +115,7 @@ class ProjectScrollIndicator extends React.Component {
 
 	loadProjects()
     {
-        this.projectsMap = ProjectsData.map( function(data, i)
+        this.projectsMap = this.props.projects.map( function(data, i)
         {
         	return (
                 <li className="indicator-container" id={data.index} key={uuid.v4()}>
@@ -122,7 +125,6 @@ class ProjectScrollIndicator extends React.Component {
                 	<ScrollToAnchor to={`#${data.anchor}`} animate={{ duration: 600 }} className="nav-link">
 						<div className={`indicator ${(this.state.activeInd === i) ? "active" : ""}`}>
 							<svg id="Layer_1" data-name="Layer 1" viewBox="0 0 108.29 124.5">
-								
 								<path d="M65.16,3.65,118.07,34.2V95.3L65.16,125.85,12.25,95.3V34.2L65.16,3.65m0-1.15L11.25,33.63V95.88L65.16,127l53.91-31.12V33.63L65.16,2.5Z" transform="translate(-11.01 -2.5)"/>
 								<path d="M65.16,5.11,117.56,95H12.75L65.16,5.11m0-2L11,96H119.3L65.16,3.12Z" transform="translate(-11.01 -2.5)"/>
 								<path d="M90.32,50.22,65.16,93.8,40,50.22H90.32m1.73-1H38.26L65.16,95.8,92,49.22Z" transform="translate(-11.01 -2.5)"/>

@@ -15,36 +15,26 @@ class Header extends React.Component {
 
 		this.state = {
 			showHeader: true,
-			path: ""
+			currentPath: ""
 		}
 	}
 
 
 	componentWillMount()
 	{
+		this.setState({ currentPath : this.props.currentPath })
 
 		this.props.history.listen(() => {
 			var path = this.props.history.location.pathname
 			var headerState = ( path !== "/" ) ?  true : false
-			
-			path = path.substring(path.lastIndexOf("/") + 1);
-			this.setState({ path: path })
-			
 			this.setState({ showHeader: headerState })
 		});
-
 	}
 
 
-	componentDidMount()
+	componentWillReceiveProps(newProps)
 	{
-		/**/
-	}
-
-
-	componentWillUnmount()
-	{
-	   /**/
+		this.setState({currentPath: newProps.currentPath})
 	}
 
 
@@ -69,7 +59,9 @@ class Header extends React.Component {
 						</Link>
 					</div>
 					<div className={`breadcrumb-divider`} />
-					<h1 className="breadcrumb-title">{this.state.path}</h1>
+					<div className="breadcrumb-title">
+						<h1>{this.state.currentPath}</h1>
+					</div>
 				</div>
 				<HamburgerMenu onClickFun={this.toggleMenu} navState={this.props.navOpen}/>
 			</header>

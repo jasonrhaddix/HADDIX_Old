@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import uuid from 'uuid'
 
-// import { viewProject } from '../../../actions'
+// import { toggleNav } from '../../../actions'
 
 import ProjectListItem from '../ProjectListItem/ProjectsListItem.jsx'
 import ProjectScrollIndicator from '../ProjectScrollIndicator/ProjectScrollIndicator.jsx'
-import ProjectsData from '../../../models/projectsData.js'
+//import ProjectsData from '../../../models/projectsData.js'
 
 
 
@@ -40,15 +40,32 @@ class ProjectsList extends React.Component
         /*appStore.dispatch(
             viewProject(true)
         )*/
+
+        /*appStore.dispatch(
+            toggleNav( true )
+        )*/
     }
 
 
     loadProjects()
     {
-        this.projectsMap = ProjectsData.map(function(data, i) {
+        this.projectsMap = this.props.projects.map(function( data, i ) {
 
+            const direction = (i % 2 == 0) ? "right" : "left"
+            
             return (
-                <ProjectListItem key={uuid.v4()} scrollref={data.index} anchor={data.anchor} path={this.props.match.path} title={data.title} subtitle={data.subtitle} desc={data.desc} images={data.images}/>
+                <ProjectListItem 
+                    key={uuid.v4()}
+                    scrollref={data.index}
+                    anchor={data.anchor}
+                    path={this.props.match.path}
+                    title={data.title}
+                    subtitle={data.subtitle}
+                    desc={data.desc}
+                    projectFolder={data.projectFolder}
+                    images={data.images} 
+                    direction={direction}
+                />
             )
 
         }, this)

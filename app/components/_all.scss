@@ -1,11 +1,13 @@
 // Routes
-@import 'routes/Intro/styles/_intro.scss';
-@import 'routes/Home/styles/_home.scss';
-@import 'routes/Work/styles/_work.scss';
+@import 'routes/Intro/styles/_intro';
+@import 'routes/Home/styles/_home';
+@import 'routes/Work/styles/_work';
 
 // UI
 @import 'ui/Logo/styles/_logo';
 @import 'ui/AppButton/styles/_app-button';
+@import 'ui/CloseButton/styles/_close-button';
+@import 'ui/ProjectDetail/styles/_project-detail';
 @import 'ui/ProjectListItem/styles/_projects-list-item';
 @import 'ui/ProjectScrollIndicator/styles/_project-scroll-indicator';
 @import 'ui/Header/styles/_header';

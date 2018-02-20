@@ -47,7 +47,7 @@ class Intro extends React.Component
                         <p>Portfolio for Jason R Haddix</p>
                     </div>
                     <div className="intro-divider"/>
-                    <AppButton />
+                    <AppButton buttonText="View Work" buttonPath="/work" />
                 </article>
             </div>
         )

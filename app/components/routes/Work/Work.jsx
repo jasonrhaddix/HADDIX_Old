@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Redirect } from 'react-router-dom'
 import { spring, AnimatedSwitch } from 'react-router-transition';
 
 import DocumentTitle from 'react-document-title'
@@ -29,8 +29,8 @@ function mapStyles(styles) {
 
 function bounce(val) {
     return spring(val, {
-        stiffness:300,
-        damping: 30,
+        stiffness:200,
+        damping: 40,
     });
 }
 
@@ -39,12 +39,12 @@ function bounce(val) {
 const bounceTransition = {
     atEnter: {
         opacity: 0,
-        scale: 1.2,
+        scale: 1.1,
     },
     
     atLeave: {
         opacity: bounce(0),
-        scale: bounce(0.8),
+        scale: bounce(1),
     },
     
     atActive: {
@@ -88,7 +88,7 @@ class Work extends React.Component
                         mapStyles={mapStyles}
                         className="route-wrapper">
                     <Route exact path={`${this.props.match.path}`} component={ProjectsList} />
-                    <Route path={`${this.props.match.path}/:name`} component={ProjectsDetail}/>
+                    <Route path={`${this.props.match.path}/:name`} component={ProjectsDetail}/>  
                 </AnimatedSwitch>
             </div>
         )
