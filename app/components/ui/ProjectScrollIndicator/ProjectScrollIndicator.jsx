@@ -35,8 +35,6 @@ class ProjectScrollIndicator extends React.Component {
 
 	componentWillMount()
 	{
-		console.log("comp will mount")
-
 		appStore.subscribe(() => {
 			// this.checkProjectIndPosition( appStore.getState()["scrollProject"] )
 			this.checkScrollPosition( appStore.getState()["scrollHeight"], appStore.getState()["scrollPos"] )
@@ -47,8 +45,6 @@ class ProjectScrollIndicator extends React.Component {
 
 	componentDidMount()
 	{	
-		console.log(this.props.history)
-
 		var collection = document.getElementsByClassName("indicator-container")
 		var containers = [].slice.call(collection);
 		
@@ -80,11 +76,11 @@ class ProjectScrollIndicator extends React.Component {
 	}
 
 
-	shouldComponentUpdate()
+	/*shouldComponentUpdate()
 	{
 		return true
 	}
-
+	*/
 
 
 	checkProjectIndPosition( scrollHeight, scrollPos )

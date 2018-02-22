@@ -28,6 +28,14 @@ export const toggleNav = bool => {
 	}
 }
 
+export const toggleCloseButton = bool => {
+	// extend the app functionality here
+	return {
+		type: storeConsts.TOGGLE_CLOSE_BUTTON,
+		payload: bool
+	}
+}
+
 export const setActiveProjectScroll = string => {
 	// extend the app functionality here
 	return {

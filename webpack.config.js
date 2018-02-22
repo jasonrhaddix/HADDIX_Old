@@ -29,7 +29,10 @@ const config_Common = webpack_merge(
 	    appMountId: 'app'
   	}),
 	config_exports.loadJSX(PATHS.app),
-	config_exports.lintJSX(PATHS.app)
+	config_exports.lintJSX(PATHS.app),
+	config_exports.modernizr(),
+	config_exports.loadVideo(),
+	config_exports.load3DOjects()
 );
 
 
@@ -62,10 +65,7 @@ const config_Production = webpack_merge([
 			limit: 15000,
 			name: "[name].[ext]",
 		},
-	}),
-	config_exports.modernizr(),
-	config_exports.loadVideo(),
-	config_exports.load3DOjects(),
+	})
 ]);
 
 
@@ -78,11 +78,8 @@ const config_development = webpack_merge([
 	config_exports.loadStyles(),
 	config_exports.loadFonts(),
 	config_exports.loadImages(),
-	config_exports.loadVideo(),
 	config_exports.loadSVGs(),
 	config_exports.loadJSON(),
-	config_exports.modernizr(),
-	config_exports.load3DOjects(),
 ]);
 
 

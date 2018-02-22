@@ -1,49 +1,47 @@
 {
 	"navOpen": false,
+	"showCloseButton": false,
 	"scrollProject": null,
 	"scrollPos": 0,
 	"scrollHeight": 0,
 	"projects": [
 		{
-			"index": "0",
 			"title": "Happy Holidays",
 			"subtitle": "Gary Group Christmas Card",
 			"anchor": "holiday_card",
-			"main": "",
-			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
 			"client": "The Gary Group",
-			"link": "",
-			"projectFolder": "holiday_card",
+			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
+			"mainImg": "img_2",
+			"link": "http://www.garygroup.com/holidaycard_2015",
+			"writeUp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor eros sed nisl eleifend, a facilisis massa cursus. Proin posuere est nec lorem pharetra, at imperdiet arcu finibus. Sed eget pretium turpis. Curabitur et justo nec justo tincidunt fringilla a at lacus. Aenean nec nibh tristique, efficitur nisi ac, egestas nibh. Quisque cursus vulputate dolor ut faucibus. Phasellus sit amet odio vel risus euismod placerat quis quis augue. Nulla neque lacus, bibendum id dignissim at, suscipit ut ipsum. Ut consectetur pellentesque est hendrerit maximus. Sed interdum est non lorem blandit mollis. Integer quis pellentesque erat, at fringilla sem. Proin auctor vulputate sem. In metus mauris, cursus lacinia orci vel, condimentum tempor nisi. Ut vel turpis sodales magna dignissim euismod at non lectus. Ut augue purus, blandit at justo non, fermentum maximus sem. In at lorem urna. Duis libero sem, aliquet volutpat libero eget, vulputate pretium sem. Vivamus ac faucibus sapien.",
 			"images": [
 				"img_2"
 			],
 			"video": "sample_vid"
 		},
 		{
-			"index": "1",
 			"title": "Fast and Furious - Supercharged",
 			"subtitle": "Too Fast. Too Furious. Totally Bitchen.",
 			"anchor": "fast_and_furious_supercharged",
-			"main": "",
-			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
 			"client": "Universal Orlando",
+			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
+			"mainImg": "img_1",
+			"writeUp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor eros sed nisl eleifend, a facilisis massa cursus. Proin posuere est nec lorem pharetra, at imperdiet arcu finibus. Sed eget pretium turpis. Curabitur et justo nec justo tincidunt fringilla a at lacus. Aenean nec nibh tristique, efficitur nisi ac, egestas nibh. Quisque cursus vulputate dolor ut faucibus. Phasellus sit amet odio vel risus euismod placerat quis quis augue. Nulla neque lacus, bibendum id dignissim at, suscipit ut ipsum. Ut consectetur pellentesque est hendrerit maximus. Sed interdum est non lorem blandit mollis. Integer quis pellentesque erat, at fringilla sem. Proin auctor vulputate sem. In metus mauris, cursus lacinia orci vel, condimentum tempor nisi. Ut vel turpis sodales magna dignissim euismod at non lectus. Ut augue purus, blandit at justo non, fermentum maximus sem. In at lorem urna. Duis libero sem, aliquet volutpat libero eget, vulputate pretium sem. Vivamus ac faucibus sapien.",
 			"link": "",
-			"projectFolder": "holiday_card",
 			"images": [
 				"img_1"
 			],
 			"video": "sample_vid"
 		},
 		{
-			"index": "2",
 			"title": "Skechers - Wayfinder",
-			"subtitle": "Interactive kiosk to get you where you need to go.",
-			"anchor": "skechers_kiosk",
-			"main": "",
-			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
 			"client": "Skechers",
+			"anchor": "skechers_kiosk",
+			"subtitle": "Interactive kiosk to get you where you need to go.",
+			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
+			"mainImg": "img_1",
+			"writeUp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor eros sed nisl eleifend, a facilisis massa cursus. Proin posuere est nec lorem pharetra, at imperdiet arcu finibus. Sed eget pretium turpis. Curabitur et justo nec justo tincidunt fringilla a at lacus. Aenean nec nibh tristique, efficitur nisi ac, egestas nibh. Quisque cursus vulputate dolor ut faucibus. Phasellus sit amet odio vel risus euismod placerat quis quis augue. Nulla neque lacus, bibendum id dignissim at, suscipit ut ipsum. Ut consectetur pellentesque est hendrerit maximus. Sed interdum est non lorem blandit mollis. Integer quis pellentesque erat, at fringilla sem. Proin auctor vulputate sem. In metus mauris, cursus lacinia orci vel, condimentum tempor nisi. Ut vel turpis sodales magna dignissim euismod at non lectus. Ut augue purus, blandit at justo non, fermentum maximus sem. In at lorem urna. Duis libero sem, aliquet volutpat libero eget, vulputate pretium sem. Vivamus ac faucibus sapien.",
 			"link": "",
-			"projectFolder": "holiday_card",
 			"images": [
 				"img_1"
 			],

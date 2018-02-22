@@ -20,6 +20,9 @@ export const addProject = (state=[], action) => {
 export const toggleNav = (state=false, action ) =>
 	( action.type === A.TOGGLE_NAV ) ? action.payload : state
 
+export const toggleCloseButton = (state=false, action ) =>
+	( action.type === A.TOGGLE_CLOSE_BUTTON ) ? action.payload : state
+
 export const setActiveProjectScroll = (state=null, action ) =>
 	( action.type === A.SET_ACTIVE_PROJECT_SCROLL ) ? action.payload : state
 
@@ -34,9 +37,11 @@ export const setScrollHeight = (state=0, action ) =>
 
 
 
+// Reducers mapped to store attributes
 export default combineReducers({
 	projects: addProject,
     navOpen: toggleNav,
+    showCloseButton: toggleCloseButton,
     scrollProject: setActiveProjectScroll,
     scrollPos: setScrollPosition,
     scrollHeight: setScrollHeight,

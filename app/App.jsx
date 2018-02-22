@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { spring, AnimatedSwitch } from 'react-router-transition'
-// import PropTypes from 'prop-types'
 
 import { setScrollPosition, setScrollHeight } from './actions'
 import Routes from './Router.jsx'
@@ -102,12 +101,12 @@ class App extends React.Component
 	}
 
 
-	onRouteChanged() {
-		console.log(this.props.location)
+	onRouteChanged()
+	{
 		setTimeout( function()
 		{
 			document.getElementById("scroll-container").firstChild.scrollTop = 0
-		}, 150)
+		}, 20)
 	}
 
 
@@ -128,10 +127,8 @@ class App extends React.Component
 		 	<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
 		 			<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
 					<Navigation links={this.props.data.navigation}/>
-        			
         			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
-					<CloseButton buttonText="X" buttonPath="/work" />
-
+					<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
 					<div className="routes-container">
 						{Routes}
 					</div>

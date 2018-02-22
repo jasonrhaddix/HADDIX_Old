@@ -2,24 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import uuid from 'uuid'
 
-// import { toggleNav } from '../../../actions'
+import { toggleCloseButton } from '../../../actions'
 
 import ProjectListItem from '../ProjectListItem/ProjectsListItem.jsx'
 import ProjectScrollIndicator from '../ProjectScrollIndicator/ProjectScrollIndicator.jsx'
-//import ProjectsData from '../../../models/projectsData.js'
 
 
 
 class ProjectsList extends React.Component
 {
-    constructor(props, context)
+    constructor(props)
     {
-        super(props, context);
+        super(props)
 
         this.state = {
+            /* */
         }
-
-        this.openProject = this.openProject.bind(this)
     }
 
 
@@ -32,18 +30,6 @@ class ProjectsList extends React.Component
     componentDidMount()
     {
 
-    }
-
-
-    openProject()
-    {
-        /*appStore.dispatch(
-            viewProject(true)
-        )*/
-
-        /*appStore.dispatch(
-            toggleNav( true )
-        )*/
     }
 
 
@@ -65,6 +51,7 @@ class ProjectsList extends React.Component
                     projectFolder={data.projectFolder}
                     images={data.images} 
                     direction={direction}
+                    onClickEvent={this.openProject}
                 />
             )
 
@@ -76,7 +63,7 @@ class ProjectsList extends React.Component
 
     render() {
         return (
-            <div className='' onClick={this.openProject}>
+            <div className='projectlist-container'>
                 {this.loadProjects()}
             </div>
         )
