@@ -6,7 +6,7 @@ import AppButton from '../AppButton/AppButton.jsx'
 
 import { setActiveProjectScroll, toggleCloseButton } from '../../../actions'
 
-const images = require.context('../../../assets/images/projects', true);
+const images = require.context('../../../assets/projects', true);
 
 
 

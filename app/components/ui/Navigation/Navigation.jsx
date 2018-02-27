@@ -9,8 +9,8 @@ import NavigationData from './data/NavigationData.js'
 
 class Navigation extends React.Component {
 
-    constructor(props, context) {
-        super(props, context)
+    constructor(props) {
+        super(props)
 
         this.getNavData()
     }
@@ -33,8 +33,8 @@ class Navigation extends React.Component {
     }
 
 
-    render() {
-
+    render()
+    {
         return (
             <div className={`nav-container ${appStore.getState().navOpen}`}>
                 <nav>

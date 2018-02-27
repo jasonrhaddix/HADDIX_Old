@@ -40,12 +40,12 @@
 			height: 24px;
 			transition: transform 0.25s ease-in-out;
 			transform: translateY(0);
-			// box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+			box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 		}
 
 		.breadcrumb-title {
 			margin: 6px 0;
-			// text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 
 			h1 {
 		    	line-height: 1.4rem;

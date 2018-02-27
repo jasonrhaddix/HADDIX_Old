@@ -2,8 +2,6 @@ import React from 'react'
 import { Route, Link, Redirect } from 'react-router-dom'
 import { spring, AnimatedSwitch } from 'react-router-transition';
 
-import DocumentTitle from 'react-document-title'
-
 import ProjectsList from '../../containers/ProjectsList'
 import ProjectsDetail from '../../containers/ProjectDetail'
 

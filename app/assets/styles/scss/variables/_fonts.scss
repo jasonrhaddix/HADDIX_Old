@@ -40,3 +40,29 @@ $fontFolder: '../../../assets/fonts/';
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'DIN-MediumItalic';
+  src: url( $fontFolder + 'Din/DIN-MediumItalic.eot');
+  src: url( $fontFolder + 'Din/DIN-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url( $fontFolder + 'Din/DIN-MediumItalic.otf') format('opentype'),
+    url( $fontFolder + 'Din/DIN-MediumItalic.svg') format('svg'),
+    url( $fontFolder + 'Din/DIN-MediumItalic.ttf') format('truetype'),
+    url( $fontFolder + 'Din/DIN-MediumItalic.woff') format('woff'),
+    url( $fontFolder + 'Din/DIN-MediumItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN-RegularItalic';
+  src: url( $fontFolder + 'Din/DIN-RegularItalic.eot');
+  src: url( $fontFolder + 'Din/DIN-RegularItalic.eot?#iefix') format('embedded-opentype'),
+    url( $fontFolder + 'Din/DIN-RegularItalic.otf') format('opentype'),
+    url( $fontFolder + 'Din/DIN-RegularItalic.svg') format('svg'),
+    url( $fontFolder + 'Din/DIN-RegularItalic.ttf') format('truetype'),
+    url( $fontFolder + 'Din/DIN-RegularItalic.woff') format('woff'),
+    url( $fontFolder + 'Din/DIN-RegularItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

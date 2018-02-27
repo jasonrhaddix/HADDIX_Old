@@ -6,44 +6,18 @@
 	"scrollHeight": 0,
 	"projects": [
 		{
-			"title": "Happy Holidays",
-			"subtitle": "Gary Group Christmas Card",
-			"anchor": "holiday_card",
+			"title": "Christmas Card",
 			"client": "The Gary Group",
-			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
+			"subtitle": "Gary Group Christmas Card",
+			"anchor": "christmas_card",
+			"desc": "A digital Christmas card using CSS 3 to create low-poly animated art.",
 			"mainImg": "img_2",
+			"headerTitle": "A digital holiday card that sets the scene with CSS 3 animations.",
+			"writeUp": "I was asked to create a digital holiday card that was simple yet engaging, and also pushed the limits of current browser technologies. The site consisted of CSS3 clip-path animations that form into low-poly 3D art with snow particles set in background. The user cycles through various preset designs, which are stored as polygon string values in Javascript arrays, while the script will handle creating and destroying polygon shards depending on the amount needed for each object. /break From an experience standpoint, this project taught me about animating CSS clipping paths and how animating those paths are an inexpensive way to add a lot of complex animation to a project. Unfortunately CSS clip-path animations weren’t fully supported on all browsers because a difference in CSS specification used by each company. At the time of development, there wasn’t a polyfill to handle cross-browser compatibility or legacy browsers. /break I’m the future, I’d like find a project where this concept would shine – other than small animation effects for buttons – but more as the centerpiece for a project. I’m also interested in recreating the technical spirit of this project with more interesting artwork, like Star Wars characters or even low-poly art of iconic musicians. /break All-in-all this was a fun, but challenging, little project that was, if anything, a great learning experience.",
+			"technologies": ["jQuery", "Javascript", "CSS3 Animations"],
 			"link": "http://www.garygroup.com/holidaycard_2015",
-			"writeUp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor eros sed nisl eleifend, a facilisis massa cursus. Proin posuere est nec lorem pharetra, at imperdiet arcu finibus. Sed eget pretium turpis. Curabitur et justo nec justo tincidunt fringilla a at lacus. Aenean nec nibh tristique, efficitur nisi ac, egestas nibh. Quisque cursus vulputate dolor ut faucibus. Phasellus sit amet odio vel risus euismod placerat quis quis augue. Nulla neque lacus, bibendum id dignissim at, suscipit ut ipsum. Ut consectetur pellentesque est hendrerit maximus. Sed interdum est non lorem blandit mollis. Integer quis pellentesque erat, at fringilla sem. Proin auctor vulputate sem. In metus mauris, cursus lacinia orci vel, condimentum tempor nisi. Ut vel turpis sodales magna dignissim euismod at non lectus. Ut augue purus, blandit at justo non, fermentum maximus sem. In at lorem urna. Duis libero sem, aliquet volutpat libero eget, vulputate pretium sem. Vivamus ac faucibus sapien.",
 			"images": [
 				"img_2"
-			],
-			"video": "sample_vid"
-		},
-		{
-			"title": "Fast and Furious - Supercharged",
-			"subtitle": "Too Fast. Too Furious. Totally Bitchen.",
-			"anchor": "fast_and_furious_supercharged",
-			"client": "Universal Orlando",
-			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
-			"mainImg": "img_1",
-			"writeUp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor eros sed nisl eleifend, a facilisis massa cursus. Proin posuere est nec lorem pharetra, at imperdiet arcu finibus. Sed eget pretium turpis. Curabitur et justo nec justo tincidunt fringilla a at lacus. Aenean nec nibh tristique, efficitur nisi ac, egestas nibh. Quisque cursus vulputate dolor ut faucibus. Phasellus sit amet odio vel risus euismod placerat quis quis augue. Nulla neque lacus, bibendum id dignissim at, suscipit ut ipsum. Ut consectetur pellentesque est hendrerit maximus. Sed interdum est non lorem blandit mollis. Integer quis pellentesque erat, at fringilla sem. Proin auctor vulputate sem. In metus mauris, cursus lacinia orci vel, condimentum tempor nisi. Ut vel turpis sodales magna dignissim euismod at non lectus. Ut augue purus, blandit at justo non, fermentum maximus sem. In at lorem urna. Duis libero sem, aliquet volutpat libero eget, vulputate pretium sem. Vivamus ac faucibus sapien.",
-			"link": "",
-			"images": [
-				"img_1"
-			],
-			"video": "sample_vid"
-		},
-		{
-			"title": "Skechers - Wayfinder",
-			"client": "Skechers",
-			"anchor": "skechers_kiosk",
-			"subtitle": "Interactive kiosk to get you where you need to go.",
-			"desc": "A digital holiday card using CSS3 animations and clipping mask tranforms.",
-			"mainImg": "img_1",
-			"writeUp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porttitor eros sed nisl eleifend, a facilisis massa cursus. Proin posuere est nec lorem pharetra, at imperdiet arcu finibus. Sed eget pretium turpis. Curabitur et justo nec justo tincidunt fringilla a at lacus. Aenean nec nibh tristique, efficitur nisi ac, egestas nibh. Quisque cursus vulputate dolor ut faucibus. Phasellus sit amet odio vel risus euismod placerat quis quis augue. Nulla neque lacus, bibendum id dignissim at, suscipit ut ipsum. Ut consectetur pellentesque est hendrerit maximus. Sed interdum est non lorem blandit mollis. Integer quis pellentesque erat, at fringilla sem. Proin auctor vulputate sem. In metus mauris, cursus lacinia orci vel, condimentum tempor nisi. Ut vel turpis sodales magna dignissim euismod at non lectus. Ut augue purus, blandit at justo non, fermentum maximus sem. In at lorem urna. Duis libero sem, aliquet volutpat libero eget, vulputate pretium sem. Vivamus ac faucibus sapien.",
-			"link": "",
-			"images": [
-				"img_1"
 			],
 			"video": "sample_vid"
 		}

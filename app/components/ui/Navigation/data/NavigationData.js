@@ -5,11 +5,11 @@ const NavigationData = [
 		navigation: [
 			{
 				id: uuid.v4(),
-				title: 'Home'
+				title: 'Work'
 			},
 			{
 				id: uuid.v4(),
-				title: 'Work'
+				title: 'About'
 			},
 			{
 				id: uuid.v4(),

@@ -106,7 +106,7 @@ class App extends React.Component
 		setTimeout( function()
 		{
 			document.getElementById("scroll-container").firstChild.scrollTop = 0
-		}, 20)
+		}, 50)
 	}
 
 

@@ -9,8 +9,9 @@ const About = () => {
 
     return (
         <DocumentTitle title='HADDIX | About' className="about-container">
-            {/*<Projects />*/}
-            This is the ABOUT page.
+        	<div>
+            	This is the ABOUT page.
+        	 </div>
         </DocumentTitle>
     )
 }

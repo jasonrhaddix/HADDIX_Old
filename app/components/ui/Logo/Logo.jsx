@@ -3,15 +3,14 @@ import React from 'react'
 
 class Logo extends React.Component {
 
-	constructor(props, context) {
+	constructor(props) {
 
-		super(props, context)
-
-
+		super(props)
 	}
 
 
-	render() {
+	render()
+	{
 		return (
 			<div className="container-logo">
 	 			<svg id="logo-svg" data-name="Layer 2" viewBox="0 78 672.8 230">

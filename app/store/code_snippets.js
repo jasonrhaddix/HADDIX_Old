@@ -1,20 +1,22 @@
 
 const codeSnippet = [
 	{	
-		anchor: "holiday_card",
-		technologies: ["Javascript", "CSS3", "jQuery"],
+		anchor: "christmas_card",
 		snippet: 
 `/* CODE HERE */`
 	},
 	{	
 		anchor: "fast_and_furious_supercharged",
-		technologies: ["Javascript", "CSS3", "jQuery"],
 		snippet: 
 `/* CODE HERE */`
 	},
 	{	
 		anchor: "skechers_kiosk",
-		technologies: ["Javascript", "CSS3", "jQuery"],
+		snippet: 
+`/* CODE HERE */`
+	},
+	{	
+		anchor: "mesh",
 		snippet: 
 `/* CODE HERE */`
 	},

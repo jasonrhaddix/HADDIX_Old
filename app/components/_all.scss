@@ -1,15 +1,16 @@
 // Routes
 @import 'routes/Intro/styles/_intro';
-@import 'routes/Home/styles/_home';
+// @import 'routes/Home/styles/_home';
 @import 'routes/Work/styles/_work';
 
 // UI
-@import 'ui/Logo/styles/_logo';
 @import 'ui/AppButton/styles/_app-button';
+@import 'ui/CircleGraph/styles/_circle-graph';
 @import 'ui/CloseButton/styles/_close-button';
+@import 'ui/HamburgerMenu/styles/_hamburger-menu';
+@import 'ui/Header/styles/_header';
+@import 'ui/Logo/styles/_logo';
+@import 'ui/Navigation/styles/_navigation';
 @import 'ui/ProjectDetail/styles/_project-detail';
 @import 'ui/ProjectListItem/styles/_projects-list-item';
 @import 'ui/ProjectScrollIndicator/styles/_project-scroll-indicator';
-@import 'ui/Header/styles/_header';
-@import 'ui/Navigation/styles/_navigation';
-@import 'ui/HamburgerMenu/styles/_hamburger-menu';

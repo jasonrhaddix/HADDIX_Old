@@ -48,7 +48,7 @@ class ProjectsList extends React.Component
                     title={data.title}
                     subtitle={data.subtitle}
                     desc={data.desc}
-                    projectFolder={data.projectFolder}
+                    projectFolder={data.anchor}
                     images={data.images} 
                     direction={direction}
                     onClickEvent={this.openProject}

@@ -3,10 +3,11 @@
 	
 	// background: linear-gradient(#660099, #330099);
 	background-color: $app-background-color;
-    background: -webkit-radial-gradient(circle, #13003a, #070707);
-    background: -o-radial-gradient(circle, #13003a, #070707);
-    background: -moz-radial-gradient(circle, #13003a, #070707);
-    background: radial-gradient(circle, #13003a, #070707);
+    background: -webkit-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    background: -o-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    background: -moz-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    background: linear-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    background-repeat: none;
 
 	height: 100%;
 	width: 100%;
@@ -26,6 +27,12 @@
 			line-height: 1.4em; */
 			text-transform: uppercase;
 			text-align: center;
+
+			li {
+				font-family: 'DIN-Bold', Helvetica, sans-serif;
+				margin: 40% 0;
+				font-size: 2rem;
+			}
 		}
 	}
 }

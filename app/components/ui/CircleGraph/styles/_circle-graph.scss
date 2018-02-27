@@ -1,0 +1,33 @@
+.circle-graph {
+	position: relative;
+	display: block;
+	z-index: 750;
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+
+	#circle-graph-canvas {
+		width: 140px;
+		height: 140px;
+		transform: rotate(90deg);
+	}
+
+	.circle-graph-text {
+		font-family: 'DIN-Light', Helvetica, sans-serif;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		text-transform: uppercase;	
+		font-weight: 100;
+
+		.percentage {
+			font-size: 1.8rem;
+		}
+
+		.language {
+			font-size: 0.7rem;
+		}
+	}
+}

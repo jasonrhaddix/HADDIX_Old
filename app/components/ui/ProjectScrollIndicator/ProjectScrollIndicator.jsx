@@ -1,10 +1,9 @@
 import React from 'react'
 import uuid from 'uuid'
 import { withRouter } from 'react-router-dom'
-import { setActiveProjectScroll } from '../../../actions'
-// import VisibilitySensor from 'react-visibility-sensor'
 
-import ProjectsData from '../../../models/projectsData.js'
+import { setActiveProjectScroll } from '../../../actions'
+
 import ScrollToAnchor from '../../util/ScrollToAnchor/ScrollToAnchor.jsx'
 
 
@@ -13,8 +12,8 @@ import ScrollToAnchor from '../../util/ScrollToAnchor/ScrollToAnchor.jsx'
 
 class ProjectScrollIndicator extends React.Component {
 
-	constructor(props, context) {
-		super(props, context)
+	constructor(props) {
+		super(props)
 
 		this.state = {
 			showInd: true,
@@ -90,6 +89,7 @@ class ProjectScrollIndicator extends React.Component {
 
 		const delta = this.maxScroll / this.numOfElements
 		this.currProject = Math.floor( this.currPos / delta )
+		console.log( this.currProject )
 		
 		if( this.currProject !== this.prevProject ) {
 			this.prevProject = this.currProject
@@ -102,7 +102,7 @@ class ProjectScrollIndicator extends React.Component {
 	checkScrollPosition( scrollHeight, scrollPos )
 	{	
 		const delta = scrollHeight / this.refs.scrollIndInner.offsetHeight
-		// document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")
+		document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")
 		
 		this.checkProjectIndPosition( scrollHeight, scrollPos )
 	}
