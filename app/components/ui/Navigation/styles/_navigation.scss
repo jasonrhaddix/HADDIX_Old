@@ -2,36 +2,54 @@
 	position: fixed;
 	
 	// background: linear-gradient(#660099, #330099);
-	background-color: $app-background-color;
-    background: -webkit-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    background: -o-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    background: -moz-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    background: linear-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    background-repeat: none;
+	// background-color: $app-background-color;
+    // background: -webkit-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    // background: -o-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    // background: -moz-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    // background: linear-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    // background-repeat: none;
 
 	height: 100%;
 	width: 100%;
 	top: 0;
 	z-index: 999;
-	display: none;
+	// display: none;
+	// transition: all 0s linear 0.6ms;
+
+	.nav-poly {
+		background-color: #141418;
+		// background-color: $app-background-color;
+	    // background: -webkit-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+	    // background: -o-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+	    // background: -moz-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+	    // background: linear-gradient(150deg, #040408 0%, #141418 70%);
+	    // background-repeat: none;
+		height: 100vh;
+		width: 100vw;
+		transition: clip-path 0.5s linear;
+		clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+	}
 
 	&.true {
-		display: block;		
+		// display: block;		
+
+		.nav-poly {
+			// clip-path: polygon(0% 0%, 100% 0%, 55% 75%, 0% 95%);
+		}
 	}
 
 	nav {
 		@extend .center-content;
 
 		ul {
-			/* font-size: 4.2rem;
-			line-height: 1.4em; */
 			text-transform: uppercase;
 			text-align: center;
 
 			li {
 				font-family: 'DIN-Bold', Helvetica, sans-serif;
-				margin: 40% 0;
-				font-size: 2rem;
+				margin: 8vh 0;
+				font-size: 4rem;
+				// line-height: 1.4em;
 			}
 		}
 	}
