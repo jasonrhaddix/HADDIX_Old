@@ -52,7 +52,7 @@ const bounceTransition = {
 };
 
 
-class Work extends React.Component
+class WorkRoute extends React.Component
 {
     constructor(props, context)
     {
@@ -96,4 +96,4 @@ class Work extends React.Component
 
 
 // const Container = connect(mapStateToProps)(Work)
-export default Work
+export default WorkRoute

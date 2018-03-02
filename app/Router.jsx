@@ -2,10 +2,10 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { spring, AnimatedSwitch } from 'react-router-transition';
 
-import Intro from './components/routes/Intro/Intro.jsx'
-import Home from './components/routes/Home/Home.jsx'
-import Work from './components/routes/Work/Work.jsx'
-import About from './components/routes/About/About.jsx'
+import IntroRoute from './components/routes/Intro/Intro.jsx'
+// import HomeRoute from './components/routes/Home/Home.jsx'
+import WorkRoute from './components/routes/Work/Work.jsx'
+import AboutRoute from './components/routes/About/About.jsx'
 
 
 
@@ -53,8 +53,8 @@ export default (
             atActive={bounceTransition.atActive}
             mapStyles={mapStyles}
             className="route-wrapper">
-		<Route exact path="/" component={Intro} />
-    	<Route path="/work" component={Work} />
-		<Route path="/about" component={About} />
+		<Route exact path="/" component={IntroRoute} />
+    	<Route path="/work" component={WorkRoute} />
+		<Route path="/about" component={AboutRoute} />
 	</AnimatedSwitch>
 )

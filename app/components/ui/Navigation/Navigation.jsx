@@ -5,7 +5,6 @@ import uuid from 'uuid'
 
 import NavigationData from './data/NavigationData.js'
 import Transition from 'react-transition-group/Transition'
-import GeomAnimate from '../GeomAnimate/GeomAnimate.jsx'
 
 import { toggleNav } from '../../../actions'
 
@@ -37,7 +36,6 @@ class Navigation extends React.Component {
             var navData = data.navigation.map(function(section) {
                 return (
                     <li key={uuid.v4()}>
-                        {/*<GeomAnimate />*/}
                         <Link onClick={this.closeNav} to={section.path}>
                             <div className="nav-button"><h1>{section.title}</h1></div>
                             <div className="nav-button-poly"><h1>{section.title}</h1></div>

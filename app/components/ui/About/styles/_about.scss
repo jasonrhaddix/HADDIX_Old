@@ -1,0 +1,8 @@
+.about-container {
+	@extend .container;
+	background-color: $color-white;
+
+	.about-inner {
+		@extend .row;
+	}
+}

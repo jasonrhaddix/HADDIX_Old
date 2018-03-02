@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-class Home extends React.Component
+class HomeRoute extends React.Component
 {
     constructor(props, context)
     {
@@ -28,7 +28,7 @@ class Home extends React.Component
     render() 
     {
         return (
-            <div className="home-container">
+            <div className="home-route-container">
                 This is the HOME page.
             </div>
         )
@@ -38,4 +38,4 @@ class Home extends React.Component
 
 
 // const Container = connect(mapStateToProps)(Home)
-export default Home
+export default HomeRoute

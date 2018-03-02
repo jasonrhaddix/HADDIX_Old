@@ -16,14 +16,14 @@ import { toggleNav } from '../../../actions'
 
 
 
-class Intro extends React.Component
+class IntroRoute extends React.Component
 {
     constructor(props, context)
     {
         super(props, context)
 
         this.state = {
-            // 
+            /* */
         }
     }
 
@@ -34,11 +34,6 @@ class Intro extends React.Component
         appStore.dispatch(
           toggleNav( false )
         )
-    }
-
-
-    componentWillUnmount() {
-        // 
     }
 
 
@@ -63,4 +58,4 @@ class Intro extends React.Component
 
 
 // const Container = connect(mapStateToProps)(Home)
-export default Intro
+export default IntroRoute

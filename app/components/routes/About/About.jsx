@@ -1,21 +1,33 @@
 import React from 'react'
 import DocumentTitle from 'react-document-title'
+
+import About from '../../ui/About/About.jsx'
 	
-// import Projects from '../../containers/Projects'
 
 
+class AboutRoute extends React.Component {
 
-const About = () => {
+	constructor(props)
+	{
+		super(props)
 
-    return (
-        <DocumentTitle title='HADDIX | About' className="about-container">
-        	<div>
-            	This is the ABOUT page.
-        	 </div>
-        </DocumentTitle>
-    )
+		this.state = {
+			/**/
+		}
+	}
+
+	render()
+	{
+		return (
+			<div className="about-route-container">
+	        	<About />
+	        </div>
+		)
+	}
 }
 
 
 
-export default About
+export default AboutRoute
+
+

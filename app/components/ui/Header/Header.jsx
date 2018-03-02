@@ -36,8 +36,23 @@ class Header extends React.Component {
 
 	componentWillReceiveProps(newProps)
 	{
-		this.setState({currentPath: newProps.currentPath})
+		if(newProps.currentPath)
+		{
+			var path = newProps.currentPath
+			var letter = path.split('')[0]
+
+			var newPath = path.replace(letter, function (g) { return g.toUpperCase(); });
+		
+			this.setState({currentPath: newPath})
+		} else {
+			this.setState({currentPath: ""})
+		}
+
+		
 	}
+
+
+
 
 
 	toggleMenu()
