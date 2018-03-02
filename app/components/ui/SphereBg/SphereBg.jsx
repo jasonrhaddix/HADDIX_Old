@@ -18,7 +18,7 @@ class SphereBg extends React.Component
     }
 
     componentDidMount() {
-        this.refs.threeContainer.append(ThreeRender)
+        this.refs.threeContainer.appendChild(ThreeRender)
         this.setState({ focus: true })
     }
 

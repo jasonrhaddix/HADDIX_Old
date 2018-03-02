@@ -41,6 +41,7 @@ class ProjectListItem extends React.Component
                     <div className='project-info'>
                         <img src={require('../../../assets/images/app/lowpoly.svg')} />
                         <div className='project-title'>
+                            <h3>{this.props.client}</h3>
                             <h2>{this.props.title}</h2>
                             <h3>{this.props.subtitle}</h3>
                             <p>{this.props.desc}</p>

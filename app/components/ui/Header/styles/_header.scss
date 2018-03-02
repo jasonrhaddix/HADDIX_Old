@@ -27,27 +27,30 @@
 		
 		.app-logo {
 			position: relative;
-
+			border: 1px solid #CCC;
+			background: white;
+			
 			img, svg {
 				width: 90px;
 			}
 		}
 
 		.breadcrumb-divider {
-			background-color: $app-text-color_light;
+			background-color: $color-app-text-light;
 			margin: 5px 10px;
 			width: 1px;
 			height: 24px;
 			transition: transform 0.25s ease-in-out;
 			transform: translateY(0);
-			box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+			box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 		}
 
 		.breadcrumb-title {
 			margin: 6px 0;
-			text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 
 			h1 {
+				color: $color-app-text-light;
 		    	line-height: 1.4rem;
 				text-transform: uppercase;
 			}

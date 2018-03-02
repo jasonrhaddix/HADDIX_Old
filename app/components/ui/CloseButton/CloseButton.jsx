@@ -9,27 +9,37 @@ class CloseButton extends React.Component
         super(props)
 
         this.state = {
-            showCloseButton: true,
+            showCloseButton: false,
             currentPath: ""
         }
 
         this.pathRegEx = /work\/(.*)([a-z][A-Z])?/g
+        this.setButtonState = this.setButtonState.bind(this)
     }
 
 
     componentWillMount()
     {
+        this.setButtonState()
         this.setState({ currentPath : this.props.currentPath })
+        
         this.props.history.listen(() => {
-            var path = this.props.history.location.pathname
-            var buttonState = ( this.pathRegEx.test(path) ) ?  true : false
-            this.setState({ showCloseButton: buttonState })
+           this.setButtonState()
         });
+    }
+
+
+    setButtonState()
+    {
+        var path = this.props.history.location.pathname
+        var buttonState = ( this.pathRegEx.test(path) ) ?  true : false
+        this.setState({ showCloseButton: buttonState, currentPath: path })
     }
 
 
 	render()
 	{
+
 		return (
 			<div className={`close-button ${this.state.showCloseButton}`}>
 				<Link to={this.props.buttonPath}>

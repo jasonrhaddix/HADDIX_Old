@@ -15,20 +15,21 @@ class Header extends React.Component {
 		super(props)
 
 		this.state = {
-			showHeader: true,
+			showHeader: false,
 			currentPath: ""
 		}
+
+		this.setHeaderState = this.setHeaderState.bind(this)
 	}
 
 
 	componentWillMount()
 	{
+		this.setHeaderState()
 		this.setState({ currentPath : this.props.currentPath })
 
 		this.props.history.listen(() => {
-			var path = this.props.history.location.pathname
-			var headerState = ( path !== "/" ) ?  true : false
-			this.setState({ showHeader: headerState })
+			this.setHeaderState()
 		});
 	}
 
@@ -46,6 +47,14 @@ class Header extends React.Component {
 		appStore.dispatch(
 			toggleNav( menuState )
 		)
+	}
+
+
+	setHeaderState()
+	{
+		var path = this.props.history.location.pathname
+		var headerState = ( path !== "/" ) ?  true : false
+		this.setState({ showHeader: headerState })
 	}
 
 

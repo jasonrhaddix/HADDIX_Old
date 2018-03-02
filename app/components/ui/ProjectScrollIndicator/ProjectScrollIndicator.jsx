@@ -16,7 +16,8 @@ class ProjectScrollIndicator extends React.Component {
 		super(props)
 
 		this.state = {
-			showInd: true,
+			showInd: false,
+			currPath: "",
 			activeInd: 0,
 		}
 
@@ -28,6 +29,8 @@ class ProjectScrollIndicator extends React.Component {
 		this.currPos = 0;
 		this.currProject = 0;
 		this.prevProject = 0;
+
+		this.setIndicatorState = this.setIndicatorState.bind(this)
 	}
 
 
@@ -38,6 +41,13 @@ class ProjectScrollIndicator extends React.Component {
 			// this.checkProjectIndPosition( appStore.getState()["scrollProject"] )
 			this.checkScrollPosition( appStore.getState()["scrollHeight"], appStore.getState()["scrollPos"] )
 		})
+
+		this.setIndicatorState()
+		this.setState({ currentPath : this.props.currentPath })
+		
+		this.props.history.listen(() => {
+			this.setIndicatorState()
+		});
 	}
 
 
@@ -57,29 +67,16 @@ class ProjectScrollIndicator extends React.Component {
     		
     		this.indicators.push({svg:svg, tag:tag})
 		}
+	}
 
+
+	setIndicatorState()
+	{
 		let path = this.props.history.location.pathname
 		let indState = ( path !== "/work" ) ?  false : true
 		this.setState({ showInd: indState })
 	}
-
-
-
-	componentDidUpdate()
-	{
-		this.props.history.listen(() => {
-			let path = this.props.history.location.pathname
-			let indState = ( path !== "/work" ) ?  false : true
-			this.setState({ showInd: indState })
-		});
-	}
-
-
-	/*shouldComponentUpdate()
-	{
-		return true
-	}
-	*/
+	
 
 
 	checkProjectIndPosition( scrollHeight, scrollPos )
@@ -89,7 +86,6 @@ class ProjectScrollIndicator extends React.Component {
 
 		const delta = this.maxScroll / this.numOfElements
 		this.currProject = Math.floor( this.currPos / delta )
-		console.log( this.currProject )
 		
 		if( this.currProject !== this.prevProject ) {
 			this.prevProject = this.currProject

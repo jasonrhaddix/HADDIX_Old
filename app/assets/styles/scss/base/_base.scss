@@ -21,14 +21,14 @@ body, html {
 
 
 body {
-    background-color: $app-background-color;
+    background-color: $color-app-background-solid;
     background: -webkit-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
     background: -o-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
     background: -moz-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
     background: linear-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
     background-repeat: none;
      
-    color: $app-text-color_light;
+    color: $color-app-text-light;
     font-weight: 600;
     font-family: 'DIN-Light', Helvetica, sans-serif;
     letter-spacing: 0.01em;
@@ -47,14 +47,14 @@ body {
 
 
  
-// h1, h2, h3, h4, h5, h6 { line-height: 1.4em }
-/* h1 { font-size: 4.2rem; }
-h2 { font-size: 3.2rem; } */
+h1, h2, h3, h4, h5, h6 {
+    color: $color-app-text-dark;
+}
 
  
 
 a, button {
-    color: $app-text-color_light;
+    color: $color-app-text-light;
     text-decoration: none;
     outline: 0;
 
@@ -68,7 +68,6 @@ a, button {
  
 p
  {
-    // font-size: 0.8rem;
     line-height: 1.3em;
 }
 
@@ -100,9 +99,12 @@ ul, ol {
 
 
 
+
 .routes-container {
     overflow-x: hidden;
 }
+
+
 
 
 .switch-wrapper {
@@ -112,12 +114,8 @@ ul, ol {
 }
 
 
+
+
 .route-wrapper > div {
     position: absolute;
 }
-
-/* #app {
-    overflow: hidden;
-    height: 100vh;
-}
- */

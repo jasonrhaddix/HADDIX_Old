@@ -47,6 +47,7 @@ class ProjectsList extends React.Component
                     path={this.props.match.path}
                     title={data.title}
                     subtitle={data.subtitle}
+                    client={data.client}
                     desc={data.desc}
                     projectFolder={data.anchor}
                     images={data.images} 

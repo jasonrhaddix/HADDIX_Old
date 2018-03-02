@@ -26,7 +26,7 @@
 		}	
 
 		.project-info {
-			background: $white;
+			background: $color-white;
 			position: absolute;
 			height: 350px;
 			width: 400px;
@@ -55,7 +55,7 @@
 				@extend .center-content;
 				width: 80%;
 				max-width: 400px;	
-				color: $app-text-color_dark;
+				color: $color-app-text-dark;
 
 				.client {
 
@@ -77,23 +77,9 @@
 				}
 
 				.app-button {
+					@extend .app-button-light;
 					margin-top: 15px;
 					float: right;
-					color: $app-text-color_dark;
-					background-color: $white;
-					border: 1px solid $app-text-color_dark;
-
-					.animated-button-text {
-						color: $app-text-color_light;
-					}
-
-					.animated-button-bg {
-						background-color: $app-text-color_dark;
-
-						&:after {
-							border-top: 70px solid $app-text-color_dark;
-						}
-					}
 				}
 			}
 		}

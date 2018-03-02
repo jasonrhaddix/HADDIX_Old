@@ -1,5 +1,5 @@
 .cls-1,.cls-2,.cls-3,.cls-5{ fill: none; }
-.cls-2,.cls-3,.cls-5{ stroke: $app-text-color_dark; stroke-miterlimit: 10; }
+.cls-2,.cls-3,.cls-5{ stroke: $color-app-logo-text; stroke-miterlimit: 10; }
 .cls-2,.cls-5{ stroke-width: 36px; }
 .cls-3{ stroke-width: 37px; }
 .cls-4{ clip-path: url( #clip-path ); }
@@ -9,7 +9,7 @@
 
 
 .container-logo {
-	background-color: $app-text-color-light; 
+	background-color: $color-app-white; 
 	width: 500px;
 	overflow: hidden;
     height: 170px;

@@ -4,6 +4,8 @@ import SphereBg from '../../containers/SphereBg'
 import Logo from '../../containers/Logo'
 import AppButton from '../../ui/AppButton/AppButton.jsx'
 
+import { toggleNav } from '../../../actions'
+
 
 /*const mapStateToProps = (state) => {
 
@@ -28,6 +30,10 @@ class Intro extends React.Component
 
     componentDidMount() {
         this.props.history.push('/')
+
+        appStore.dispatch(
+          toggleNav( false )
+        )
     }
 
 

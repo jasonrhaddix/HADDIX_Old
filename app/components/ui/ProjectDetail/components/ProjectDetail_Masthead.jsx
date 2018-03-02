@@ -7,8 +7,6 @@ const ProjectDetail_Masthead = props => {
 		backgroundImage: "url(" + ` ${props.backgroundImage} ` + ")"
 	}
 
-	console.log(props)
-
 	return (
 		<div className="detail-masthead">
 			<div className="detail-masthead-background" style={projectMasthead_Styles}/>

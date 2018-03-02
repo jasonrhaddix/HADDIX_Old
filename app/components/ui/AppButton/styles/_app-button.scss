@@ -1,9 +1,9 @@
 .app-button {
 	position: relative;
 	display: inline-block;
-	border: 1px solid $app-button-border;
+	background-color: $color-app-button-background;
+	border: 1px solid $color-app-button-border;
 	margin: 0 auto;
-	background-color: rgba(0, 0, 0, 0.5);
 	overflow: hidden;
 	
 	&:hover {
@@ -31,6 +31,7 @@
 	}
 
 	.button-text {
+		color: $color-app-button-text;
 		transition: all 0.2s ease-in-out;
 		transition-delay: 0.25s;	
 	}
@@ -53,12 +54,12 @@
 		opacity: 0;
 		font-size: 0.8rem;
 		font-weight: 800;
-		color: $app-text-color_dark;
+		color: $color-app-button-text-hover;
 	}
 
 	.animated-button-bg, .animated-button-bg-under {
 		transition-delay: 0.2s;
-		background-color: $white;
+		background-color: $color-app-button-background-hover;
 		transform: translateX( -150% );
 	
 		&:after {
@@ -67,18 +68,18 @@
 			display: block;
 			width: 20px;
 			height: 20px;
-			border-top: 70px solid $white;
+			border-top: 70px solid $color-app-button-background-hover;
 			border-right: 70px solid transparent;
 		}
 	}
 
 	.animated-button-bg-under {
 		transition-delay: 0.3s;
-		background-color: #2b0081;
+		background-color: $color-app-button-background-animate;
 		opacity: 0.7;
 
 		&:after {
-			border-top: 50px solid #2b0081;
+			border-top: 50px solid $color-app-button-background-animate;
 		}
 
 	}
@@ -89,5 +90,31 @@
     	position: relative;
     	padding: 10px 40px;
     	font-size: 0.8rem;
+	}
+}
+
+
+
+
+
+.app-button-light {
+	color: $color-app-button-text-light;
+	background-color: $color-app-button-background-light;
+	border: 1px solid $color-app-button-border-light;
+
+	.button-text {
+		color: $color-app-button-text-light;
+	}
+
+	.animated-button-text {
+		color: $color-app-button-text-hover-light;
+	}
+
+	.animated-button-bg {
+		background-color: $color-app-button-background-hover-light;
+
+		&:after {
+			border-top: 70px solid $color-app-button-background-hover-light;
+		}
 	}
 }

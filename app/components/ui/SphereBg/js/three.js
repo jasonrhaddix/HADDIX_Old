@@ -25,8 +25,8 @@ var meshSphere_1_Solid_Mat;
 var meshSphere_1_Solid_Faces;
 var meshSphere_1_Solid_Vertices;
 var meshSphere_1_Wire;                     // meshPlane
-var meshSphere_1_Solid_Scale = 15;
-var meshSphere_1_Wire_Scale = 16;
+var meshSphere_1_Solid_Scale = 16;
+var meshSphere_1_Wire_Scale = 16.1;
 
 var meshSphere_2_Wire;                     // meshPlane
 var meshSphere_2_Wire_Mat;
@@ -60,7 +60,7 @@ function initThreeJS()
 	setTimeout( function() { 
 		initThreeJS_Display();
 		initThreeJS_Render();
-	}, 500 );
+	}, 1000 );
 
 	setTimeout( function() {
 		initThreeJS_Animate();		
@@ -215,10 +215,11 @@ function iniThreeJS_Geometry()
 	// meshSphere_1
 	three_JSONLoader.load( MESH_SPHERE, function( geometry )
 	{
-		var meshSphere_1_Solid_Mat = new THREE.MeshLambertMaterial({ color:0x070707, shading:THREE.FlatShading, vertexColors:THREE.FaceColors })
+		var meshSphere_1_Solid_Mat = new THREE.MeshLambertMaterial({ color:0x070707, vertexColors:THREE.FaceColors })
+		meshSphere_1_Solid_Mat.flatShading = true;
 
 		meshSphere_1_Solid = new THREE.Mesh( geometry, meshSphere_1_Solid_Mat );
-		meshSphere_1_Solid.scale.set( 16, 16, 16 );
+		meshSphere_1_Solid.scale.set( meshSphere_1_Solid_Scale, meshSphere_1_Solid_Scale, meshSphere_1_Solid_Scale );
         three_Scene.add( meshSphere_1_Solid );
         
         meshSphere_1_Solid_Vertices = geometry.vertices;
@@ -242,7 +243,7 @@ function iniThreeJS_Geometry()
 
         var meshSphere_1_Wire_Mat = new THREE.MeshLambertMaterial({ color:0xda5200, vertexColors:THREE.FaceColors, wireframe:true })
         meshSphere_1_Wire = new THREE.Mesh( geometry, meshSphere_1_Wire_Mat);
-        meshSphere_1_Wire.scale.set( 16.1, 16.1, 16.1 );
+        meshSphere_1_Wire.scale.set( meshSphere_1_Wire_Scale, meshSphere_1_Wire_Scale, meshSphere_1_Wire_Scale );
 		three_Scene.add( meshSphere_1_Wire );
 		
 		// geometry.computeFaceNormals();
@@ -257,7 +258,8 @@ function iniThreeJS_Geometry()
 	{		
 		meshSphere_2_Wire_Mat = new THREE.MeshLambertMaterial({ color:0x3100bd, vertexColors:THREE.VertexColors, wireframe:true });
 		meshSphere_2_Wire = new THREE.Mesh( geometry, meshSphere_2_Wire_Mat );
-		
+        meshSphere_2_Wire.scale.set( meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale );
+
 		three_Scene.add( meshSphere_2_Wire );
 
 		var meshSphere_2_Wire_Vertices = geometry.vertices;
@@ -295,8 +297,9 @@ function iniThreeJS_Geometry()
 			meshSphere_2_Particles_PointGeom.scale( 1.3, 1.3, 1.3 );
 
 			meshSphere_2_Particles = new THREE.Points( meshSphere_2_Particles_PointGeom, meshSphere_2_Wire_Point_Mat );
-			meshSphere_2_Particles.geometry.scale( meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale );
+			// meshSphere_2_Particles.geometry.scale( meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale );
 			meshSphere_2_Particles.sortParticles = true;
+        	meshSphere_2_Particles.scale.set( meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale, meshSphere_2_Wire_Scale );
 			
 			three_Scene.add( meshSphere_2_Particles );
 		})
@@ -386,20 +389,24 @@ function initThreeJS_Render( time )
     var y = motionRate * 1.65;
     var z = motionRate;
 
-    meshSphere_1_Solid.rotation.set( x, y, z ); 
-    meshSphere_1_Wire.rotation.set( x, y, z ); 
-    
-    meshSphere_1_Solid.geometry.verticesNeedUpdate = true;
-    meshSphere_1_Solid.geometry.elementsNeedUpdate = true;
-    meshSphere_1_Solid.geometry.colorsNeedUpdate = true
-    
+    try {
+	    meshSphere_1_Solid.rotation.set( x, y, z ); 
+	    meshSphere_1_Wire.rotation.set( x, y, z ); 
+	    
+	    meshSphere_1_Solid.geometry.verticesNeedUpdate = true;
+	    meshSphere_1_Solid.geometry.elementsNeedUpdate = true;
+	    meshSphere_1_Solid.geometry.colorsNeedUpdate = true
+    } catch(err){console.warn("Cannot load meshSphere_1_...")}
+		    
 
+    try {
 
-    meshSphere_2_Wire.rotation.set( y, z, x );
-    meshSphere_2_Particles.rotation.set( y, z, x ); 
-    
-    meshSphere_2_Wire.verticesNeedUpdate = true;
-    meshSphere_2_Wire.colorsNeedUpdate = true;
+	    meshSphere_2_Wire.rotation.set( y, z, x );
+	    meshSphere_2_Particles.rotation.set( y, z, x ); 
+	    
+	    meshSphere_2_Wire.verticesNeedUpdate = true;
+	    meshSphere_2_Wire.colorsNeedUpdate = true;
+    } catch(err){console.warn("Cannot load meshSphere_2_...")}
    
 
     // meshSphere_2_Particles.verticesNeedUpdate = true;
