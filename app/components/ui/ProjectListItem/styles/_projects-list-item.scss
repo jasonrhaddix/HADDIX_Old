@@ -76,10 +76,17 @@
 					margin: 20px 0;
 				}
 
-				.app-button {
-					@extend .app-button-light;
-					margin-top: 15px;
-					float: right;
+				.appbutton-container {
+
+					a {
+						display: block;
+						margin: 0 0;
+					}
+					.app-button {
+						@extend .app-button-light;
+						margin-top: 15px;
+						float: right;
+					}
 				}
 			}
 		}

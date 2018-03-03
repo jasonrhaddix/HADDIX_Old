@@ -4,6 +4,7 @@ import { spring, AnimatedSwitch } from 'react-router-transition';
 
 import IntroRoute from './components/routes/Intro/Intro.jsx'
 // import HomeRoute from './components/routes/Home/Home.jsx'
+// import HomeRoute from './components/routes/Home/Home.jsx'
 import WorkRoute from './components/routes/Work/Work.jsx'
 import AboutRoute from './components/routes/About/About.jsx'
 
