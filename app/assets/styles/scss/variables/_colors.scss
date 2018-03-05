@@ -58,6 +58,11 @@ $color-app-button-text-hover-light: $color-app-text-light;
 
 
 
+
 ////// ROUTES //////
 // Intro
-$color-app-logo-text: #141418;
+$color-app-logo-text: $color-app-black;
+
+
+// About
+$color-about-subsection: $color-app-white;

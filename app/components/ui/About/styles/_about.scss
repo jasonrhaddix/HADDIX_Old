@@ -120,7 +120,7 @@
 					display: block;
 					clear: both;
 					padding-bottom: 30px;
-					background-color: #EFEFEF;
+					background-color: $color-about-subsection;
 					padding: 20px;
 					margin-bottom: 15px;
 
@@ -128,7 +128,7 @@
 						font-family: 'Din-Black';
 						display: inline-block;
 						text-transform: uppercase;
-						padding: 5px 0;
+						padding-bottom: 10px;
 					}
 
 					.about-section-skillset-list {
