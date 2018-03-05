@@ -36,9 +36,10 @@ class About extends React.Component {
 					<div className="about-divider" />
 					<About_Experience />
 					<div className="about-divider" />
-					{/*<About_Clients />*/}
-					<div className="about-divider" />
-					<AppButton buttonText="Contact" buttonPath="/contact" />
+					<About_Clients />
+					<div className="about-divider last-item" />
+					{/*<div className="get-in-touch"><p>Get in touch</p></div>*/}
+					<AppButton buttonText="Contact" buttonPath="/contact">Get In Touch</AppButton>
 				</div>
 			</div>
 		)

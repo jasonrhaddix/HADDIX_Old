@@ -1,7 +1,7 @@
 .about-container {
 	@extend .container;
 	background-color: $color-white;
-	margin-top: 20vh;
+	margin-top: 120px;
 	color: $color-app-text-dark;
 
 	.about-inner {
@@ -19,7 +19,10 @@
 			width: 60%;
 			height: 1px;
 			margin: 5vw auto 0;
-			// @extend .about-spacing;
+
+			&.last-item {
+				margin: 0 auto;
+			}
 		}
 
 
@@ -33,7 +36,7 @@
 
 		.appbutton-container {
 			display: block;
-			margin: 5vw 0;
+			margin: 4vw 0;
 
 			.app-button {
 				@extend .app-button-light;
@@ -53,7 +56,7 @@
 		.about-profilePhoto-inner {
 			position: relative;
 			margin: 0 auto;
-			padding: 8% 0 2%;
+			padding: 4% 0 2%;
 
 			img {
 				height: 240px;
@@ -225,4 +228,58 @@
 			}
 		}
 	}
+
+	/* About Experince */
+	.about-clients-container {
+		@extend .about-spacing;
+
+		.about-clients-inner {
+
+			.about-client-header {
+
+				h2 {
+					font-family: 'Din-Black';
+					display: inline-block;
+					text-transform: uppercase;
+					background-color: $color-app-text-dark;
+					color: $color-app-text-light;
+					padding: 5px 10px;
+				}
+			}
+
+			.client-list {
+				@extend .row;
+
+				.client-item {
+					@extend .col-xs-4;
+					@extend .col-md-3;
+					padding-top: 40px;
+					padding-bottom: 120px;
+
+					.client-img {
+						position: relative;
+
+						img {
+							@extend .img-responsive;
+							// @extend .center-content;
+							width: 120px;
+							height: 60px;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* .get-in-touch {
+		max-width: 140px;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 4vw 0 10px;
+		font-family: 'Din-Black';
+		padding: 5px 10px;		
+		background-color: $color-app-text-dark;
+		color: $color-app-text-light;
+	} */
 }
