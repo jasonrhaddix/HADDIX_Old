@@ -43,7 +43,7 @@ class ProjectListItem extends React.Component
                         <div className='project-title'>
                             <h3>{this.props.client}</h3>
                             <h2>{this.props.title}</h2>
-                            <h3>{this.props.subtitle}</h3>
+                            {/*<h3>{this.props.subtitle}</h3>*/}
                             <p>{this.props.desc}</p>
                             <AppButton buttonText="View Project" buttonPath={`${this.props.path}/${this.props.anchor}`} />
                         </div>

@@ -31,7 +31,8 @@ function bounce(val) {
 const bounceTransition = {
     atEnter: {
         opacity: 0,
-        scale: 1.1,
+        scale: 1,
+        // scale: 1.1,
     },
     
     atLeave: {

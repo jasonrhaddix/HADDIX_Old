@@ -8,6 +8,7 @@ const About_Clients = () => {
 			<div className="about-clients-inner">
 				<div className="about-client-header">
 					<h2> Notable Clients</h2>
+					<div className="about-header-divider" />
 				</div>
 				<div className="client-list">
 					<div className="client-item">
@@ -24,7 +25,7 @@ const About_Clients = () => {
 
 					<div className="client-item">
 						<div className="client-img">
-							<img src={require('../../../../assets/images/app/client_logos/fx.svg')} />
+							<img src={require('../../../../assets/images/app/client_logos/mgm-grand.svg')} />
 						</div>
 					</div>
 
@@ -48,6 +49,12 @@ const About_Clients = () => {
 
 					<div className="client-item">
 						<div className="client-img">
+							<img src={require('../../../../assets/images/app/client_logos/fx.svg')} />
+						</div>
+					</div>
+
+					<div className="client-item">
+						<div className="client-img">
 							<img src={require('../../../../assets/images/app/client_logos/chevron.svg')} />
 						</div>
 					</div>
@@ -66,7 +73,7 @@ const About_Clients = () => {
 
 					<div className="client-item">
 						<div className="client-img">
-							<img src={require('../../../../assets/images/app/client_logos/hbo.svg')} />
+							<img src={require('../../../../assets/images/app/client_logos/propel.svg')} />
 						</div>
 					</div>
 
@@ -84,7 +91,7 @@ const About_Clients = () => {
 
 					<div className="client-item">
 						<div className="client-img">
-							<img src={require('../../../../assets/images/app/client_logos/propel.svg')} />
+							<img src={require('../../../../assets/images/app/client_logos/hbo.svg')} />
 						</div>
 					</div>
 
