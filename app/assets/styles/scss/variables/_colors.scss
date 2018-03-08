@@ -1,15 +1,68 @@
-// App
-$white: #FFFFFF;
-$black: #000000;
 
-$app-background-color: #070707;
-$app-text-color: #FFFFFF;
-$app-accent-color-purple: #370FAE;
-$app-accent-color-orange: #D63D04;
+/**************************************/
+// COLORS
+/**************************************/
 
-$app-button-border: $white;
+// Base Colors
+$color-white: #FFF;
+$color-black: #000;
+$color-app-white: #EFEFEF;
+$color-app-black: #141418;
+$color-app-grey-dark: #242428;
+$color-app-black-alpha: rgba( 0, 0, 0, 0.5 );
+
+// Accent Colors
+$color-accent-purple: #3100bd; //#2b0081
+$color-accent-purple-alpha: rgba( 55, 15, 174, 0.5 );
+$color-accent-orange: #ff4f00;
+
+// Background Colors
+$color-background-solid: #150044;
+$color-background-gradient-outter: #040011;
+$color-background-gradient-inner: #150044;
 
 
-// Projects
-$project-background-color: rgba( 0, 0, 0, 0.5 );
-$project-background-cover-color: rgba( 0, 0, 0, 0.65 );
+
+
+////// APP //////
+// Background
+$color-app-background-solid: $color-app-black;
+$color-app-background-gradient-linear: linear-gradient( to right, $color-background-gradient-outter 0%, $color-background-gradient-inner 50%, $color-background-gradient-outter 100% );
+$color-app-background-gradient-radial: radial-gradient( to right, $color-background-gradient-outter 0%, $color-background-gradient-inner 50%, $color-background-gradient-outter 100% );
+
+// Text Colors
+$color-app-text-light: $color-app-white;
+$color-app-text-dark: $color-app-grey-dark;
+
+
+
+
+////// GLOBAL COMPONENTS //////
+// App Button
+$color-app-button-background: $color-app-black-alpha;
+$color-app-button-text: $color-app-text-light;
+$color-app-button-border: $color-app-text-light;
+
+$color-app-button-background-animate: $color-accent-purple;
+$color-app-button-background-hover: $color-app-text-light;
+$color-app-button-text-hover: $color-app-text-dark;
+
+// App Button (Inverse)
+$color-app-button-background-light: $color-white;
+$color-app-button-text-light: $color-app-text-dark;
+$color-app-button-border-light: $color-app-text-dark;
+
+// $color-app-button-background-animate: $color-accent-purple-alpha;
+$color-app-button-background-hover-light: $color-app-text-dark;
+$color-app-button-text-hover-light: $color-app-text-light;
+
+
+
+
+////// ROUTES //////
+// Intro
+$color-app-logo-text: $color-app-black;
+
+
+// About
+$color-about-subsection: $color-app-white;

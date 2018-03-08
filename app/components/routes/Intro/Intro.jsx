@@ -4,6 +4,8 @@ import SphereBg from '../../containers/SphereBg'
 import Logo from '../../containers/Logo'
 import AppButton from '../../ui/AppButton/AppButton.jsx'
 
+import { toggleNav } from '../../../actions'
+
 
 /*const mapStateToProps = (state) => {
 
@@ -14,25 +16,24 @@ import AppButton from '../../ui/AppButton/AppButton.jsx'
 
 
 
-class Intro extends React.Component
+class IntroRoute extends React.Component
 {
     constructor(props, context)
     {
         super(props, context)
 
         this.state = {
-            // 
+            /* */
         }
     }
 
 
     componentDidMount() {
-        // 
-    }
+        this.props.history.push('/')
 
-
-    componentWillUnmount() {
-        // 
+        appStore.dispatch(
+          toggleNav( false )
+        )
     }
 
 
@@ -47,7 +48,7 @@ class Intro extends React.Component
                         <p>Portfolio for Jason R Haddix</p>
                     </div>
                     <div className="intro-divider"/>
-                    <AppButton />
+                    <AppButton buttonText="View Work" buttonPath="/work" />
                 </article>
             </div>
         )
@@ -57,4 +58,4 @@ class Intro extends React.Component
 
 
 // const Container = connect(mapStateToProps)(Home)
-export default Intro
+export default IntroRoute

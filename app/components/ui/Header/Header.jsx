@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import DocumentTitle from 'react-document-title'
 
-import HamburgerMenu from '../../ui/HamburgerMenu/HamburgerMenu.jsx'
+import Logo from '../Logo/Logo.jsx'
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu.jsx'
 
 import { toggleNav } from '../../../actions'
 
@@ -9,45 +11,48 @@ import { toggleNav } from '../../../actions'
 
 class Header extends React.Component {
 
-	constructor(props, context) {
-		super(props, context)
+	constructor(props) {
+		super(props)
 
 		this.state = {
-			scrollInterval: null,
-			showHeaderBg: false,
-			prevShowHeaderBg: true,
+			showHeader: false,
+			currentPath: ""
 		}
 
-		this.checkScrollPos = this.checkScrollPos.bind(this)
-		this.toggleMenu = this.toggleMenu.bind(this)
+		this.setHeaderState = this.setHeaderState.bind(this)
 	}
 
 
 	componentWillMount()
 	{
-		const showHeaderBg = ( document.documentElement.scrollTop > 625 ) ? true : false
-		if( showHeaderBg !== this.state.prevShowHeaderBg) this.setState({showHeaderBg: showHeaderBg, prevShowHeaderBg: showHeaderBg})
+		this.setHeaderState()
+		this.setState({ currentPath : this.props.currentPath })
+
+		this.props.history.listen(() => {
+			this.setHeaderState()
+		});
 	}
 
 
-	componentDidMount()
+	componentWillReceiveProps(newProps)
 	{
-		const scrollInterval = setInterval(this.checkScrollPos, 10)
-		this.setState({scrollInterval: scrollInterval})
+		if(newProps.currentPath)
+		{
+			var path = newProps.currentPath
+			var letter = path.split('')[0]
+
+			var newPath = path.replace(letter, function (g) { return g.toUpperCase(); });
+		
+			this.setState({currentPath: newPath})
+		} else {
+			this.setState({currentPath: ""})
+		}
+
+		
 	}
 
 
-	componentWillUnmount()
-	{
-	   clearInterval(this.state.scrollInterval)
-	}
 
-
-	checkScrollPos()
-	{
-		const showHeaderBg = ( document.documentElement.scrollTop > 800 ) ? true : false
-		if( showHeaderBg !== this.state.prevShowHeaderBg) this.setState({showHeaderBg: showHeaderBg, prevShowHeaderBg: showHeaderBg})
-	}
 
 
 	toggleMenu()
@@ -60,20 +65,37 @@ class Header extends React.Component {
 	}
 
 
+	setHeaderState()
+	{
+		var path = this.props.history.location.pathname
+		var headerState = ( path !== "/" ) ?  true : false
+		this.setState({ showHeader: headerState })
+	}
+
+
 	render()
 	{
 		return (
-			<header className="header-container">
-				<div className={`header-bg show-bg ${this.state.showHeaderBg}`}/>
-				<div className="app-logo">
-					<Link to="/about"><img alt={this.props.title} src={this.props.logo}/></Link>
-				</div>
-				<HamburgerMenu onClickFun={this.toggleMenu} navState={this.props.navOpen}/>
-			</header>
+			<DocumentTitle title={`HADDIX | ${this.state.currentPath}`} className="home-container">
+				<header className={`header-container ${this.state.showHeader}`} >
+					<div className="app-logo-wrapper">
+						<div className="app-logo">
+							<Link to="/">
+								<img alt={this.props.title} src={this.props.logo}/>
+							</Link>
+						</div>
+						<div className={`breadcrumb-divider`} />
+						<div className="breadcrumb-title">
+							<h1>{this.state.currentPath}</h1>
+						</div>
+					</div>
+					<HamburgerMenu onClickFun={this.toggleMenu} navState={this.props.navOpen}/>
+				</header>
+			</DocumentTitle>
 		)
 	}
 }
 
 
 	
-export default Header
+export default withRouter(Header)

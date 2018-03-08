@@ -2,21 +2,22 @@ const path = require('path');
 const webpack_merge = require('webpack-merge');
 
 
-const config_exports = require("./config/webpack/config_exports");
-
-
 
 const PATHS = {
 	app: path.join(__dirname, "app"),
 	build: path.join(__dirname, "build"),
+	// bootstrap: path.join(__dirname, "node_modules/bootstrap")
 };
+
+
+const config_exports = require("./config/webpack/config_exports");
 
 
 
 const config_Common = webpack_merge(
 	{
 		entry: {
-			app: PATHS.app,
+			app: ['babel-polyfill', PATHS.app],
 		},
 		output: {
 			path: PATHS.build,
@@ -28,7 +29,10 @@ const config_Common = webpack_merge(
 	    appMountId: 'app'
   	}),
 	config_exports.loadJSX(PATHS.app),
-	config_exports.lintJSX(PATHS.app)
+	config_exports.lintJSX(PATHS.app),
+	config_exports.modernizr(),
+	config_exports.loadVideo(),
+	config_exports.load3DOjects()
 );
 
 
@@ -50,14 +54,18 @@ const config_Production = webpack_merge([
 			name: "[name].[ext]",
 		},
 	}),
-	config_exports.loadJSON({
+	config_exports.loadSVGs({
 		options: {
 			limit: 15000,
 			name: "[name].[ext]",
 		},
 	}),
-	config_exports.modernizr(),
-	config_exports.load3DOjects(),
+	config_exports.loadJSON({
+		options: {
+			limit: 15000,
+			name: "[name].[ext]",
+		},
+	})
 ]);
 
 
@@ -72,8 +80,6 @@ const config_development = webpack_merge([
 	config_exports.loadImages(),
 	config_exports.loadSVGs(),
 	config_exports.loadJSON(),
-	config_exports.modernizr(),
-	config_exports.load3DOjects(),
 ]);
 
 

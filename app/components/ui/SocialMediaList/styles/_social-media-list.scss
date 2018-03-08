@@ -1,0 +1,27 @@
+.socialmedia-container {
+	display: flex;
+	width: 100%;
+
+	.socialmedia-inner {
+		position: relative;
+		margin: 0 auto;
+
+		ul {
+		
+			
+			li {
+				float: left;
+				padding: 10px;
+				margin: 0 3vw;
+
+				a {
+					color: $color-app-text-dark;
+
+					&:hover {
+						color: $color-accent-purple;
+					}
+				}
+			}
+		}
+	}
+}

@@ -49,7 +49,7 @@ exports.devServer = ({ host, port } = {}) => ({
 		stats: 'errors-only',
 		host,
 		port,
-		historyApiFallback: true,
+		// historyApiFallback: true,
 		overlay: {
 			errors: true,
 			warnings: true,
@@ -63,6 +63,7 @@ exports.indexTemplate = function(options) {
 	return {
 		plugins: [
 			new HtmlWebpackPlugin({
+				publicPath:"/",
 				template: 'app/index.tpl',
 				inject: 'body',
 				title: options.title,
@@ -149,7 +150,7 @@ exports.extractStyles = ({ include, exclude, use }) => {
 					})
 				},
 				{
-					test: /\.scss/,
+					test: /\.(scss|sass)$/,
 					use: ['style-loader', 'css-loader', 'sass-loader'],
 				},
 			],
@@ -160,21 +161,27 @@ exports.extractStyles = ({ include, exclude, use }) => {
 
 
 
-exports.loadStyles = ({ include, exclude } = {}) => ({
+exports.loadStyles = ({ include, exclude, path } = {}) => ({
 	module: {
 		rules: [
 			{
-				test: /\.css/,
+				test: /\.css$/,
 				include,
 				exclude: /node_modules/,
 				use: ['style-loader', 'css-loader'],	
 			},
 			{
-				test: /\.scss/,
+				test: /\.scss$/,
+				include,
 				use: ['style-loader', 'css-loader', 'sass-loader'],
 			},
 		],
 	},
+	/*resolve: {
+        alias: {
+            "bootstrap-sass$": "~bootstrap-sass/assets/stylesheets/bootstrap"
+        }
+    },*/
 });
 
 
@@ -187,7 +194,7 @@ exports.loadFonts = ({ include, exclude, options }  = {}) => ({
 				include,
 				exclude,
 				use: {
-					loader: 'url-loader',
+					loader: 'file-loader',
 					options,
 				},
 			},
@@ -213,11 +220,28 @@ exports.loadJSON = ({ include, exclude, options } = {}) => ({
 });
 
 
+exports.loadVideo = ({ include, exclude, options } = {}) => ({
+	module: {
+		rules: [
+			{
+				test: /\.mp4$/,
+				include,
+				exclude,
+				use: {
+					loader: 'file-loader',
+					options,
+				},
+			},
+		],
+	},
+});
+
+
 exports.loadImages = ({ include, exclude, options } = {}) => ({
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpg|gif|svg)$/,
+				test: /\.(png|jpg|gif)$/,
 				include,
 				exclude,
 				use: {

@@ -3,15 +3,18 @@ import { Link } from 'react-router-dom'
 
 
 
-const AppButton = () => {
+const AppButton = ({buttonText, buttonPath}) => {
 	return (
-		<Link to='/home'>
-			<div className="app-button">
-				<p>View Work</p>
-				<div className="animated-button-bg"/>
-				<p className="animated-button-text">View Work</p>
-			</div>
-		</Link>
+		<div className="appbutton-container">
+			<Link to={buttonPath}>
+				<div className="app-button">
+					<div className="button-text">{buttonText}</div>
+					<div className="animated-button-bg-under"/>
+					<div className="animated-button-bg"/>
+					<div className="animated-button-text">{buttonText}</div>
+				</div>
+			</Link>
+		</div>
 	)
 }
 

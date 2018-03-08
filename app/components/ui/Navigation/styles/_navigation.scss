@@ -1,31 +1,79 @@
 .nav-container {
 	position: fixed;
-	
-	// background: linear-gradient(#660099, #330099);
-	background-color: $app-background-color;
-    background: -webkit-radial-gradient(circle, #13003a, #070707);
-    background: -o-radial-gradient(circle, #13003a, #070707);
-    background: -moz-radial-gradient(circle, #13003a, #070707);
-    background: radial-gradient(circle, #13003a, #070707);
-
 	height: 100%;
 	width: 100%;
 	top: 0;
 	z-index: 999;
-	display: none;
+
+	.nav-poly {
+		background-color: $color-app-black;
+		height: 100vh;
+		width: 100vw;
+		transition: clip-path 0.5s linear;
+		clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+	}
 
 	&.true {
-		display: block;		
+		// display: block;		
+
+		.nav-poly {
+			// clip-path: polygon(0% 0%, 100% 0%, 55% 75%, 0% 95%);
+		}
 	}
 
 	nav {
 		@extend .center-content;
 
 		ul {
-			/* font-size: 4.2rem;
-			line-height: 1.4em; */
 			text-transform: uppercase;
 			text-align: center;
+
+			li {
+				font-family: 'DIN-Bold', Helvetica, sans-serif;
+				margin: 8vh 0;
+				font-size: 4rem;
+
+				a {
+					position: relative;
+					
+					.nav-button {
+						position: relative;
+						display: inline-block;
+
+						h1 {	
+							color: $color-app-text-light;
+							transition: color 0.3s ease-in-out;
+							font-weight: 100;
+						}
+					}
+
+					.nav-button-poly {
+						position: absolute;
+						width: 100%;
+					    top: 7px;
+    					left: 0px;
+    					transition: clip-path 0.3s ease-in-out;
+    					clip-path: polygon(0% 0%, 100% 0%, 0% 0%, 0% 100%);
+					
+						h1 {
+							color: $color-white;
+							font-weight: 900;
+						}	
+					}
+
+					/* &:hover {
+						.nav-button {
+							h1 {	
+								color: $color-accent-purple;
+							}
+						}
+						.nav-button-poly {
+    						clip-path: polygon(0% 20%, 100% 0%, 100% 70%, 0% 30%);
+    						
+						}
+					} */
+				}
+			}
 		}
 	}
 }

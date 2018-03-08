@@ -1,63 +1,132 @@
-.app-button {
-	position: relative;
-	display: inline-block;
-	border: 1px solid $app-button-border;
-	margin: 0 auto;
-	background-color: rgba(0, 0, 0, 0.5);
-	overflow: hidden;
-	
-	&:hover {
+.appbutton-container {
 
-		.animated-button-bg {
-			transition-delay: 0s;
-			transform: translateX( 0% );
+	a {
+		display: flex;
+		margin: 0 auto;
+	}
+
+	.app-button {
+		min-width: 150px;
+		position: relative;
+		display: inline-block;
+		background-color: $color-app-button-background;
+		border: 1px solid $color-app-button-border;
+		margin: 0 auto;
+		overflow: hidden;
+		
+
+		&:hover {
+
+			.button-text {
+				transition-delay: 0s;
+				transform: translateX( 7% );
+			}
+
+			.animated-button-bg-under {
+				transition-delay: 0s;
+				transform: translateX( 0% );
+			}
+
+			.animated-button-bg {
+				transition-delay: 0.1s;
+				transform: translateX( 0% );
+			}
+
+			.animated-button-text {
+				transition-delay: 0.2s;
+				transform: translateX( 0% );
+				opacity: 1;
+			}
+		}
+
+		.button-text {
+			color: $color-app-button-text;
+			transition: all 0.2s ease-in-out;
+			transition-delay: 0.25s;	
+			text-align: center;
+		}
+
+		.animated-button-text, .animated-button-bg, .animated-button-bg-under  {
+			top: 0;
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+			transform: translateX( -10% );
+			transition: all 0.2s ease-in-out;
 		}
 
 		.animated-button-text {
+			text-transform: uppercase;
+			text-align: center;
+		    padding: 10px 40px;
+			transition-delay: 0s;
+			opacity: 0;
+			font-size: 0.8rem;
+			font-weight: 800;
+			color: $color-app-button-text-hover;
+		}
+
+		.animated-button-bg, .animated-button-bg-under {
 			transition-delay: 0.2s;
-			transform: translateX( 0% );
-			opacity: 1;
+			background-color: $color-app-button-background-hover;
+			transform: translateX( -150% );
+		
+			&:after {
+				content: "";
+				margin-left: 145px;
+				display: block;
+				width: 20px;
+				height: 20px;
+				border-top: 70px solid $color-app-button-background-hover;
+				border-right: 70px solid transparent;
+			}
+		}
+
+		.animated-button-bg-under {
+			transition-delay: 0.3s;
+			background-color: $color-app-button-background-animate;
+			opacity: 0.7;
+
+			&:after {
+				border-top: 50px solid $color-app-button-background-animate;
+			}
+
+		}
+
+		.button-text {
+			text-transform: uppercase;
+		    display: block;
+	    	position: relative;
+	    	padding: 10px 40px;
+	    	font-size: 0.8rem;
 		}
 	}
 
-	.animated-button-text, .animated-button-bg {
-		top: 0;
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-		background-color: transparent;
-		transform: translateX( -10% );
-		transition: all 0.3s ease-in-out;
-	}
 
-	.animated-button-text {
-		transition-delay: 0s;
-		opacity: 0;
-		font-weight: 800;
-		color: $black;
-	}
 
-	.animated-button-bg {
-		transition-delay: 0.2s;
-		background-color: $white;
-		transform: translateX( -150% );
-	
-		&:after {
-			content: "";
-			margin-left: 145px;
-			display: block;
-			width: 10px;
-			height: 10px;
-			border-top: 50px solid $white;
-			border-right: 50px solid transparent;
+
+
+	.app-button-light {
+		color: $color-app-button-text-light;
+		background-color: $color-app-button-background-light;
+		border: 1px solid $color-app-button-border-light;
+
+		.button-text {
+			color: $color-app-button-text-light;
 		}
-	}
 
-	p {
-		text-transform: uppercase;
-	    display: block;
-    	position: relative;
-    	padding: 10px 40px;
+		.animated-button-text {
+			color: $color-app-button-text-hover-light;
+		}
+
+		.animated-button-bg {
+			background-color: $color-app-button-background-hover-light;
+
+			&:after {
+				border-top: 70px solid $color-app-button-background-hover-light;
+			}
+		}
 	}
 }

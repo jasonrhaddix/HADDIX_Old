@@ -1,0 +1,285 @@
+.about-container {
+	@extend .container;
+	background-color: $color-white;
+	margin-top: 120px;
+	color: $color-app-text-dark;
+
+	.about-inner {
+		@extend .row;
+		max-width: 80%;
+		margin: 0 auto;
+
+		.about-spacing {
+			margin-top: 4vw;
+		}
+
+		/* About Divider */
+		.about-divider {
+			background-color: #DDD;
+			width: 60%;
+			height: 1px;
+			margin: 5vw auto 0;
+
+			&.last-item {
+				margin: 0 auto;
+			}
+		}
+
+
+		.about-header-divider {
+			@extend .about-divider;
+
+			margin: 14px 0;
+			width: 25%;
+			background-color: $color-app-text-dark;
+		}
+
+		.appbutton-container {
+			display: block;
+			margin: 4vw 0;
+
+			.app-button {
+				@extend .app-button-light;
+			}
+		}
+	}
+
+
+
+
+	/* About Profile Photo */
+	.about-profilePhoto-container {
+		display: flex;
+		width: 100%;
+		@extend .about-spacing;
+
+		.about-profilePhoto-inner {
+			position: relative;
+			margin: 0 auto;
+			padding: 4% 0 2%;
+
+			img {
+				height: 240px;
+			}
+		}		
+	}
+
+
+
+
+	/* About SocialMedia */
+	.socialmedia-container {
+		margin-top: 20px;
+	}
+
+
+
+
+	/* About Bio */
+	.about-profileBio-container {
+		@extend .about-spacing;
+
+		.about-profileBio-inner {
+
+			h1 {
+				font-family: 'Din-Bold', helvetica, sans-serif;
+				font-size: 1.6rem;
+				text-transform: uppercase;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+
+			p {
+				@extend .dropcap;
+			}
+		}
+	}
+
+
+
+
+	/* About Skillset */
+	.about-skillset-container {
+		@extend .about-spacing;
+
+		.about-skillset-inner {
+
+			.about-section-content {
+    			display: inline-block;
+			    width: 100%;
+				margin: 0;
+
+				h2 {
+					font-family: 'Din-Black';
+					display: inline-block;
+					text-transform: uppercase;
+					background-color: $color-app-text-dark;
+					color: $color-app-text-light;
+					padding: 5px 10px;
+				}
+
+
+				.about-subsection {
+					display: block;
+					clear: both;
+					padding-bottom: 30px;
+					background-color: $color-about-subsection;
+					padding: 20px;
+					margin-bottom: 15px;
+
+					h3 {
+						font-family: 'Din-Black';
+						display: inline-block;
+						text-transform: uppercase;
+						padding-bottom: 10px;
+					}
+
+					.about-section-skillset-list {
+						display: flex;
+						flex-direction: row;
+
+						ul {
+							@extend .col-xs-12;
+							@extend .col-sm-6;
+							padding-left: 0;
+							
+							li {
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+	/* About Experince */
+	.about-experience-container {
+		@extend .about-spacing;
+
+		.about-experience-inner {
+
+			.about-section-content {
+    			display: inline-block;
+			    width: 100%;
+
+				h2 {
+					font-family: 'Din-Black';
+					display: inline-block;
+					text-transform: uppercase;
+					background-color: $color-app-text-dark;
+					color: $color-app-text-light;
+					padding: 5px 10px;
+				}
+
+
+				.about-subsection {
+					display: block;
+					clear: both;
+					// padding-bottom: 40px;
+					background-color: $color-about-subsection;
+					padding: 20px;
+					margin-bottom: 15px; 
+
+					h3 {
+						font-family: 'Din-Black';
+						display: inline-block;
+						text-transform: uppercase;
+						padding-bottom: 10px;
+					}
+
+					.about-experience-role {
+						text-transform: uppercase;
+						padding: 10px 0;
+
+						span {
+							font-family: 'Din-Light', Helvetica, sans-serif;
+
+							color: #999;
+						}
+					}
+
+					p {
+						max-width: 60%;
+					}
+
+					.about-section-experience-roles {
+						padding: 20px 0;
+
+						ul {
+							padding-left: 15px;
+
+							li {
+								padding-top: 10px;
+								padding-left: 0.7em;
+								text-indent:-0.7em;
+
+								&:before {
+									float: left;
+									content: "-";
+									padding-right: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* About Experince */
+	.about-clients-container {
+		@extend .about-spacing;
+
+		.about-clients-inner {
+
+			.about-client-header {
+
+				h2 {
+					font-family: 'Din-Black';
+					display: inline-block;
+					text-transform: uppercase;
+					background-color: $color-app-text-dark;
+					color: $color-app-text-light;
+					padding: 5px 10px;
+				}
+			}
+
+			.client-list {
+				@extend .row;
+
+				.client-item {
+					@extend .col-xs-4;
+					@extend .col-md-3;
+					padding-top: 40px;
+					padding-bottom: 120px;
+
+					.client-img {
+						position: relative;
+
+						img {
+							@extend .img-responsive;
+							// @extend .center-content;
+							width: 120px;
+							height: 60px;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* .get-in-touch {
+		max-width: 140px;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 4vw 0 10px;
+		font-family: 'Din-Black';
+		padding: 5px 10px;		
+		background-color: $color-app-text-dark;
+		color: $color-app-text-light;
+	} */
+}
