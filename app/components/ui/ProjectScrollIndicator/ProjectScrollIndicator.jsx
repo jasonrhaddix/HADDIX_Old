@@ -97,8 +97,13 @@ class ProjectScrollIndicator extends React.Component {
 
 	checkScrollPosition( scrollHeight, scrollPos )
 	{	
-		const delta = scrollHeight / this.refs.scrollIndInner.offsetHeight
-		document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")
+		try{
+    		const delta = scrollHeight / this.refs.scrollIndInner.offsetHeight
+			document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")
+    	} catch(err){
+    		console.warn("Cannot get scroll-container: ProjectScrollIndicator.jsx")
+    	}
+
 		
 		this.checkProjectIndPosition( scrollHeight, scrollPos )
 	}

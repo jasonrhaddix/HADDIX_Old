@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import A from './action_types'
 
 
@@ -45,5 +46,6 @@ export default combineReducers({
     scrollProject: setActiveProjectScroll,
     scrollPos: setScrollPosition,
     scrollHeight: setScrollHeight,
+    form: formReducer,
     // viewProject: viewProject,
 })

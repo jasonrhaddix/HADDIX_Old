@@ -49,7 +49,7 @@ exports.devServer = ({ host, port } = {}) => ({
 		stats: 'errors-only',
 		host,
 		port,
-		historyApiFallback: true,
+		// historyApiFallback: true,
 		overlay: {
 			errors: true,
 			warnings: true,

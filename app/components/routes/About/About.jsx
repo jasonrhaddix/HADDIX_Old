@@ -1,5 +1,4 @@
 import React from 'react'
-import DocumentTitle from 'react-document-title'
 
 import About from '../../ui/About/About.jsx'
 	
