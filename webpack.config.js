@@ -17,7 +17,7 @@ const config_exports = require("./config/webpack/config_exports");
 const config_Common = webpack_merge(
 	{
 		entry: {
-			app: PATHS.app,
+			app: ['babel-polyfill', PATHS.app],
 		},
 		output: {
 			path: PATHS.build,

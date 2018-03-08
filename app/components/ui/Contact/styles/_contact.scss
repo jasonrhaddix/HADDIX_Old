@@ -1,10 +1,11 @@
 .contact-wrapper {
-	@extend .container;
 	
 	.contact-container {
+		@extend .container;
 		background-color: $color-white;
 		color: $color-app-text-dark;
 		margin-top: 120px;
+		margin-bottom: 50px;
 
 		.contact-inner {
 			@extend .row;
@@ -25,25 +26,31 @@
 			}
 
 			.contact-form {
-				/*  */
-
+				
 				& > div {
 					padding: 20px 0;
 				}
 
-				.contact-text-name {
+				.form-textfield-fname-container {
 					@extend .col-xs-12;
 					@extend .col-sm-6;
 				}
 
-				.contact-text-email {
+				.form-textfield-lname-container {
 					@extend .col-xs-12;
 					@extend .col-sm-6;
 				}
 
-				.contact-text-message {
+				.form-textfield-email-container {
 					@extend .col-xs-12;
-					padding-bottom: 50px;
+				}
+
+				.form-textfield-message-container {
+					@extend .col-xs-12;
+				}
+
+				.form-submit-btn {
+					/*  */
 				}
 			}
 		}
@@ -53,10 +60,10 @@
 
 
 /* Google Maps Styling */
-// a[href^="http://maps.google.com/maps"]{display:none !important}
-// a[href^="https://maps.google.com/maps"]{display:none !important}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
 
-/* #iw-container {
+#iw-container {
     padding: 5px 13px;
 }
 
@@ -65,12 +72,10 @@
         font-size: 1.8rem;
         white-space: nowrap;
         line-height: 18px;
-        // padding-left: 40px;
     }
 
     .p-t-sm {
         padding-top: 5px;
-        // margin-right: 10px;
     }
 
 
@@ -110,4 +115,3 @@
 .gmnoprint div {
     // background:none !important;
 }
- */

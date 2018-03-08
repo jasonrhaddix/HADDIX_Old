@@ -75,7 +75,11 @@ class App extends React.Component
     componentDidMount()
     {
 		window.addEventListener('resize', ::this.handleResize)
-    	document.getElementById("scroll-container").firstChild.addEventListener("scroll", ::this.setScrollPos)
+    	try{
+    		document.getElementById("scroll-container").firstChild.addEventListener("scroll", ::this.setScrollPos)
+    	} catch(err){
+    		console.warn("Cannot get scroll-container: App.jsx")
+    	}
     }
 
 
