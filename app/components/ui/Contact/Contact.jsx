@@ -4,6 +4,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ContactForm from './components/ContactForm.jsx'
 import GoogleMaps from '../GoogleMaps/GoogleMaps.jsx'
 
+import { reduxForm, reset } from 'redux-form';
+
 
 
 class Contact extends React.Component {
@@ -13,15 +15,21 @@ class Contact extends React.Component {
 		super(props)
 
 		this.state = {
-			formSent: false, 
-			email: ""
+			formSent: false,
+			isSubmitting: false, 
+			// responseCode: null,
+			responseMsg: ""
 		}
+
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
 
 
-	handleSubmit(e) {
-
+	handleSubmit(e)
+	{	
+		this.setState({ isSubmitting: true })
+		
 		fetch("./send-mail.php", {
 			method: "POST",
 			headers: {
@@ -29,15 +37,41 @@ class Contact extends React.Component {
 				'content-type': 'application/json; charset=utf-8'
 			},
 			body: JSON.stringify({
-				firstName: "test fname",
-				lastName: "test lname",
-				email: "skippyjone@jonestesttest.com",
-				message: "WTF have you done lately?"
+				firstName: e.firstName,
+				lastName: e.lastName,
+				email: e.email,
+				message: e.message
 			}),
 			// cors: 'no-cors'
 		})
-		.then( (response) => { 
-			console.log(response, "woop")
+		.then( (response) => {
+			console.log(response.status, "done!")
+
+			switch(response.status)
+			{
+				case 200 :
+					/* */
+					break;
+
+				case 403 :
+					/* */
+					break;
+
+				case 404 :
+					/* */
+					break;
+
+				case 500 :
+					/* */
+					break;
+
+				default :
+					/* */
+					break;
+			}
+
+			this.setState({ isSubmitting: false })
+			appStore.dispatch( reset('ReduxContactForm') )
 		});
 
 	}
@@ -51,7 +85,7 @@ class Contact extends React.Component {
 					<div className="contact-inner">
 						<h1>Drop me a line</h1>
 						<MuiThemeProvider>
-							<ContactForm onSubmit={this.handleSubmit} />
+							<ContactForm onSubmit={this.handleSubmit} isSubmitting={this.state.isSubmitting} />
 						</MuiThemeProvider>
 					</div>
 					<GoogleMaps />
@@ -63,4 +97,5 @@ class Contact extends React.Component {
 
 
 
+// export default reduxForm({form:'ReduxContactForm'})(Contact)
 export default Contact
