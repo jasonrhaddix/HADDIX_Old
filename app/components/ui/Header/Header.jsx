@@ -20,13 +20,15 @@ class Header extends React.Component {
 		}
 
 		this.setHeaderState = this.setHeaderState.bind(this)
+		this.setNewPath = this.setNewPath.bind(this)
 	}
 
 
 	componentWillMount()
 	{
 		this.setHeaderState()
-		this.setState({ currentPath : this.props.currentPath })
+		this.setNewPath(this.props)
+		// this.setState({ currentPath : this.props.currentPath })
 
 		this.props.history.listen(() => {
 			this.setHeaderState()
@@ -36,19 +38,23 @@ class Header extends React.Component {
 
 	componentWillReceiveProps(newProps)
 	{
-		if(newProps.currentPath)
-		{
-			var path = newProps.currentPath
-			var letter = path.split('')[0]
+		this.setNewPath(newProps)	
+	}
 
-			var newPath = path.replace(letter, function (g) { return g.toUpperCase(); });
-		
+
+
+
+	setNewPath(props)
+	{
+		if(props.currentPath)
+		{
+			var path = props.currentPath
+			var newPath = path.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+			
 			this.setState({currentPath: newPath})
 		} else {
 			this.setState({currentPath: ""})
-		}
-
-		
+		}	
 	}
 
 
