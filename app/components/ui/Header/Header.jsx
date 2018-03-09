@@ -28,8 +28,7 @@ class Header extends React.Component {
 	{
 		this.setHeaderState()
 		this.setNewPath(this.props)
-		// this.setState({ currentPath : this.props.currentPath })
-
+		
 		this.props.history.listen(() => {
 			this.setHeaderState()
 		});
@@ -82,7 +81,7 @@ class Header extends React.Component {
 	render()
 	{
 		return (
-			<DocumentTitle title={`HADDIX | ${this.state.currentPath}`} className="home-container">
+			<DocumentTitle title={`HADDIX ${(this.state.currentPath !== "") ? "|" : ""} ${this.state.currentPath}`} className="home-container">
 				<header className={`header-container ${this.state.showHeader}`} >
 					<div className="app-logo-wrapper">
 						<div className="app-logo">
