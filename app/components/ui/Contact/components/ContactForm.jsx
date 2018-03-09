@@ -3,7 +3,7 @@ import { Field, reset, reduxForm } from 'redux-form'
 import TextField from 'material-ui/TextField'
 import validate from '../js/validate'
 import asyncValidate from '../js/asyncValidate'
-// import AppButton from '../../AppButton/AppButton.jsx'
+import AppButton from '../../AppButton/AppButton.jsx'
 // import Button from 'material-ui/Button'
 
 
@@ -78,7 +78,8 @@ const ContactForm = props => {
 				</div>
 
 				<div className="form-submit-btn">
-					<button type="submit" disabled={submitting}>Submit</button>
+					<button type="submit" disabled={submitting}><AppButton buttonText="Submit" /></button>
+		      		<div className="form-response-msg"><p>{props.responseMsg}</p></div>
 		      	</div>
 			</form>
 			<div className={`form-submit-overlay ${props.isSubmitting}`}>

@@ -17,18 +17,19 @@ class Contact extends React.Component {
 		this.state = {
 			formSent: false,
 			isSubmitting: false, 
-			// responseCode: null,
 			responseMsg: ""
 		}
 
 		this.handleSubmit = this.handleSubmit.bind(this)
+		appStore.dispatch( reset('ReduxContactForm') )
 	}
 
 
 
 	handleSubmit(e)
 	{	
-		this.setState({ isSubmitting: true })
+		let msg = ""
+		this.setState({ isSubmitting: true, responseMsg: msg })
 		
 		fetch("./send-mail.php", {
 			method: "POST",
@@ -50,27 +51,31 @@ class Contact extends React.Component {
 			switch(response.status)
 			{
 				case 200 :
-					/* */
+					msg = "Email sent! Thank you."
+					break;
+
+				case 400 :
+					msg = "[400] Somehow, one of the required fields is empty"
 					break;
 
 				case 403 :
-					/* */
+					msg = "[403] Bad request : method is not POST."
 					break;
 
 				case 404 :
-					/* */
+					msg = "[404] Cannot find 'send-mail.php'."
 					break;
 
 				case 500 :
-					/* */
+					msg = "This is embarassing. Something went wrong :/"
 					break;
 
 				default :
-					/* */
+					msg = "This is embarassing. Something went wrong :/"
 					break;
 			}
 
-			this.setState({ isSubmitting: false })
+			this.setState({ isSubmitting: false, responseMsg: msg })
 			appStore.dispatch( reset('ReduxContactForm') )
 		});
 
@@ -85,7 +90,7 @@ class Contact extends React.Component {
 					<div className="contact-inner">
 						<h1>Drop me a line</h1>
 						<MuiThemeProvider>
-							<ContactForm onSubmit={this.handleSubmit} isSubmitting={this.state.isSubmitting} />
+							<ContactForm onSubmit={this.handleSubmit} isSubmitting={this.state.isSubmitting} responseMsg={this.state.responseMsg} />
 						</MuiThemeProvider>
 					</div>
 					<GoogleMaps />
