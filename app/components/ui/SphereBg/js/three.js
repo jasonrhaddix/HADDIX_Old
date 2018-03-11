@@ -10,7 +10,9 @@ var SCREEN_WIDTH = window.innerWidth;
 var SCREEN_HEIGHT = window.innerHeight;
 const MESH_SPHERE = require('../assets/sphere_geom.json3d');
 const MESH_PARTICLE = require('../assets/point.png');
-
+var _screenWidth;
+var _screenSize;
+var camera_zPos;
 
 var three_Camera, three_Scene, three_Renderer, three_RendererDOM;
 var three_JSONLoader;
@@ -25,15 +27,15 @@ var meshSphere_1_Solid_Mat;
 var meshSphere_1_Solid_Faces;
 var meshSphere_1_Solid_Vertices;
 var meshSphere_1_Wire;                     // meshPlane
-var meshSphere_1_Solid_Scale = 16;
-var meshSphere_1_Wire_Scale = 16.1;
+var meshSphere_1_Solid_Scale = 17;
+var meshSphere_1_Wire_Scale = 17.1;
 
 var meshSphere_2_Wire;                     // meshPlane
 var meshSphere_2_Wire_Mat;
 var meshSphere_2_Wire_Vertices;
 var meshSphere_2_Particles;                // meshPlane2Inner
 var meshSphere_2_Particles_PointGeom;      // pointGeometry
-var meshSphere_2_Wire_Scale = 25;
+var meshSphere_2_Wire_Scale = 20;
 
 var meshSphere_3_Wire;                     // meshPlane
 var meshSphere_3_Wire_Vertices;
@@ -53,6 +55,8 @@ initThreeJS();
 
 function initThreeJS()
 {
+	medieQueries_Init();
+
 	initThreeJS_World();
 	iniThreeJS_Geometry();
 	// initThreeJS_Controls();
@@ -77,8 +81,6 @@ function initThreeJS()
 
 
 
-
-
 function initThreeJS_Display()
 {
     // document.getElementById('three-container').appendChild( three_Renderer.domElement );
@@ -97,13 +99,11 @@ function initThreeJS_World()
 	// Scene
 	three_Scene = new THREE.Scene();
 
-
-
 	// Camera
 	three_Camera = new THREE.PerspectiveCamera( 40, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 1000);
-	three_Camera.position.x = -10;
-	three_Camera.position.y = 0;
-	three_Camera.position.z = 60;
+	three_Camera.position.x = 0;
+	three_Camera.position.y = -2;
+	three_Camera.position.z = camera_zPos;
 	three_Camera.fov = 2 * Math.atan( (SCREEN_WIDTH / three_Camera.aspect) /  (2 * 1100) ) * (180 / Math.PI);
 	three_Camera.updateProjectionMatrix();
 
@@ -241,7 +241,7 @@ function iniThreeJS_Geometry()
         	++i
         }
 
-        var meshSphere_1_Wire_Mat = new THREE.MeshLambertMaterial({ color:0xda5200, vertexColors:THREE.FaceColors, wireframe:true })
+        var meshSphere_1_Wire_Mat = new THREE.MeshLambertMaterial({ color:0xDA5200, vertexColors:THREE.FaceColors, wireframe:true })
         meshSphere_1_Wire = new THREE.Mesh( geometry, meshSphere_1_Wire_Mat);
         meshSphere_1_Wire.scale.set( meshSphere_1_Wire_Scale, meshSphere_1_Wire_Scale, meshSphere_1_Wire_Scale );
 		three_Scene.add( meshSphere_1_Wire );
@@ -312,17 +312,17 @@ function iniThreeJS_Geometry()
 
 
 	// meshSphere_3
-	three_JSONLoader.load( MESH_SPHERE, function( geometry )
+	/*three_JSONLoader.load( MESH_SPHERE, function( geometry )
 	{		
 		var meshSphere_3_Wire_Mat = new THREE.MeshLambertMaterial({ color:0x1c006b, vertexColors:THREE.VertexColors, wireframe:true, opacity: 1 });
 		meshSphere_3_Wire = new THREE.Mesh( geometry, meshSphere_3_Wire_Mat );
 
 		meshSphere_3_Wire.scale.set( 100, 100, 100 );
-		// three_Scene.add( meshSphere_3_Wire );
+		three_Scene.add( meshSphere_3_Wire );
 		
 		var meshSphere_3_Wire_Vertices = geometry.vertices;
 		
-		/*var textureLoader = new THREE.TextureLoader();
+		var textureLoader = new THREE.TextureLoader();
 		textureLoader.load( MESH_PARTICLE, function( texture )
 		{
 			var sprite = event.content;
@@ -350,11 +350,11 @@ function iniThreeJS_Geometry()
 			meshSphere_3_Particles.sortParticles = true;
 			
 			three_Scene.add( meshSphere_3_Particles );
-		})*/
+		})
 
 		meshSphere_3_Wire.geometry.computeVertexNormals();
 		meshSphere_3_Wire.geometry.computeFaceNormals();
-	});
+	});*/
 }
 
 
@@ -392,6 +392,8 @@ function initThreeJS_Render( time )
     try {
 	    meshSphere_1_Solid.rotation.set( x, y, z ); 
 	    meshSphere_1_Wire.rotation.set( x, y, z ); 
+
+	     // meshSphere_1_Wire.scale.set( 17.1 + (motionRate*10), 17.1 + (motionRate*10), 17.1 + (motionRate*10))
 	    
 	    meshSphere_1_Solid.geometry.verticesNeedUpdate = true;
 	    meshSphere_1_Solid.geometry.elementsNeedUpdate = true;
@@ -440,6 +442,11 @@ function initThreeJS_Render( time )
 
 function onWindowResize()
 {
+	medieQueries_Init();
+
+
+	three_Camera.position.set(0 ,-2, camera_zPos);
+
     SCREEN_WIDTH = window.innerWidth;
     SCREEN_HEIGHT = window.innerHeight;
 
@@ -581,6 +588,74 @@ function twitch_Inner()
     setTimeout( twitch_Inner, 20000 );    
    
 }
+
+
+
+
+
+
+
+
+function medieQueries_Init()
+{
+	_screenWidth = window.innerWidth;
+
+	var mqls = [
+				window.matchMedia( 'screen and (min-width: 768px) and (max-width: 768px)' ),  // ipad-portrait
+			    window.matchMedia( 'screen and (max-width: 379px)' ),                         // xxs
+			    window.matchMedia( 'screen and (min-width: 380px) and (max-width: 579px)' ),  // xs
+			    window.matchMedia( 'screen and (min-width: 580px) and (max-width: 767px)' ),  // sm
+			    window.matchMedia( 'screen and (min-width: 768px) and (max-width: 990px)' ),  // md
+			    window.matchMedia( 'screen and (min-width: 991px) and (max-width: 1199px)' ), // lg
+			    window.matchMedia( 'screen and (min-width: 1200px)' )                       // xl
+				]
+
+
+	for ( var i = 0; i < mqls.length; ++i ){
+	    mediaqueryresponse( mqls[i] );
+	}
+
+
+	function mediaqueryresponse( mql ){
+	    if ( mqls[0].matches ){
+	    	_screenSize = 'ipad-portrait';
+	    }
+	    else if ( mqls[1].matches ){
+	    	_screenSize = 'xxs';
+	    	camera_zPos = 100;
+	    }
+	    else if ( mqls[2].matches ){  
+	    	_screenSize = 'xs';
+	    	camera_zPos = 100;
+	    }
+	    else if ( mqls[3].matches ){
+	    	_screenSize = 'sm';
+	    	camera_zPos = 80;
+	    }
+	    else if ( mqls[4].matches ){ 
+	    	_screenSize = 'md';
+	    	camera_zPos = 70;
+	    }
+	    else if ( mqls[5].matches ){ 
+	    	_screenSize = 'lg';
+	    	camera_zPos = 70;
+	    }
+	    else if ( mqls[6].matches ){ 
+	    	_screenSize = 'xl';
+	    	camera_zPos = 70;
+	    }
+	    else{
+	    	console.log( "WINDOW RESIZE | Media Queries | No size found")
+	    }
+
+	}
+
+}
+
+
+
+
+
 
 
 
