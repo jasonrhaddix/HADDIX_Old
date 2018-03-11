@@ -36,6 +36,7 @@
 		}
 
 		.breadcrumb-divider {
+			@extend .desktop-only;
 			background-color: $color-app-text-light;
 			margin: 5px 10px;
 			width: 1px;
@@ -46,6 +47,7 @@
 		}
 
 		.breadcrumb-title {
+			@extend .desktop-only;
 			margin: 6px 0;
 			text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 

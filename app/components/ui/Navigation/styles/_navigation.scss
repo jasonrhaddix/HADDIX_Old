@@ -26,6 +26,10 @@
 	nav {
 		@extend .center-content;
 
+		@include respond-to( xxs ) { transform: translate(-50%, -70%); }
+		@include respond-to( xs ) { transform: translate(-50%, -70%); }
+		@include respond-to( sm ) { transform: translate(-50%, -70%); }
+
 		ul {
 			text-transform: uppercase;
 			text-align: center;
@@ -33,8 +37,7 @@
 			li {
 				font-family: 'DIN-Bold', Helvetica, sans-serif;
 				margin: 8vh 0;
-				font-size: 4rem;
-
+				
 				a {
 					position: relative;
 					
@@ -46,6 +49,12 @@
 							color: $color-app-text-light;
 							transition: color 0.3s ease-in-out;
 							font-weight: 100;
+							font-size: 4rem;
+
+							@include respond-to( xxs ) { font-size: 2rem; }
+							@include respond-to( xs ) { font-size: 3rem; }
+							@include respond-to( sm ) { font-size: 3.6rem; }
+
 						}
 					}
 

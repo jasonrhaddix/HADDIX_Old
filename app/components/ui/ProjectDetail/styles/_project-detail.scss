@@ -66,6 +66,10 @@
 					font-family: 'DIN-Bold', helvetica, sans-serif;
 					text-transform: uppercase;
 					font-size: 2rem;
+
+					@include respond-to( xxs ) { font-size: 1.3rem; }
+					@include respond-to( xs ) { font-size: 1.3rem; }
+					@include respond-to( sm ) { font-size: 1.3rem; }
 				}
 
 				h1 {
@@ -73,6 +77,10 @@
 					font-family: 'DIN-Black', helvetica, sans-serif;
 					text-transform: uppercase;
 					font-size: 6rem;
+
+					@include respond-to( xxs ) { font-size: 3.4rem; }
+					@include respond-to( xs ) { font-size: 3.4rem; }
+					@include respond-to( sm ) { font-size: 3.4rem; }
 				}
 			}
 		}
@@ -153,7 +161,12 @@
 		h3 {
 			font-family: 'DIN-RegularItalic', helvetica, sans-serif;
 			font-size: 1.6rem;
+			line-height: 1.6rem;
 			text-align: center;
+
+			@include respond-to( xxs ) { font-size: 1.3rem; }
+			@include respond-to( xs ) { font-size: 1.3rem; }
+			@include respond-to( sm ) { font-size: 1.3rem; }
 		}
 	}	
 

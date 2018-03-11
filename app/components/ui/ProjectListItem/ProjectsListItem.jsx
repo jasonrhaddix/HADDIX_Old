@@ -18,7 +18,7 @@ class ProjectListItem extends React.Component
         super(props)
 
         this.state = {
-
+            /* */
         }
     }
 
@@ -30,14 +30,16 @@ class ProjectListItem extends React.Component
         return (
             <div id={this.props.anchor} className='project-container col-sm-12 col-lg-12'>
                 <div className={`project-container-inner ${(this.props.direction)}`}>
-                    <VisibilitySensor>
-                        <Link to={`${this.props.path}/${this.props.anchor}`}>
-                            <div scrollref={this.props.scrollref} className='project-background'>
-                                <div><img src={img_src} /></div>
-                                <video></video>
-                            </div>
-                        </Link>
-                    </VisibilitySensor>
+                    <div className="project-image">
+                        <VisibilitySensor>
+                            <Link to={`${this.props.path}/${this.props.anchor}`}>
+                                <div scrollref={this.props.scrollref} className='project-background'>
+                                    <img src={img_src} />
+                                    {/*<video></video>*/}
+                                </div>
+                            </Link>
+                        </VisibilitySensor>
+                    </div>
                     <div className='project-info'>
                         <img src={require('../../../assets/images/app/lowpoly.svg')} />
                         <div className='project-title'>

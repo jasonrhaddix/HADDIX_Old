@@ -1,4 +1,5 @@
 .project-scroll-ind-container {
+	@extend .desktop-only;
 	position: fixed;
 	display: block;
 	top: 50%;

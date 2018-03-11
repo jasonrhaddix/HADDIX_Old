@@ -21,6 +21,7 @@
     "history": "^4.7.2",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
+    "radium": "^0.22.1",
     "react": "^16.2.0",
     "react-browser-detection": "^1.1.0",
     "react-codemirror2": "^4.0.0",
