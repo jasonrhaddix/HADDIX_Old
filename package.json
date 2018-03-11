@@ -22,6 +22,7 @@
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-browser-detection": "^1.1.0",
     "react-codemirror2": "^4.0.0",
     "react-custom-scrollbars": "^4.2.1",
     "react-document-title": "^2.0.3",

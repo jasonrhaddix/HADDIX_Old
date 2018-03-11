@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { spring, AnimatedSwitch } from 'react-router-transition'
+import BrowserDetection from 'react-browser-detection';
 
 import { setScrollPosition, setScrollHeight } from './actions'
 import Routes from './Router.jsx'
@@ -127,16 +128,39 @@ class App extends React.Component
 			setScrollPosition(this.scrollPos)
 		)
 
-	   return (
-		 	<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
-		 			<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
-					<Navigation links={this.props.data.navigation}/>
-        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
-					<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
-					<div className="routes-container">
-						{Routes}
+		const browserHandler = {
+			chrome: () => {
+				return (
+					<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
+			 			<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
+						<Navigation links={this.props.data.navigation}/>
+	        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
+						<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
+						<div className="routes-container">
+							{Routes}
+						</div>
+					</Scrollbars>
+				)
+			},
+			default: (browser) => {
+				return (
+					<div id="scroll-container">
+						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
+						<Navigation links={this.props.data.navigation}/>
+	        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
+						<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
+						<div className="routes-container">
+							{Routes}
+						</div>
 					</div>
-			</Scrollbars>
+				)
+			},
+		};
+
+		return (
+			<BrowserDetection>
+				{browserHandler}
+			</BrowserDetection>
 		)
 	}
 }
