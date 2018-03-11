@@ -7,12 +7,6 @@ import AppButton from '../../ui/AppButton/AppButton.jsx'
 import { toggleNav } from '../../../actions'
 
 
-/*const mapStateToProps = (state) => {
-
-    return {
-        openNav: state.openNav
-    }
-}*/
 
 
 

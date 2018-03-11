@@ -35,11 +35,11 @@ class Header extends React.Component {
 	}
 
 
+
 	componentWillReceiveProps(newProps)
 	{
 		this.setNewPath(newProps)	
 	}
-
 
 
 
@@ -48,15 +48,15 @@ class Header extends React.Component {
 		if(props.currentPath)
 		{
 			var path = props.currentPath
-			var newPath = path.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+			var newPath = path.replace(/\w\S*/g, function(str){
+					return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase()
+			});
 			
 			this.setState({currentPath: newPath})
 		} else {
 			this.setState({currentPath: ""})
 		}	
 	}
-
-
 
 
 
@@ -70,12 +70,14 @@ class Header extends React.Component {
 	}
 
 
+
 	setHeaderState()
 	{
 		var path = this.props.history.location.pathname
 		var headerState = ( path !== "/" ) ?  true : false
 		this.setState({ showHeader: headerState })
 	}
+
 
 
 	render()

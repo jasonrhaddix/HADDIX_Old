@@ -39,6 +39,7 @@ class ProjectsList extends React.Component
 
             const direction = (i % 2 == 0) ? "right" : "left"
             
+            console.log(data.mainImg)
             return (
                 <ProjectListItem 
                     key={uuid.v4()}
@@ -49,8 +50,9 @@ class ProjectsList extends React.Component
                     subtitle={data.subtitle}
                     client={data.client}
                     desc={data.desc}
+                    mainImage={data.mainImg}
                     projectFolder={data.anchor}
-                    images={data.images} 
+                    imagesArr={data.images} 
                     direction={direction}
                     onClickEvent={this.openProject}
                 />
