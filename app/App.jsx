@@ -76,6 +76,7 @@ class App extends React.Component
     componentDidMount()
     {
 		window.addEventListener('resize', ::this.handleResize)
+
     	try{
     		document.getElementById("scroll-container").firstChild.addEventListener("scroll", ::this.setScrollPos)
     	} catch(err){
@@ -132,7 +133,7 @@ class App extends React.Component
 			chrome: () => {
 				return (
 					<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
-			 			<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
+						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
 						<Navigation links={this.props.data.navigation}/>
 	        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
 						<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
@@ -158,7 +159,7 @@ class App extends React.Component
 		};
 
 		return (
-			<BrowserDetection>
+			<BrowserDetection once={false}>
 				{browserHandler}
 			</BrowserDetection>
 		)

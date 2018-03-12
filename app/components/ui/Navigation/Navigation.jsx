@@ -38,7 +38,6 @@ class Navigation extends React.Component {
                     <li key={uuid.v4()}>
                         <Link onClick={this.closeNav} to={section.path}>
                             <div className="nav-button"><h1>{section.title}</h1></div>
-                            <div className="nav-button-poly"><h1>{section.title}</h1></div>
                         </Link>
                     </li>
                 )
@@ -70,7 +69,7 @@ class Navigation extends React.Component {
 
         const transitionStyles_Poly = {
           entering: { clipPath: 'polygon(0% 0%, 110% 0%, 0% 0%, 0% 50%, 0% 100%)' },
-          entered:  { clipPath: 'polygon(0% 0%, 110% 0%, 75% 80%, 10% 90%, 0% 100%)' },
+          entered:  { clipPath: 'polygon(0% 0%, 110% 0%, 90% 80%, 10% 90%, 0% 100%)' },
         }
 
         const defaultStyle_Nav = {

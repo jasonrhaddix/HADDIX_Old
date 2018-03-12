@@ -37,7 +37,7 @@ class IntroRoute extends React.Component
             <div className="intro-container">
                 <SphereBg />
                 <article className="title-container">
-                    <Logo />
+                    <Logo animate={true}/>
                     <div className="subtitle">
                         <p>Portfolio for Jason R Haddix</p>
                     </div>

@@ -2,14 +2,18 @@
 	position: relative;
 	display: block;
 	z-index: 750;
-	width: 140px;
-	height: 140px;
+	max-width: 140px;
+	max-height: 140px;
 	margin: 0 auto;
+
 
 	#circle-graph-canvas {
 		width: 140px;
 		height: 140px;
 		transform: rotate(90deg);
+	
+		@include respond-to( xxs ) { width: 100%; height: 100%; transform: scale(1.4) rotate(90deg); }
+		@include respond-to( xs ) { width: 100%; height: 100%; transform: scale(1.2) rotate(90deg); }
 	}
 
 	.circle-graph-text {
@@ -24,10 +28,16 @@
 
 		.percentage {
 			font-size: 1.8rem;
+
+			@include respond-to( xxs ) { font-size: 1.1rem; }
+			@include respond-to( xs ) { font-size: 1.3rem; }
 		}
 
 		.language {
 			font-size: 0.7rem;
+
+			@include respond-to( xxs ) { font-size: 0.4rem; }
+			@include respond-to( xs ) { font-size: 0.6rem; }
 		}
 	}
 }
