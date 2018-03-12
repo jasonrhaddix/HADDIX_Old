@@ -45,25 +45,25 @@ const config_Production = webpack_merge([
 	config_exports.loadFonts({
 		options: {
 			limit: 15000,
-			name: "[name].[ext]",
+			name: "./fonts/[name].[ext]",
 		},
 	}),
 	config_exports.loadImages({
 		options: {
 			limit: 15000,
-			name: "[name].[ext]",
+			name: "./images/[name].[ext]",
 		},
 	}),
 	config_exports.loadSVGs({
 		options: {
 			limit: 15000,
-			name: "[name].[ext]",
+			name: "./svgs/[name].[ext]",
 		},
 	}),
 	config_exports.loadJSON({
 		options: {
 			limit: 15000,
-			name: "[name].[ext]",
+			name: "./sctips/[name].[ext]",
 		},
 	})
 ]);

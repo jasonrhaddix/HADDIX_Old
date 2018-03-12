@@ -26,9 +26,9 @@
 	nav {
 		@extend .center-content;
 
-		@include respond-to( xxs ) { transform: translate(-50%, -70%); }
-		@include respond-to( xs ) { transform: translate(-50%, -70%); }
-		@include respond-to( sm ) { transform: translate(-50%, -70%); }
+		@include respond-to( xxs ) { transform: translate(-50%, -60%); }
+		@include respond-to( xs ) { transform: translate(-50%, -60%); }
+		@include respond-to( sm ) { transform: translate(-50%, -60%); }
 
 		ul {
 			text-transform: uppercase;
@@ -46,8 +46,8 @@
 						display: inline-block;
 
 						h1 {	
-							color: $color-app-text-light;
-							transition: color 0.3s ease-in-out;
+							color: #646468;
+							transition: color 0.1s ease-in-out;
 							font-weight: 100;
 							font-size: 4rem;
 
@@ -58,12 +58,13 @@
 						}
 					}
 
+					/*
 					.nav-button-poly {
 						position: absolute;
 						width: 100%;
 					    top: 7px;
     					left: 0px;
-    					transition: clip-path 0.3s ease-in-out;
+    					transition: clip-path 0.2s ease-in-out;
     					clip-path: polygon(0% 0%, 100% 0%, 0% 0%, 0% 100%);
 					
 						h1 {
@@ -71,18 +72,20 @@
 							font-weight: 900;
 						}	
 					}
+					*/
 
-					/* &:hover {
+					&:hover {
 						.nav-button {
 							h1 {	
-								color: $color-accent-purple;
+								color: $color-app-text-light;
 							}
 						}
+						/* 
 						.nav-button-poly {
-    						clip-path: polygon(0% 20%, 100% 0%, 100% 70%, 0% 30%);
-    						
+    						clip-path: polygon(0% 20%, 100% 0%, 100% 70%, 0% 30%);	
 						}
-					} */
+						*/
+					}
 				}
 			}
 		}

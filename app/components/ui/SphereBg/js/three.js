@@ -12,7 +12,7 @@ const MESH_SPHERE = require('../assets/sphere_geom.json3d');
 const MESH_PARTICLE = require('../assets/point.png');
 var _screenWidth;
 var _screenSize;
-var camera_zPos;
+var camera_zPos = 70;
 
 var three_Camera, three_Scene, three_Renderer, three_RendererDOM;
 var three_JSONLoader;
