@@ -1,12 +1,16 @@
 import React from 'react'
 import PreloaderAni from './js/preloader-threejs.js'
 
+import { animateLogo } from '../../../actions'
+
 
 class Preloader extends React.Component {
 
 	constructor(props)
 	{
 		super(props)
+
+		this.initLogo = this.initLogo.bind(this)
 	}
 
 
@@ -15,9 +19,20 @@ class Preloader extends React.Component {
     }
 
 
+    initLogo()
+    {
+    	// console.log(appStore.getState()["animateLogo"])
+    	appStore.dispatch(
+			animateLogo(true)
+		)
+    }
+
+
 	render()
 	{
 		const percent = Math.floor(this.props.event.progress * 100) + "%"
+
+		if( Math.floor(this.props.event.progress * 100 ) === 100) setTimeout(this.initLogo, 2000)
 		
 		return (
 			<div className={`preloader-container ${(this.props.event.progress === 1) ? "fadeOut" : "" }`}>

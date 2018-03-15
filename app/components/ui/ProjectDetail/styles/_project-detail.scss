@@ -76,6 +76,7 @@
 					position: relative;
 					font-family: 'DIN-Black', helvetica, sans-serif;
 					text-transform: uppercase;
+					padding-right: 40px;
 					font-size: 6rem;
 
 					@include respond-to( xxs ) { font-size: 3.4rem; }

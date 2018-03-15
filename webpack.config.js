@@ -28,11 +28,10 @@ const config_Common = webpack_merge(
 	    title: 'HADDIX',
 	    appMountId: 'app'
   	}),
+  	config_exports.assetPreload(PATHS.app, process.argv[(process.argv.indexOf("--env.target")+1)]),
 	config_exports.loadJSX(PATHS.app),
 	config_exports.lintJSX(PATHS.app),
-	config_exports.modernizr(),
-	config_exports.loadVideo(),
-	config_exports.load3DOjects()
+	config_exports.modernizr()
 );
 
 
@@ -54,6 +53,11 @@ const config_Production = webpack_merge([
 			name: "./images/[name].[ext]",
 		},
 	}),
+	config_exports.loadVideo({
+		options: {
+			name: "./videos/[name].[ext]",
+		},
+	}),
 	config_exports.loadSVGs({
 		options: {
 			limit: 15000,
@@ -61,6 +65,12 @@ const config_Production = webpack_merge([
 		},
 	}),
 	config_exports.loadJSON({
+		options: {
+			limit: 15000,
+			name: "./sctips/[name].[ext]",
+		},
+	}),
+	config_exports.load3DOjects({
 		options: {
 			limit: 15000,
 			name: "./sctips/[name].[ext]",
@@ -78,6 +88,8 @@ const config_development = webpack_merge([
 	config_exports.loadStyles(),
 	config_exports.loadFonts(),
 	config_exports.loadImages(),
+	config_exports.loadVideo(),
+	config_exports.load3DOjects(),
 	config_exports.loadSVGs(),
 	config_exports.loadJSON(),
 ]);

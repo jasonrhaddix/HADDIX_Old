@@ -11,7 +11,8 @@ var RENDERERDOM;
 const SCENE = new THREE.Scene(), 
 		CAM = new THREE.PerspectiveCamera(...[50, w/h, 1, 1000]), 
 		RENDERER = new THREE.WebGLRenderer({
-			antialias: true
+			antialias: true,
+			alpha: true
 		}), 
 		K = 0.75, 
 		S3D = new THREE.Mesh(...[

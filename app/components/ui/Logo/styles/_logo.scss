@@ -19,6 +19,7 @@
 		overflow: hidden;
 	    height: 170px;
 	    padding: 6px 10px 0px 13px;
+		transform: scaleX(0);
 
 	}
 }
@@ -26,7 +27,6 @@
 
 
 .animate {
-	transform: scaleX(0);
 	animation: scale 0.7s forwards;
 	animation-delay: 0.0s;
 	animation-timing-function: cubic-bezier(.87,.02,.52,.98);

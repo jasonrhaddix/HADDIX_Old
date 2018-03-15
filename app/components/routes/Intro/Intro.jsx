@@ -19,6 +19,7 @@ class IntroRoute extends React.Component
         this.state = {
             /* */
         }
+
     }
 
 
@@ -37,7 +38,7 @@ class IntroRoute extends React.Component
             <div className="intro-container">
                 <SphereBg />
                 <article className="title-container">
-                    <Logo animate={true}/>
+                    <Logo animate={this.props.animateLogo}/>
                     <div className="subtitle">
                         <p>Portfolio for Jason R Haddix</p>
                     </div>

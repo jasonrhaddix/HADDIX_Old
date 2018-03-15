@@ -60,6 +60,14 @@ export const setScrollHeight = num => {
 	}
 }
 
+export const animateLogo = bool => {
+	// extend the app functionality here
+	return {
+		type: storeConsts.ANIMATE_LOGO,
+		payload: bool
+	}
+}
+
 
 
 /* redux thunk*/

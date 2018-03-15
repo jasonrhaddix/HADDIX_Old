@@ -5,6 +5,7 @@ const action_constants = {
 	SET_ACTIVE_PROJECT_SCROLL: 'SET_ACTIVE_PROJECT_SCROLL',
 	SET_SCROLL_POS: 'SET_SCROLL_POS',
 	SET_SCROLL_HEIGHT: 'SET_SCROLL_HEIGHT',
+	ANIMATE_LOGO: 'ANIMATE_LOGO',
 }
 
 export default action_constants; 

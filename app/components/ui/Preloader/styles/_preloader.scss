@@ -1,14 +1,15 @@
 .preloader-container {
+  background-color: $color-app-black;
 	position: absolute;
-	background-color: $color-app-black;
 	width: 100vw;
 	height: 100vh;
 	top: 0;
+  overflow: hidden;
 	z-index: 1200;
 
 	.preloader-content {
 		@extend .center-content;
-		transform: translate(-50%, -60%);
+		transform: translate(-50%, -80%);
 
 		.percent {
 			text-align: center;
@@ -18,7 +19,7 @@
 	}
 
 	&.fadeOut {
-		animation: FadeOut 1s ease-in-out 3s forwards;
+		animation: FadeOut 1s ease-in-out 2s forwards;
 	}
 }
 

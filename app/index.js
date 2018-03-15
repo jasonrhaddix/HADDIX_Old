@@ -8,7 +8,7 @@ import AssetLoader from './AssetLoader'
 import configureStore from './store'
 import rootReducer from './store/reducers'
 import initialState from './store/initial_state.json'
-import { addProject, toggleNav, randomGoals } from './actions'
+import { animateLogo } from './actions'
 
 import App from './AppContainer'
 import Preloader from './components/ui/Preloader/Preloader.jsx'
@@ -26,11 +26,11 @@ const appStore = configureStore( setInitialState )
 appStore.subscribe( saveState )
 
 
-/*
+
 appStore.dispatch(
-	toggleNav(false)
+	animateLogo(false)
 )
-*/
+
 
 
 window.appStore = appStore

@@ -13,6 +13,7 @@ body, html {
     -webkit-text-size-adjust: 100%; // Some mobile devices don't scale up text size on device rotation
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004); // Turns on ClearType for Windows machines
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -22,10 +23,7 @@ body, html {
 
 body {  
     background-color: $color-app-background-solid;
-    // background: -webkit-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    // background: -o-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    // background: -moz-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    background: linear-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
+    background: linear-gradient(to right, #040011 0%, #150044 50%, #040011 100%);
     background-repeat: none;
 
     color: $color-app-text-light;
@@ -34,7 +32,6 @@ body {
     letter-spacing: 0.01em;
     margin: 0;
     font-size: 0.9rem;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004); // Turns on ClearType for Windows machines
 
     &.display-scrim {
         overflow: hidden;
@@ -68,7 +65,7 @@ a, button {
  
 p
  {
-    line-height: 1.3em;
+    line-height: 1.4rem;
 }
 
 
@@ -84,16 +81,13 @@ ul, ol {
 }
 
 
-
-/* #app {
+/* 
+#app {
     background-color: $color-app-background-solid;
-    // background: -webkit-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    // background: -o-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
-    // background: -moz-radial-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
     background: linear-gradient(to right, #040011 0%,#150044 50%,#040011 100%);
     background-repeat: none;
-} */
-
+}
+ */
 
 
 

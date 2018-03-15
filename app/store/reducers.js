@@ -33,6 +33,9 @@ export const setScrollPosition = (state=0, action ) =>
 export const setScrollHeight = (state=0, action ) =>
 	( action.type === A.SET_SCROLL_HEIGHT ) ? action.payload : state
 
+export const animateLogo = (state=false, action ) =>
+	( action.type === A.ANIMATE_LOGO ) ? action.payload : state
+
 /*export const viewProject = (state=false, action ) =>
 	( action.type === A.VIEW_PROJECT ) ? action.payload : state*/
 
@@ -46,6 +49,7 @@ export default combineReducers({
     scrollProject: setActiveProjectScroll,
     scrollPos: setScrollPosition,
     scrollHeight: setScrollHeight,
+    animateLogo: animateLogo,
     form: formReducer,
     // viewProject: viewProject,
 })
