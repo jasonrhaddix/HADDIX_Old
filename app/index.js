@@ -4,12 +4,14 @@ import { AppContainer } from 'react-hot-loader'
 import { BrowserRouter, Route }from 'react-router-dom'
 import { Provider } from 'react-redux'
 
+import AssetLoader from './AssetLoader'
 import configureStore from './store'
 import rootReducer from './store/reducers'
 import initialState from './store/initial_state.json'
 import { addProject, toggleNav, randomGoals } from './actions'
 
 import App from './AppContainer'
+import Preloader from './components/ui/Preloader/Preloader.jsx'
 
 
 
@@ -23,6 +25,7 @@ const saveState = () => localStorage['redux-store'] = JSON.stringify( appStore.g
 const appStore = configureStore( setInitialState )
 appStore.subscribe( saveState )
 
+
 /*
 appStore.dispatch(
 	toggleNav(false)
@@ -34,14 +37,24 @@ window.appStore = appStore
 
 
 
-render (
-	<AppContainer>
-		<Provider store={appStore}>
-			<BrowserRouter>
-				<App data={appData}/>
-			</BrowserRouter>
-		</Provider>
-	</AppContainer>,
+AssetLoader.load(( event )=> {
+    
+    render(
+		<Preloader event={event}/>,
+		document.getElementById( 'preloader' )
+	)
 
-	document.getElementById( 'app' )
-)
+}).then(()=> {
+
+    render (
+		<AppContainer>
+			<Provider store={appStore}>
+				<BrowserRouter>
+					<App data={appData}/>
+				</BrowserRouter>
+			</Provider>
+		</AppContainer>,
+
+		document.getElementById( 'app' )
+	)
+});

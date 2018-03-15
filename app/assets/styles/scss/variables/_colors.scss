@@ -8,7 +8,7 @@ $color-white: #FFF;
 $color-white-alpha: rgba(255, 255, 255, 0.75);
 $color-black: #000;
 $color-app-white: #EFEFEF;
-$color-app-black: #141418;
+$color-app-black: #040408;
 $color-app-grey-dark: #242428;
 $color-app-black-alpha: rgba( 0, 0, 0, 0.75 );
 
@@ -18,7 +18,7 @@ $color-accent-purple-alpha: rgba( 55, 15, 174, 0.5 );
 $color-accent-orange: #ff4f00;
 
 // Background Colors
-$color-background-solid: #150044;
+$color-background-solid: $color-app-black;
 $color-background-gradient-outter: #040011;
 $color-background-gradient-inner: #150044;
 
