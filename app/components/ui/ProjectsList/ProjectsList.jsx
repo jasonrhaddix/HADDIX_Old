@@ -39,7 +39,6 @@ class ProjectsList extends React.Component
 
             const direction = (i % 2 == 0) ? "right" : "left"
             
-            console.log(data.mainImg)
             return (
                 <ProjectListItem 
                     key={uuid.v4()}
