@@ -14,6 +14,8 @@
 
 		.project-image {
 			position: relative;
+			top: 70px;
+			opacity: 0;
 			
 			.project-background {
 
@@ -35,6 +37,8 @@
 			height: 350px;
 			width: 400px;
 			overflow: hidden;
+			bottom: -90px;
+			opacity: 0;
 
 			@include respond-to( xxs ) { position: relative; width: 100%; max-height: 250px; }
 			@include respond-to( xs ) { position: relative; width: 100%; max-height: 250px; }
@@ -46,10 +50,10 @@
 				margin: -10px 0 0 -10px;
 				height: 105%;
 				right: 190px;
-				// transform: scale(1);
+				transform: scale(1);
 				opacity: 0;
 				will-change: opacity;
-				transition: opacity 0.6s ease-in-out;
+				transition: all 0.6s ease-in-out;
 
 				@include respond-to( xxs ) { display: none; }
 				@include respond-to( xs ) { display: none; }
@@ -142,6 +146,24 @@
 				@include respond-to( xxs ) { bottom: 0; right: 0; }
 				@include respond-to( xs ) { bottom: 0; right: 0; }
 				@include respond-to( sm ) { bottom: 0; right: 0; }
+			}
+		}
+	}
+
+	&.active {
+		
+		.project-container-inner {
+			
+			.project-image {
+				transition: all 0.2s linear;
+				opacity: 1;
+				top: 0;
+			}
+
+			.project-info {
+				transition: all 0.2s linear 0.2s;
+				opacity: 1;
+				bottom: -20px;
 			}
 		}
 	}

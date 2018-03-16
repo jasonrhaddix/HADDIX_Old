@@ -18,8 +18,17 @@ class ProjectListItem extends React.Component
         super(props)
 
         this.state = {
-            /* */
+            animate: false
         }
+
+        this.animate = this.animate.bind(this)
+    }
+
+
+    animate(isVisible)
+    {
+        // console.log(isVisible)
+        if(isVisible) this.setState({ animate: true })
     }
 
 
@@ -27,11 +36,13 @@ class ProjectListItem extends React.Component
     {
         let img_src = images(`./${this.props.projectFolder}/${this.props.mainImage}.jpg`)
 
+        console.log(this.state.animate)
+
         return (
-            <div id={this.props.anchor} className='project-container col-sm-12 col-lg-12'>
+            <div id={this.props.anchor} className={`project-container col-sm-12 col-lg-12 ${(this.state.animate) ? "active" : ""}`}>
                 <div className={`project-container-inner ${(this.props.direction)}`}>
                     <div className="project-image">
-                        <VisibilitySensor>
+                        <VisibilitySensor onChange={this.animate}>
                             <Link to={`${this.props.path}/${this.props.anchor}`}>
                                 <div scrollref={this.props.scrollref} className='project-background'>
                                     <img src={img_src} />
