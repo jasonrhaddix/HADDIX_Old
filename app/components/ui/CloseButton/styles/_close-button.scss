@@ -8,7 +8,7 @@
 	background-color: $color-app-text-dark;
 	border-radius: 50%;
 	margin-top: 26px;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.2s ease-in-out;
 
 	&.true {
 		top: 0px;
@@ -27,5 +27,14 @@
 		line-height: 1.8em;
 		font-family: 'DIN-Light', Helvetica, sans-serif;
 		font-size: 1.4rem;
+	}
+
+
+	&:hover {
+		background-color: $color-accent-purple;
+
+		.button-text {
+			color: $color-white;
+		}
 	}
 }
