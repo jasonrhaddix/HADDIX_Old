@@ -41,6 +41,7 @@ class ProjectsList extends React.Component
             
             return (
                 <ProjectListItem 
+                    projectId={i}
                     key={uuid.v4()}
                     scrollref={data.index}
                     anchor={data.anchor}

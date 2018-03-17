@@ -36,23 +36,22 @@ class ProjectListItem extends React.Component
     {
         let img_src = images(`./${this.props.projectFolder}/${this.props.mainImage}.jpg`)
 
-        console.log(this.state.animate)
-
         return (
-            <div id={this.props.anchor} className={`project-container col-sm-12 col-lg-12 ${(this.state.animate) ? "active" : ""}`}>
+            <div id={this.props.anchor} className={`project-container col-sm-12 col-lg-12 ${(this.state.animate) ? "active" : ""} ${(this.props.projectId === 0) ? "first-project" : ""}`}>
                 <div className={`project-container-inner ${(this.props.direction)}`}>
+                    <VisibilitySensor onChange={this.animate}><div className="visibility-marker" /></VisibilitySensor>
                     <div className="project-image">
-                        <VisibilitySensor onChange={this.animate}>
+                        {/*<VisibilitySensor onChange={this.animate}>*/}
                             <Link to={`${this.props.path}/${this.props.anchor}`}>
-                                <div scrollref={this.props.scrollref} className='project-background'>
-                                    <img src={img_src} />
+                                <div scrollref={this.props.scrollref} className='project-background' style={{backgroundImage: 'url(' + img_src + ')'}}>
+                                    {/*<img src={img_src} />*/}
                                     {/*<video></video>*/}
                                 </div>
                             </Link>
-                        </VisibilitySensor>
+                        {/*</VisibilitySensor>*/}
                     </div>
                     <div className='project-info'>
-                        <img src={require('../../../assets/images/app/lowpoly.svg')} />
+                        {/*<img src={require('../../../assets/images/app/lowpoly.svg')} />*/}
                         <div className='project-title'>
                             <h3>{this.props.client}</h3>
                             <h2>{this.props.title}</h2>

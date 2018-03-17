@@ -6,7 +6,7 @@
   "author": "Jason R. Haddix",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --host 192.168.1.189 --hot --inline --env.target development\"",
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --host localhost --hot --inline --env.target development\"",
     "build": "webpack --env.target production --progress --profile --colors" 
   },
   "dependencies": {
