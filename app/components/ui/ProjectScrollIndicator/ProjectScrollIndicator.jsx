@@ -99,7 +99,7 @@ class ProjectScrollIndicator extends React.Component {
 	{	
 		try{
     		const delta = scrollHeight / this.refs.scrollIndInner.offsetHeight
-			document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")
+			/*document.getElementById("scroll-ind-inner").style.top = String(-(scrollPos) / delta + "px")*/
     	} catch(err){
     		console.warn("Cannot get scroll-container: ProjectScrollIndicator.jsx")
     	}
