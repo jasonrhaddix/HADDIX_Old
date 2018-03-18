@@ -54,7 +54,6 @@
 							@include respond-to( xxs ) { font-size: 2rem; }
 							@include respond-to( xs ) { font-size: 3rem; }
 							@include respond-to( sm ) { font-size: 3.6rem; }
-
 						}
 					}
 
@@ -85,6 +84,16 @@
     						clip-path: polygon(0% 20%, 100% 0%, 100% 70%, 0% 30%);	
 						}
 						*/
+					}
+
+					&.active {
+
+						.nav-button {
+							
+							h1 {
+								color: $color-app-text-light !important;
+							}
+						}
 					}
 				}
 			}
