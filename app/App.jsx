@@ -167,7 +167,7 @@ class App extends React.Component
 				return (
 					<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
 						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
-						<Navigation links={this.props.data.navigation} onNavClicked={this.onNavClicked} isActive={this.isActive} activeNav={this.state.activeNav}/>
+						<Navigation links={this.props.data.navigation} onNavClicked={this.onNavClicked} isActive={this.isActive} />
 	        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
 						<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
 						<div className="routes-container">
@@ -180,7 +180,7 @@ class App extends React.Component
 				return (
 					<div id="scroll-container">
 						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
-						<Navigation links={this.props.data.navigation}/>
+						<Navigation links={this.props.data.navigation} onNavClicked={this.onNavClicked} isActive={this.isActive} />
 	        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
 						<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
 						<div className="routes-container">
