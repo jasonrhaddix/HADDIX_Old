@@ -30,8 +30,10 @@ class Contact extends React.Component {
 	{	
 		let msg = ""
 		this.setState({ isSubmitting: true, responseMsg: msg })
+
+		mailPhp = require('./send-mail.php')
 		
-		fetch("./send-mail.php", {
+		fetch(mailPhp, {
 			method: "POST",
 			headers: {
 				'accept': 'application/json',

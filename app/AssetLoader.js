@@ -1,7 +1,7 @@
 const PIXI = require('pixi.js')
 const loader = PIXI.loader
 import manifest from "./asset_manifest.json"
-const images = require.context('./assets/projects', true);
+const images = require.context('./assets/projects', true)
 
 
 export default class AssetLoader {

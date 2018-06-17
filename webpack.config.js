@@ -75,6 +75,12 @@ const config_Production = webpack_merge([
 			limit: 15000,
 			name: "./sctips/[name].[ext]",
 		},
+	}),
+	config_exports.loadPHP({
+		options: {
+			limit: 15000,
+			name: "./sctips/[name].[ext]",
+		},
 	})
 ]);
 
@@ -92,6 +98,7 @@ const config_development = webpack_merge([
 	config_exports.load3DOjects(),
 	config_exports.loadSVGs(),
 	config_exports.loadJSON(),
+	config_exports.loadPHP(),
 ]);
 
 

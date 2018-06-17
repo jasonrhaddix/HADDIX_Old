@@ -321,6 +321,24 @@ exports.load3DOjects = ({ include, exclude, options } = {}) => ({
 
 
 
+exports.loadPHP = ({ include, exclude, options } = {}) => ({
+	module: {
+		rules: [
+			{
+				test: /\.php$/,
+				include,
+				exclude,
+				use: {
+					loader: 'file-loader',
+					options,
+				},
+			},
+		],
+	},
+});
+
+
+
 exports.modernizr = ({ include, exclude } = {}) => ({
 	module: {
 		rules: [
