@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { spring, AnimatedSwitch } from 'react-router-transition';
 
-import IntroRoute from './components/routes/Intro/Intro.jsx'
+import IntroRoute from './components/containers/IntroRoute'
 import WorkRoute from './components/routes/Work/Work.jsx'
 import AboutRoute from './components/routes/About/About.jsx'
 import ContactRoute from './components/routes/Contact/Contact.jsx'

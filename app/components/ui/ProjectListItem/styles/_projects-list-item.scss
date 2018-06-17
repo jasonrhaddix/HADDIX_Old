@@ -2,28 +2,53 @@
 	position: relative;
 	min-height: 400px;
 	height: 100vh;
-	width: 100vw;
+	min-width: 100vw;
+
+	.visibility-marker {
+		position: absolute;
+		background-color: transparent;
+		width: 50px;
+		height: 2px;
+		top: -50px
+	}
 
 	.project-container-inner {
-		position: absolute;
+		@extend .center-content;
 		max-width: 875px;
 		width: 80%;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
 
-		.project-background {
+		.project-image {
 			position: relative;
+			top: 70px;
+			opacity: 0;
 
-			img {
-				width: 100%;
+			// @include respond-to( xxs ) { opacity: 1 !important; top: 0 !important; }
+			// @include respond-to( xs ) { opacity: 1 !important; top: 0 !important; }
+			// @include respond-to( sm ) { opacity: 1 !important; top: 0 !important; }
+			
+			.project-background {
+
+				background-size: cover;
+				background-position: center;
+				height: 500px;
 				overflow: hidden;
-			}
 
-			video {
-				display: none;
-			}
-		}	
+				@include respond-to( xxs ) { height: 275px; }
+				@include respond-to( xs ) { height: 275px; }
+				@include respond-to( sm ) { height: 275px; }
+
+				img {
+					display: block;
+					width: 100%;
+					height: auto;
+					overflow: hidden;
+				}
+
+				video {
+					display: none;
+				}
+			}	
+		}
 
 		.project-info {
 			background: $color-white;
@@ -31,6 +56,13 @@
 			height: 350px;
 			width: 400px;
 			overflow: hidden;
+			bottom: -60px;
+			opacity: 0;
+
+			@include respond-to( xxs ) { position: relative; width: 100%; max-height: 225px; }
+			@include respond-to( xs ) { position: relative; width: 100%; max-height: 225px; }
+			@include respond-to( sm ) { position: relative; width: 100%; max-height: 225px; }
+
 
 			img {
 				position: relative;
@@ -39,13 +71,18 @@
 				right: 190px;
 				transform: scale(1);
 				opacity: 0;
+				will-change: opacity;
 				transition: all 0.6s ease-in-out;
+
+				@include respond-to( xxs ) { display: none; }
+				@include respond-to( xs ) { display: none; }
+				@include respond-to( sm ) { display: none; }
 			}
 
 
 			&:hover {
 				img{
-					transform: scale(1.05);
+					// transform: scale(1.05);
 					opacity: 0.5;
 					right: 170px;
 				}
@@ -73,6 +110,7 @@
 				}
 
 				p {
+					@extend .desktop-only;
 					margin: 20px 0;
 				}
 
@@ -86,6 +124,10 @@
 						@extend .app-button-light;
 						margin-top: 15px;
 						float: right;
+
+						@include respond-to( xxs ) { float: left; }
+						@include respond-to( xs ) { float: left; }
+						@include respond-to( sm ) { float: left; }
 					}
 				}
 			}
@@ -94,11 +136,20 @@
 		&.left {
 			.project-background { 
 				right: -25px;
+
+				@include respond-to( xxs ) { right: 0; }
+				@include respond-to( xs ) { right: 0; }
+				@include respond-to( sm ) { right: 0; }
+
 			}
 			
 			.project-info {
-				bottom: -25px;
+				bottom: -60px;
 				left: -25px;
+				
+				@include respond-to( xxs ) { bottom: 0; left: 0; }
+				@include respond-to( xs ) { bottom: 0; left: 0; }
+				@include respond-to( sm ) { bottom: 0; left: 0; }
 			}
 		}
 
@@ -106,11 +157,57 @@
 
 			.project-background { 
 				left: -25px;
+
+				@include respond-to( xxs ) { left: 0; }
+				@include respond-to( xs ) { left: 0; }
+				@include respond-to( sm ) { left: 0; }
 			}
 			
 			.project-info {
-				bottom: -25px;
+				bottom: -60px;
 				right: -25px;
+
+				@include respond-to( xxs ) { bottom: 0; right: 0; }
+				@include respond-to( xs ) { bottom: 0; right: 0; }
+				@include respond-to( sm ) { bottom: 0; right: 0; }
+			}
+		}
+	}
+
+	&.active {
+		
+		.project-container-inner {
+			
+			.project-image {
+				transition: all 0.2s ease-out;
+				opacity: 1;
+				top: 0;
+			}
+
+			.project-info {
+				transition: all 0.2s ease-out 0.25s;
+				opacity: 1;
+				bottom: -25px;
+
+				@include respond-to( xxs ) { bottom: 0; }
+				@include respond-to( xs ) { bottom: 0; }
+				@include respond-to( sm ) { bottom: 0; }
+			}
+		}
+	}
+
+	&.first-project {
+
+		.project-container-inner {
+			
+			.project-image {
+				opacity: 1 !important;
+				top: 0px !important;
+			}
+
+			.project-info {
+				opacity: 1 !important;
+				bottom: -25px !important;
 			}
 		}
 	}

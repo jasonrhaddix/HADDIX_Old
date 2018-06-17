@@ -20,38 +20,43 @@ class Header extends React.Component {
 		}
 
 		this.setHeaderState = this.setHeaderState.bind(this)
+		this.setNewPath = this.setNewPath.bind(this)
 	}
 
 
 	componentWillMount()
 	{
 		this.setHeaderState()
-		this.setState({ currentPath : this.props.currentPath })
-
+		this.setNewPath(this.props)
+		
 		this.props.history.listen(() => {
 			this.setHeaderState()
 		});
 	}
 
 
+
 	componentWillReceiveProps(newProps)
 	{
-		if(newProps.currentPath)
-		{
-			var path = newProps.currentPath
-			var letter = path.split('')[0]
-
-			var newPath = path.replace(letter, function (g) { return g.toUpperCase(); });
-		
-			this.setState({currentPath: newPath})
-		} else {
-			this.setState({currentPath: ""})
-		}
-
-		
+		this.setNewPath(newProps)	
 	}
 
 
+
+	setNewPath(props)
+	{
+		if(props.currentPath)
+		{
+			var path = props.currentPath
+			var newPath = path.replace(/\w\S*/g, function(str){
+					return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase()
+			});
+			
+			this.setState({currentPath: newPath})
+		} else {
+			this.setState({currentPath: ""})
+		}	
+	}
 
 
 
@@ -65,6 +70,7 @@ class Header extends React.Component {
 	}
 
 
+
 	setHeaderState()
 	{
 		var path = this.props.history.location.pathname
@@ -73,10 +79,11 @@ class Header extends React.Component {
 	}
 
 
+
 	render()
 	{
 		return (
-			<DocumentTitle title={`HADDIX | ${this.state.currentPath}`} className="home-container">
+			<DocumentTitle title={`HADDIX ${(this.state.currentPath !== "") ? "|" : ""} ${this.state.currentPath}`} className="home-container">
 				<header className={`header-container ${this.state.showHeader}`} >
 					<div className="app-logo-wrapper">
 						<div className="app-logo">

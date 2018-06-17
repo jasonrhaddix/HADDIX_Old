@@ -4,6 +4,7 @@
 	"scrollProject": null,
 	"scrollPos": 0,
 	"scrollHeight": 0,
+	"animateLogo": false,
 	"projects": [
 		{
 			"title": "Christmas Card",
@@ -16,7 +17,23 @@
 			"writeUp": "I was asked to create a digital holiday card that was simple yet engaging, and also pushed the limits of current browser technologies. The site consisted of CSS3 clip-path animations that form into low-poly 3D art with snow particles set in background. The user cycles through various preset designs, which are stored as polygon string values in Javascript arrays, while the script will handle creating and destroying polygon shards depending on the amount needed for each object. /break From an experience standpoint, this project taught me about animating CSS clipping paths and how animating those paths are an inexpensive way to add a lot of complex animation to a project. Unfortunately CSS clip-path animations weren’t fully supported on all browsers because a difference in CSS specification used by each company. At the time of development, there wasn’t a polyfill to handle cross-browser compatibility or legacy browsers. /break I’m the future, I’d like find a project where this concept would shine – other than small animation effects for buttons – but more as the centerpiece for a project. I’m also interested in recreating the technical spirit of this project with more interesting artwork, like Star Wars characters or even low-poly art of iconic musicians. /break All-in-all this was a fun, but challenging, little project that was, if anything, a great learning experience.",
 			"technologies": ["jQuery", "Javascript", "CSS3 Animations"],
 			"link": "http://www.garygroup.com/holidaycard_2015",
-			"images": [
+			"imagesArr": [
+				"img_2"
+			],
+			"video": "sample_vid"
+		},
+		{
+			"title": "Wayfinder Kiosk",
+			"client": "Skechers",
+			"subtitle": "Skechers Wayfinder kiosk",
+			"anchor": "skechers_kiosk",
+			"desc": "A digital Christmas card using CSS 3 to create low-poly animated art.",
+			"mainImg": "img_2",
+			"headerTitle": "A digital holiday card that sets the scene with CSS 3 animations.",
+			"writeUp": "I was asked to create a digital holiday card that was simple yet engaging, and also pushed the limits of current browser technologies. The site consisted of CSS3 clip-path animations that form into low-poly 3D art with snow particles set in background. The user cycles through various preset designs, which are stored as polygon string values in Javascript arrays, while the script will handle creating and destroying polygon shards depending on the amount needed for each object. /break From an experience standpoint, this project taught me about animating CSS clipping paths and how animating those paths are an inexpensive way to add a lot of complex animation to a project. Unfortunately CSS clip-path animations weren’t fully supported on all browsers because a difference in CSS specification used by each company. At the time of development, there wasn’t a polyfill to handle cross-browser compatibility or legacy browsers. /break I’m the future, I’d like find a project where this concept would shine – other than small animation effects for buttons – but more as the centerpiece for a project. I’m also interested in recreating the technical spirit of this project with more interesting artwork, like Star Wars characters or even low-poly art of iconic musicians. /break All-in-all this was a fun, but challenging, little project that was, if anything, a great learning experience.",
+			"technologies": ["jQuery", "Javascript", "CSS3 Animations"],
+			"link": "http://www.garygroup.com/holidaycard_2015",
+			"imagesArr": [
 				"img_2"
 			],
 			"video": "sample_vid"

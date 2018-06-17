@@ -1,5 +1,6 @@
 import React from 'react'
-import ThreeRender from './js/three.js'
+// import ThreeRender from './js/three.js'
+import ThreeRender_Opt from './js/three-optimize.js'
 
 
 
@@ -18,7 +19,7 @@ class SphereBg extends React.Component
     }
 
     componentDidMount() {
-        this.refs.threeContainer.appendChild(ThreeRender)
+        this.refs.threeContainer.appendChild(ThreeRender_Opt)
         this.setState({ focus: true })
     }
 

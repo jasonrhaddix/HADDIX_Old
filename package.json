@@ -6,8 +6,8 @@
   "author": "Jason R. Haddix",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --host 192.168.1.189 --hot --inline --env development\"",
-    "build": "webpack --env.target production --progress --profile --colors"
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --progress --host localhost --hot --inline --env.target development\"",
+    "build": "webpack --env.target production --progress --profile --colors" 
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
@@ -19,9 +19,14 @@
     "fbjs": "^0.8.16",
     "gsap": "^1.20.3",
     "history": "^4.7.2",
+    "manifest-loader": "^0.0.1",
     "material-ui": "^0.20.0",
+    "pixi.js": "^4.7.0",
+    "preloadjs": "^1.0.1",
     "prop-types": "^15.6.0",
+    "radium": "^0.22.1",
     "react": "^16.2.0",
+    "react-browser-detection": "^1.1.0",
     "react-codemirror2": "^4.0.0",
     "react-custom-scrollbars": "^4.2.1",
     "react-document-title": "^2.0.3",
@@ -35,6 +40,7 @@
     "react-scrollbar-js": "^1.0.1",
     "react-transition-group": "^2.2.1",
     "react-visibility-sensor": "^3.11.0",
+    "recursive-readdir": "^2.2.2",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0",

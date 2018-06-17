@@ -28,13 +28,13 @@ const About_Skillset = () => {
 
 							<ul>
 								<li><p>ActionScript</p></li>
-								<li><p>Backbone / Marionette</p></li>
+								<li><p>Backbone-Marionette</p></li>
 								<li><p>jQuery</p></li>
 								<li><p>Handlebars / Mustache</p></li>
 								<li><p>Bootstrap</p></li>
 								<li><p>Grunt / Gulp</p></li>
 								<li><p>NodeJS</p></li>
-								<li><p>Yarn / NPM / NVM</p></li>
+								<li><p>Yarn / NPM</p></li>
 								<li><p>ThreeJS</p></li>
 							</ul>
 						</div>
@@ -49,10 +49,11 @@ const About_Skillset = () => {
 								<li><p>Google Cloud Platform</p></li>
 								<li><p>Amazon Web Services</p></li>
 								<li><p>Akamai CDN</p></li>
-								<li><p>Plesk / Paralells</p></li>
+								<li><p>Atlassian / JIRA</p></li>
 							</ul>
 
 							<ul>
+								<li><p>Plesk / Paralells</p></li>
 								<li><p>Wordpress</p></li>
 								<li><p>Sizmek</p></li>
 								<li><p>DoubleClick</p></li>

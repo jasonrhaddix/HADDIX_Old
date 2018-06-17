@@ -5,8 +5,7 @@ export default function( values ) {
         'firstName',
         'lastName',
         'email',
-        'favoriteColor',
-        'notes',
+        'message'
     ];
 
     requiredFields.forEach( field => {

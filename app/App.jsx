@@ -2,13 +2,14 @@ import React from 'react'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { spring, AnimatedSwitch } from 'react-router-transition'
+import BrowserDetection from 'react-browser-detection';
 
-import { setScrollPosition, setScrollHeight } from './actions'
 import Routes from './Router.jsx'
 import Header from './components/containers/Header'
 import Navigation from './components/containers/Navigation'
 import CloseButton from './components/ui/CloseButton/CloseButton.jsx'
 import ProjectScrollIndicator from './components/containers/ProjectScrollIndicator'
+import { setScrollPosition, setScrollHeight, toggleNav } from './actions'
 
 
 // import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
@@ -27,13 +28,16 @@ class App extends React.Component
             windowWidth: window.innerWidth,
             windowHeight: window.innerHeight,
             scrollPos: null,
-            currentPath: ""
+            currentPath: "",
+            activeNav: 0,
         }
 
         this.scrollPos = 0
         this.scrollHeight = 0
 
         this.setScrollHeight = this.setScrollHeight.bind(this)
+        this.onNavClicked = this.onNavClicked.bind(this)
+        this.isActive = this.isActive.bind(this)
 	}
 
 
@@ -66,6 +70,12 @@ class App extends React.Component
     }
 
 
+    /*getInitialState()
+    {
+    	return { activeNav: 0 }
+    }*/
+
+
     componentWillMount()
     {
     	this.getCurrentPath()
@@ -75,6 +85,7 @@ class App extends React.Component
     componentDidMount()
     {
 		window.addEventListener('resize', ::this.handleResize)
+
     	try{
     		document.getElementById("scroll-container").firstChild.addEventListener("scroll", ::this.setScrollPos)
     	} catch(err){
@@ -114,6 +125,28 @@ class App extends React.Component
 	}
 
 
+	onNavClicked(el)
+	{
+		this.setActive(el.currentTarget.id)
+		
+		appStore.dispatch(
+      		toggleNav( false )
+        )
+	}
+
+
+	isActive(id)
+	{	
+		return this.state.activeNav == id
+	}
+
+
+	setActive(selectedNavId)
+	{
+		this.setState({ activeNav: selectedNavId })
+	}
+
+
 	render() 
 	{
 		setTimeout(this.setScrollHeight, 500)
@@ -127,16 +160,41 @@ class App extends React.Component
 			setScrollPosition(this.scrollPos)
 		)
 
-	   return (
-		 	<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
-		 			<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
-					<Navigation links={this.props.data.navigation}/>
-        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
-					<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
-					<div className="routes-container">
-						{Routes}
+		// console.log("App Component : Render()", this.state.activeNav)
+
+		const browserHandler = {
+			chrome: () => {
+				return (
+					<Scrollbars id="scroll-container" style={{ width: this.state.windowWidth, height: this.state.windowHeight }}>
+						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
+						<Navigation links={this.props.data.navigation} onNavClicked={this.onNavClicked} isActive={this.isActive} />
+	        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
+						<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
+						<div className="routes-container">
+							{Routes}
+						</div>
+					</Scrollbars>
+				)
+			},
+			default: (browser) => {
+				return (
+					<div id="scroll-container">
+						<Header logo={require( `./assets/images/app/${this.props.data.logo}` )} title={this.props.data.title} currentPath={this.state.currentPath}/>
+						<Navigation links={this.props.data.navigation} onNavClicked={this.onNavClicked} isActive={this.isActive} />
+	        			<ProjectScrollIndicator ref={(ProjectScrollIndicator) => { this.scrollInd = ProjectScrollIndicator }} className="project-scroll-ind-container"/>
+						<CloseButton buttonText="X" buttonPath="/work" currentPath={this.state.currentPath}/>
+						<div className="routes-container">
+							{Routes}
+						</div>
 					</div>
-			</Scrollbars>
+				)
+			},
+		};
+
+		return (
+			<BrowserDetection once={false}>
+				{browserHandler}
+			</BrowserDetection>
 		)
 	}
 }

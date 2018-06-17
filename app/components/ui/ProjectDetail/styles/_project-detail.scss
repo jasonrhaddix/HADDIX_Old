@@ -66,13 +66,22 @@
 					font-family: 'DIN-Bold', helvetica, sans-serif;
 					text-transform: uppercase;
 					font-size: 2rem;
+
+					@include respond-to( xxs ) { font-size: 1.3rem; }
+					@include respond-to( xs ) { font-size: 1.3rem; }
+					@include respond-to( sm ) { font-size: 1.3rem; }
 				}
 
 				h1 {
 					position: relative;
 					font-family: 'DIN-Black', helvetica, sans-serif;
 					text-transform: uppercase;
+					padding-right: 40px;
 					font-size: 6rem;
+
+					@include respond-to( xxs ) { font-size: 3.4rem; }
+					@include respond-to( xs ) { font-size: 3.4rem; }
+					@include respond-to( sm ) { font-size: 3.4rem; }
 				}
 			}
 		}
@@ -86,6 +95,10 @@
 		height: 100px;
 		transition: transform 0.4s ease-in-out;
 		transform-origin: 50% 100%;
+
+		@include respond-to(xxs){ height: 250px; margin-top: 0px; transform: scaleY(1) !important; }
+		@include respond-to(xs){ height: 250px; margin-top: 0px; transform: scaleY(1) !important; }
+		@include respond-to(sm){ height: 250px; margin-top: 0px; transform: scaleY(1) !important; }
 
 		&.false {
 			transform: scaleY(0);
@@ -104,6 +117,10 @@
 				flex-direction: row;
 				will-change: opacity;
 
+				@include respond-to(xxs){ flex-direction: column; opacity: 1 !important; }
+				@include respond-to(xs){ flex-direction: column; opacity: 1 !important; }
+				@include respond-to(sm){ flex-direction: column; opacity: 1 !important; }
+
 				&.true {
 					transition: opacity 0.2s linear 0.3s;
 					opacity: 1;
@@ -121,6 +138,10 @@
 					margin: 0 auto;
 					flex: 1;
 
+					@include respond-to(xxs){ margin: 10px 0; }
+					@include respond-to(xs){ margin: 10px 0; }
+					@include respond-to(sm){ margin: 10px 0; }
+
 					.detail-header-item-name {
 						font-family: 'DIN-Bold', helvetica, sans-serif;
 						text-transform: uppercase;
@@ -131,6 +152,12 @@
 						/*  */
 					}
 
+					.detail-button {
+						margin: 0 !important;
+						left: 0 !important;
+						display: block;
+						
+					}
 					.app-button {
 						@extend .app-button-light;
 					}
@@ -153,7 +180,12 @@
 		h3 {
 			font-family: 'DIN-RegularItalic', helvetica, sans-serif;
 			font-size: 1.6rem;
+			line-height: 1.6rem;
 			text-align: center;
+
+			@include respond-to( xxs ) { font-size: 1.3rem; }
+			@include respond-to( xs ) { font-size: 1.3rem; }
+			@include respond-to( sm ) { font-size: 1.3rem; }
 		}
 	}	
 
@@ -206,11 +238,11 @@
 			.detail-technologies-row {
 				@extend .row;
 				padding: 20px 0;
+				margin: 0;
 				
 				.detail-technologies-list {
 
 					.tech-item {
-						// @extend .col-xs-12;
 						@extend .col-xs-4;
 					}
 				}

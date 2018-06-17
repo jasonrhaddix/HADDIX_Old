@@ -41,6 +41,7 @@ class ProjectsList extends React.Component
             
             return (
                 <ProjectListItem 
+                    projectId={i}
                     key={uuid.v4()}
                     scrollref={data.index}
                     anchor={data.anchor}
@@ -49,8 +50,9 @@ class ProjectsList extends React.Component
                     subtitle={data.subtitle}
                     client={data.client}
                     desc={data.desc}
+                    mainImage={data.mainImg}
                     projectFolder={data.anchor}
-                    images={data.images} 
+                    imagesArr={data.images} 
                     direction={direction}
                     onClickEvent={this.openProject}
                 />

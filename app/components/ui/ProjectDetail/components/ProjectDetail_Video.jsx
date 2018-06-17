@@ -9,7 +9,7 @@ const ProjectDetail_Video = props => {
 	return (
 		<div className="detail-video">
 			<div className="detail-video-inner">
-				<video className="project-video" autoPlay muted playsInline loop >
+				<video className="project-video" autoPlay controls muted playsInline loop >
 	                <source src={`${props.projectVideo}`} type="video/mp4"/>
 	            </video>
             </div>

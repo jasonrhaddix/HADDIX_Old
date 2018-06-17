@@ -7,12 +7,6 @@ import AppButton from '../../ui/AppButton/AppButton.jsx'
 import { toggleNav } from '../../../actions'
 
 
-/*const mapStateToProps = (state) => {
-
-    return {
-        openNav: state.openNav
-    }
-}*/
 
 
 
@@ -25,6 +19,7 @@ class IntroRoute extends React.Component
         this.state = {
             /* */
         }
+
     }
 
 
@@ -43,7 +38,7 @@ class IntroRoute extends React.Component
             <div className="intro-container">
                 <SphereBg />
                 <article className="title-container">
-                    <Logo />
+                    <Logo animate={this.props.animateLogo}/>
                     <div className="subtitle">
                         <p>Portfolio for Jason R Haddix</p>
                     </div>

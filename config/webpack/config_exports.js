@@ -44,12 +44,42 @@ exports.production = function() {
 
 
 
+exports.assetPreload = function(path, env) {
+
+	const customLoaderOptions = {
+		images: {
+			env : env,
+            assetsPath: path + '/assets/projects/',
+            rewritePath: "images/",
+            ignore: ['.DS_Store', 'share_*', '*-icon-*', 'favicon*']
+        },
+	};
+
+	return {
+		/*module: {
+			rules: [
+				{
+					test: /\.manifest$/,
+					use: ['json-loader', 'manifest-loader'],
+				},
+			],
+		},*/
+		plugins: [
+			new webpack.LoaderOptionsPlugin({
+				options: customLoaderOptions
+			})
+		],
+	};
+}
+
+
+
 exports.devServer = ({ host, port } = {}) => ({
 	devServer: {
 		stats: 'errors-only',
 		host,
 		port,
-		// historyApiFallback: true,
+		historyApiFallback: true,
 		overlay: {
 			errors: true,
 			warnings: true,
@@ -278,6 +308,24 @@ exports.load3DOjects = ({ include, exclude, options } = {}) => ({
 		rules: [
 			{
 				test: /\.(obj|mtl|json3d)$/,
+				include,
+				exclude,
+				use: {
+					loader: 'file-loader',
+					options,
+				},
+			},
+		],
+	},
+});
+
+
+
+exports.loadPHP = ({ include, exclude, options } = {}) => ({
+	module: {
+		rules: [
+			{
+				test: /\.php$/,
 				include,
 				exclude,
 				use: {

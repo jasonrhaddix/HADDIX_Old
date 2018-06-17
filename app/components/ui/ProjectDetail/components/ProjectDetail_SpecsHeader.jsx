@@ -18,7 +18,7 @@ const ProjectDetail_SpecsHeader = props => {
 						<p className="detail-header-item-value">Concept, Design, Development</p>
 					</div>
 
-					<div className="detail-spec-header-item">
+					<div className="detail-spec-header-item detail-button">
                         <AppButton buttonText="Open Project" buttonPath={`${props.path}/${props.anchor}`} />
 					</div>
 				</div>

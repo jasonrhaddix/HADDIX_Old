@@ -16,29 +16,19 @@ class Navigation extends React.Component {
         super(props)
 
         this.getNavData()
-        this.closeNav = this.closeNav.bind(this)
-    }
-
-
-
-    closeNav()
-    {
-        appStore.dispatch(
-          toggleNav( false )
-        )
     }
 
 
     getNavData()
     {
+        // console.log(this.props.activeNav)
         this.navMap = NavigationData.map(function(data) {
-
-            var navData = data.navigation.map(function(section) {
+            var navData = data.navigation.map(function(section, i) {
+                // console.log(this.props.activeNav, i, this.props.isActive(i))
                 return (
                     <li key={uuid.v4()}>
-                        <Link onClick={this.closeNav} to={section.path}>
+                        <Link to={section.path} id={i} onClick={this.props.onNavClicked} className={( this.props.isActive(i) ) ? 'active' : ''}>
                             <div className="nav-button"><h1>{section.title}</h1></div>
-                            <div className="nav-button-poly"><h1>{section.title}</h1></div>
                         </Link>
                     </li>
                 )
@@ -70,7 +60,7 @@ class Navigation extends React.Component {
 
         const transitionStyles_Poly = {
           entering: { clipPath: 'polygon(0% 0%, 110% 0%, 0% 0%, 0% 50%, 0% 100%)' },
-          entered:  { clipPath: 'polygon(0% 0%, 110% 0%, 75% 80%, 10% 90%, 0% 100%)' },
+          entered:  { clipPath: 'polygon(0% 0%, 110% 0%, 90% 80%, 10% 90%, 0% 100%)' },
         }
 
         const defaultStyle_Nav = {
