@@ -18,7 +18,7 @@ const SCENE = new THREE.Scene(),
 		S3D = new THREE.Mesh(...[
 			new THREE.IcosahedronGeometry(K*Math.min(w, h), 1), 
 			new THREE.MeshBasicMaterial({
-				color: 0xEFEFEF, 
+				color: 0x141418, 
 				wireframe: true
 			})
 		]), 

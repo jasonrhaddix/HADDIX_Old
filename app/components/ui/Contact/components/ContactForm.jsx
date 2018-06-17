@@ -4,6 +4,9 @@ import TextField from 'material-ui/TextField'
 import validate from '../js/validate'
 import asyncValidate from '../js/asyncValidate'
 import AppButton from '../../AppButton/AppButton.jsx'
+
+import SubmittingAni from '../js/submitting-threejs.js'
+
 // import Button from 'material-ui/Button'
 
 
@@ -53,8 +56,68 @@ const renderTextField = (
 
 
 
+class ContactForm extends React.Component {
 
-const ContactForm = props => {
+	constructor(props)
+	{
+		super(props)
+
+		this.state = {
+			/* */
+		}
+	}
+
+	componentDidMount() {
+		this.refs.submittingThreeContainer.appendChild(SubmittingAni)
+    }
+
+
+    render()
+    {
+    	const { handleSubmit, pristine, reset, submitting } = this.props
+
+    	return (
+			<div className="form-container">
+				<form onSubmit={handleSubmit} method="post" className="contact-form">
+					<div className="form-textfield-fname-container">
+						<Field name="firstName" component={renderTextField} label="First Name" multiLine={false}/>
+					</div>	
+
+					<div className="form-textfield-lname-container">
+						<Field name="lastName" component={renderTextField} label="Last Name" multiLine={false}/>
+					</div>
+
+					<div className="form-textfield-email-container">
+						<Field name="email" component={renderTextField} label="Email" multiLine={false}/>
+					</div>
+
+					<div className="form-textfield-message-container">
+						<Field name="message" component={renderTextField} label="Message" multiLine={true}/>
+					</div>
+
+					<div className="form-submit-btn">
+						<button type="submit" disabled={submitting}><AppButton buttonText="Submit" /></button>
+			      		<div className="form-response-msg"><p>{this.props.responseMsg}</p></div>
+			      	</div>
+				</form>
+				<div className={`form-submit-overlay ${this.props.isSubmitting}`}>
+					<div className="form-submit-loader">
+						<div className="submitting-three-container" ref="submittingThreeContainer"/>
+						<p>Submitting...</p>
+					</div>
+				</div>
+			</div>
+		)
+    }
+}
+
+
+
+
+
+
+
+/*const ContactForm = props => {
 
 	const { handleSubmit, pristine, reset, submitting } = props
 
@@ -84,12 +147,12 @@ const ContactForm = props => {
 			</form>
 			<div className={`form-submit-overlay ${props.isSubmitting}`}>
 				<div className="form-submit-loader">
-					Submitting
+					Submitting...
 				</div>
 			</div>
 		</div>
 	)
-}
+}*/
 
 
 
